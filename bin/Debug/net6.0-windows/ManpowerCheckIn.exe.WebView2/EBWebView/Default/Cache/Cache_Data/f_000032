@@ -1,0 +1,674 @@
+<!doctype html>
+<html>
+
+<head>
+    <base href="https://www.dci.co.th">
+<meta charset="utf-8">
+
+    <title>
+        Daikin Compressor Industries Ltd.    </title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="robot" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+
+    <link type="image/ico" rel="shortcut icon" href="/frontend/images/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="/frontend/css/layout.css" />
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+    
+    
+   
+    
+    </head>
+
+<body>
+
+    <div class="container-fluid">
+         <div class="row">
+    <div class="col-12 wrap_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-5 col-md-4">
+                    <a href="https://www.dci.co.th/en" class="logo">
+                        <img src="/frontend/images/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="col-7 col-md-8">
+                    <div class="topbar-right">
+                        <div class="topbar-phone">
+                            <i class="bi bi-telephone"></i> 66(0) 3865 0060
+                        </div>
+                        <div class="toplang">
+                            <a href="https://www.dci.co.th/setlang?lang=en&path=" ><img src="/frontend/images/en_flag.svg" alt=""></a>
+                            <a href="https://www.dci.co.th/setlang?lang=th&path="  class="active" ><img src="/frontend/images/th_flag.svg" alt=""></a>
+                        </div>
+                        <div class="btn_menutop">
+                            <a class="menu-popup-btn" href="javascript:void(0)">
+                                <div class="btn_menu">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="txt-btnmenu">menu</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-popup">
+            <button class="menu-popup-close"><i class="bi bi-x-lg"></i></button>
+            <button class="menu-popup-back"><i class="bi bi-arrow-left"></i> back</button>
+            <div class="box-scrollmenu">
+                <ul class="menu-popup-main">
+                    <li><a href="#">Home</a></li>
+                    <li class="menu-popup-hassub">
+                    <a href="#">CORPORATE INFO</a>
+                        <ul class="menu-popup-submenu">
+                            <li><a href="https://www.dci.co.th/en/vision_mission">VISSION & MISSION</a></li>
+                            <li><a href="https://www.dci.co.th/en/history">HISTORY</a></li>
+                            <li><a href="https://www.dci.co.th/en/certification">CERTIFICATION</a></li>
+                            <li><a href="https://www.dci.co.th/en/policyDCI">POLICY DCI</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-popup-hassub">
+                        <a href="#">MANUFACTURING</a>
+                        <ul class="menu-popup-submenu">
+                          <li><a href="https://www.dci.co.th/en/product_process">PRODUCTION PROCESS</a></li>
+                          <li><a href="https://www.dci.co.th/en/quality_control">QUALITY CONTROL</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.dci.co.th/en/product_technology">PRODUCT & TECHNOLOGY</a></li>
+                    <li><a href="https://www.dci.co.th/en/news_activities">NEWS & ACTIVITIES</a></li>
+                    <li class="menu-popup-hassub">
+                        <a href="#">SUSTAINBILITY</a>
+                        <ul class="menu-popup-submenu">
+                          <li><a href="https://www.dci.co.th/en/environment">ENVIROMENT MANAGEMENT</a></li>
+                          <li><a href="https://www.dci.co.th/en/engergy">ENGERGY MANAGEMENT</a></li>
+                          <li><a href="https://www.dci.co.th/en/safety">SAFETY</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.dci.co.th/en/careers">CAREERS</a></li>
+                    <li><a href="https://www.dci.co.th/en/planttour">PLANT TOUR</a></li>
+                    <li><a href="https://www.dci.co.th/en/contact">CONTACT US</a></li>
+                </ul>
+            </div>
+            <div class="menu-popup-info">
+                <div class="box-popupinfo">
+                    <div>address</div>
+                    <address>7/202 Moo.6 T.Mabyangporn A.Pluakdaeng, Rayong 21140</address>
+                </div>
+                <div class="box-popupinfo">
+                    <div>contact</div>
+                    <p>Tel. 66(0)-3865-0060</p>
+                    <p>Fax. 66(0)-3865-0061</p>
+                    <p>E-mail: contact@dci.co.th</p>
+                </div>
+                <div class="box-popupinfo">
+                    <div>follow us</div>
+                    <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-line"></i></a>
+                    <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="mainmenu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="menubar">
+                                <li class="logo_menuopen">
+                                    <div class="close_menu"><i class="bi bi-x-circle-fill"></i></div>
+                                </li>
+                                <li class="hassub"><a><b>CORPORATE INFO</b></a>
+                                    <ul class="submenu">
+                                        <li><a href="https://www.dci.co.th/en/vision_mission">VISSION & MISSION</a></li>
+                                        <li><a href="https://www.dci.co.th/en/history">HISTORY</a></li>
+                                        <li><a href="https://www.dci.co.th/en/certification">CERTIFICATION</a></li>
+                                        <li><a href="https://www.dci.co.th/en/policyDCI">POLICY DCI</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hassub"><a><b>MANUFACTURING</b></a>
+                                    <ul class="submenu">
+                                        <li><a href="https://www.dci.co.th/en/product_process">PRODUCTION PROCESS</a></li>
+                                        <li><a href="https://www.dci.co.th/en/quality_control">QUALITY CONTROL</a>
+                                    </ul>
+                                </li>
+                                <li><a href="https://www.dci.co.th/en/product_technology"><b>PRODUCT & TECHNOLOGY</b></a></li>
+                                <li><a href="https://www.dci.co.th/en/news_activities"><b>NEWS & ACTIVITIES</b></a></li>
+                                <li class="hassub"><a><b>SUSTAINBILITY</b></a>
+                                    <ul class="submenu">
+                                    <li><a href="https://www.dci.co.th/en/environment">ENVIROMENT MANAGEMENT</a></li>
+                                        <li><a href="https://www.dci.co.th/en/engergy">ENGERGY MANAGEMENT</a></li>
+                                        <li><a href="https://www.dci.co.th/en/safety">SAFETY</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="https://www.dci.co.th/en/careers"><b>CAREERS</b></a></li>
+                                <li><a href="https://www.dci.co.th/en/planttour"><b>PLANT TOUR</b></a></li>
+                                <li><a href="https://www.dci.co.th/en/contact"><b>CONTACT US</b></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+                           <section class="row">
+              <div class="col-12 wrapbanner">
+                <div class="banner-boxleft wow fadeInLeft"></div>
+                <div class="banner-home wow fadeInDown">
+                  <div class="owl-bannerslide owl-carousel owl-theme">
+                                        <div class="items">
+                      <figure><img src="https://www.dci.co.th/upload/project/unit_01042023-224919-00.jpeg" alt=""></figure>
+                    </div>
+                                        <div class="items">
+                      <figure><img src="https://www.dci.co.th/upload/project/unit_01042023-224920-03.webp" alt=""></figure>
+                    </div>
+                                        <div class="items">
+                      <figure><img src="https://www.dci.co.th/upload/project/unit_28042023-095841-00.jpeg" alt=""></figure>
+                    </div>
+                                        <div class="items">
+                      <figure><img src="https://www.dci.co.th/upload/project/unit_28042023-095842-01.webp" alt=""></figure>
+                    </div>
+                                        <div class="items">
+                      <figure><img src="https://www.dci.co.th/upload/project/unit_28042023-095843-02.webp" alt=""></figure>
+                    </div>
+                                        <div class="items">
+                      <figure><img src="https://www.dci.co.th/upload/project/unit_28042023-095843-03.webp" alt=""></figure>
+                    </div>
+                                      </div>
+                </div>
+                <div class="banner-boxright wow fadeInRight">
+                  <div class="txt-follow">
+                    <div class="social-top">
+                                               <a href="@line" target="_blank"><img src="/frontend/images/icon-line.svg" alt=""></a>                         <a href="https://www.facebook.com" target="_blank"><img src="/frontend/images/icon-fb.svg" alt=""></a>                                            </div>
+                        <div class="txtsocial">Follow us</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         
+                
+     
+          <section class="row">
+            <div class="col-12 wrap-welcome">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-5 wow fadeInDown">                
+                            <div class="topic-welcome"><span style="font-size: 4rem;">DAIKIN</span><br />COMPRESSOR INDUSTRIES</div>
+                        </div>
+                        <div class="col-12 col-lg-7 wow fadeInDown">
+                            <div class="desc-welcome">
+                              <div class="desc-welcome">
+<p><span style="color: #000000;">Daikin Compressor Industries Ltd,. (DCI) </span> was established in 2001. Located in Amata City Industrial Estate, Rayong Province, according to DIL's main strategy To be a compressor production base for Daikin affiliates around the world that assemble air conditioners for homes. Office and industrial buildings Started production in 2002 and has continued to expand production capacity over the past 20 years.</p>
+<p>DCI has managed the organization with the highest focus on customer satisfaction under a unique management system Daikin production system (Production of Daikin System: PDS) has been implemented to reduce wastage in the production process and elevate the quality of the products. as well as reducing production costs.</p>
+</div>
+                            </div>
+                            <div class="row wrap-iconwelcome">
+                                <div class="col-6 col-md-3">
+                                    <a href="https://www.dci.co.th/en/vision_mission">
+                                      
+                                        <img src="/frontend/images/icon-w01.svg" alt="">
+                                         Vision & Mission
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="https://www.dci.co.th/en/history">
+                                        <img src="/frontend/images/icon-w02.svg" alt="">
+                                         History
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <a href="https://www.dci.co.th/en/certification">
+                                        <img src="/frontend/images/icon-w03.svg" alt="">
+                                         Certification
+                                        </a>
+                                      </div>
+                                      <div class="col-6 col-md-3">
+                                        <a href="https://www.dci.co.th/en/policyDCI">
+                                          <img src="/frontend/images/icon-w04.svg" alt="">
+                                           Policy DCI
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-company wow fadeInUp"><img src="upload/project/img_04052023-135525000000.jpeg" alt=""></div>
+            </div>
+        </section>
+                        <section class="row">
+            <div class="col-12 home-menufac wow fadeInDown">
+                <div class="bg-homefac">
+                    <img src="/frontend/images/manufac-home_new.webp" alt="">
+                    <img src="/frontend/images/manufac-home_04.webp" alt="">
+                </div>
+                <div class="container content-mfachome">
+                    <div class="row">
+                        <div class="col-12 col-xl-9 col-xxl-8">
+                            <div class="topic-home">  MANUFACTURING</div>
+                            <div class="topic-mfachome"> Revolutionary "Swing Compressor" and "Scroll Compressor" Design </div>
+                            <p>
+                              Daikin Compressor Industries Ltd. produces modern-design swing compressors for use in residential air conditioners and scroll compressor for use in commercial air conditioners. 
+                            </p>
+                            <div class="btn-menufac">
+                                <a href="https://www.dci.co.th/en/product_process">  Production Process  </a>
+                                <a href="https://www.dci.co.th/en/quality_control">Quality Control  </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="wrap-homeproduct">
+            <div class="container home-product wow fadeInDown">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                          <div class="topic-home"><span style="font-size: 4rem;">Product &amp;</span><br />
+<div>Technology EN</div>
+</div>  
+                        <div class="desc-topicphome">  Lorem Ipsum is simply dummy text of the printing and typesetting industry  </div>
+                        <a href="https://www.dci.co.th/en/product_technology" class="btn-default btn-blue home-mproduct">view all <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <div class="owl-homeproduct owl-carousel owl-theme">
+                                                
+                            <div class="items">
+                                <a href="https://www.dci.co.th/en/product_technology" class="item-phome"> 
+                                    <figure><img src="https://www.dci.co.th/upload/project/unit_03042023-213006-00.webp" alt=""></figure>
+                                    <div class="name-product">Compressor Technology YC model</div>
+                                    <div class="subtopic-product">Daikin&#039;s compressor is a unique Mechanism series design called Swing compressor Which has better points than the Rotary type, such as High Efficiency, High Reliability For compressor motors, high efficiency magnets are used. which applies to inverter type air conditioners that save electricity.</div>
+                                </a>
+                            </div>
+
+                                                   
+                            <div class="items">
+                                <a href="https://www.dci.co.th/en/product_technology" class="item-phome"> 
+                                    <figure><img src="https://www.dci.co.th/upload/project/unit_26042023-195052-00.png" alt=""></figure>
+                                    <div class="name-product">Compressor Technology SCR model</div>
+                                    <div class="subtopic-product">Daikin’s Scroll Compressor feature a more efficient and quiet operation than other regular compressors due to their high-pressure dome construction that helps minimise heat loss and the use of high-pressure lubrication oil. This will also result in noise level reduction and efficiency improvement</div>
+                                </a>
+                            </div>
+
+                                                   
+                            <div class="items">
+                                <a href="https://www.dci.co.th/en/product_technology" class="item-phome"> 
+                                    <figure><img src="https://www.dci.co.th/upload/project/unit_26042023-195224-00.jpeg" alt=""></figure>
+                                    <div class="name-product">ODM Technology</div>
+                                    <div class="subtopic-product">Daikin System Indoor &amp; Outdoor Units are equipped with a high efficiency, variable speed DC Fan Motor. By using high-power magnets instead of the induction magnets of conventional AC motors. Daikin DC motors are able to deliver significantly higher motor efficiency. The motor control system also has a range of fan speeds.
+
+The design is different from the general Fan Motor in that the rotor is designed outside the stator to increase efficiency. This makes it possible to have a smaller size and save energy on electricity bills.</div>
+                                </a>
+                            </div>
+
+                                                   
+                            <div class="items">
+                                <a href="https://www.dci.co.th/en/product_technology" class="item-phome"> 
+                                    <figure><img src="https://www.dci.co.th/upload/project/unit_04052023-114325-00.png" alt=""></figure>
+                                    <div class="name-product">Swing Compressor 1YC - (NEW)</div>
+                                    <div class="subtopic-product">Compressor of Air Conditioning for the                                                           Residential use the inverter technology and R32                                             
+refrigerant which is  environmentally friendly                                                               and energy saving</div>
+                                </a>
+                            </div>
+
+                                                    </div>
+                        <a href="#" class="btn-default btn-blue home-mproduct-show">view all <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+        <section class="row wrap-homenews">
+            <div class="col-12 col-lg-5 box-hilightnews">
+                <div class="wrap-hilightnews">
+                    <div class="topic-homenews">Highlights</div>
+                    <div class="owl-hihlightnews owl-carousel owl-theme">
+                                                                      <div class="items">
+                            <a href="https://www.dci.co.th/en/news_detail/37" class="item-hihlightnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-200856000000-0.jpeg" alt=""></figure>
+                                <div class="title-news">Daikin Group Reforestation Activity Date 19-11- 2022 </div>
+                                <div class="subtopic-news">The DCI project focuses on conservation campaigns. protect the environment Increase green space by planting forests by replanting forests such as mangrove forests tropical forests, etc. Khao Cha-ang Subdistrict, Bo Thong District, Chonburi Province </div>
+                            </a>
+                        </div>
+                                                                                                <div class="items">
+                            <a href="https://www.dci.co.th/en/news_detail/15" class="item-hihlightnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-181956000000-0.jpeg" alt=""></figure>
+                                <div class="title-news">The Prime Minister&#039;s Industry Award </div>
+                                <div class="subtopic-news">In 2016, Daikin Compressor Company received the award Outstanding Industry Type of Quality Management </div>
+                            </a>
+                        </div>
+                                                                                                <div class="items">
+                            <a href="https://www.dci.co.th/en/news_detail/42" class="item-hihlightnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-202625000000-0.jpeg" alt=""></figure>
+                                <div class="title-news">Visiting activities - study work from the agency Government, private sector, students, students, etc. * Suankularb Wittayalai School, Chonburi Day 8 -09- 2017 </div>
+                                <div class="subtopic-news">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits of Suankularb Wittayalai School, Chonburi </div>
+                            </a>
+                        </div>
+                                                                                                <div class="items">
+                            <a href="https://www.dci.co.th/en/news_detail/41" class="item-hihlightnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-202500000000-0.jpeg" alt=""></figure>
+                                <div class="title-news">Visiting activities - study work from the agency Government, private sector, students, students, etc. * Chiang Mai University Date 24 -07- 2019 </div>
+                                <div class="subtopic-news">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits of Chiang Mai University </div>
+                            </a>
+                        </div>
+                                                                                                <div class="items">
+                            <a href="https://www.dci.co.th/en/news_detail/40" class="item-hihlightnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-202307000000-0.jpeg" alt=""></figure>
+                                <div class="title-news">Visiting activities - study work from the agency Government, private sector, students, students, etc. * King Mongkut&#039;s University of Technology North Bangkok Date 11-02-2019 </div>
+                                <div class="subtopic-news">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits of King Mongkut&#039;s University of Technology North Bangkok </div>
+                            </a>
+                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 bg-homenews">
+                <div class="box-homenews">
+                    <div class="row">
+                        <div class="col-12 col-md-7">
+                            <div class="topic-homenews">news <span>& Activities</span> </div>
+                        </div>
+                        <div class="col-12 col-md-5 text-end">
+                            <a href="https://www.dci.co.th/en/news_activities" class="btn-default btn-blue btnnews-hide">view all <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="row">
+                                                                    <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/37" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-200856000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-10-27 14:15:31</div>
+                                    <div class="title-listnews">The DCI project focuses on conservation campaigns. protect the environment Increase green space by planting forests by replanting forests such as mangrove forests tropical forests, etc. Khao Cha-ang Subdistrict, Bo Thong District, Chonburi Province </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/15" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-181956000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-06-08 09:55:44</div>
+                                    <div class="title-listnews">In 2016, Daikin Compressor Company received the award Outstanding Industry Type of Quality Management </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/42" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-202625000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-05-29 20:26:25</div>
+                                    <div class="title-listnews">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits of Suankularb Wittayalai School, Chonburi </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/41" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-202500000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-05-29 20:25:00</div>
+                                    <div class="title-listnews">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits of Chiang Mai University </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/40" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-202307000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-05-29 20:23:24</div>
+                                    <div class="title-listnews">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits of King Mongkut&#039;s University of Technology North Bangkok </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/39" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-201330000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-05-29 20:13:30</div>
+                                    <div class="title-listnews">DCI Project Doing Good for Society by Focus on developing, improving and helping Schools, temples, communities, public health and government sectors etc., for example, support for study visits Mae Moh Electricity Company </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/38" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-201140000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-05-29 20:11:40</div>
+                                    <div class="title-listnews">The DCI project focuses on conservation campaigns. protect the environment Increase green space by planting forests by replanting forests such as mangrove forests tropical forests, etc. Khao Noi Subdistrict, Khao Chamao District, Rayong Province </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                               <div class="col-6">
+                            <a href="https://www.dci.co.th/en/news_detail/36" class="item-listnews">
+                                <figure><img src="https://www.dci.co.th/upload/project/unit_29052023-200706000000-0.jpeg" alt=""></figure>
+                                <div class="news-cpad">
+                                    <div class="news-date"><i class="bi bi-calendar3"></i> 2023-05-29 20:07:06</div>
+                                    <div class="title-listnews">The DCI project focuses on conservation campaigns. protect the environment Increase green space by planting forests by replanting forests such as mangrove forests tropical forests, etc. Amata City Industrial Estate, Rayong </div> 
+                                </div>
+                            </a>
+                        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <div class="col-12 text-center">
+                            <a href="https://www.dci.co.th/en/new_activities" class="btn-default btn-blue btnnews-show">view all <i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="row home-quicklink">
+            <div class="col-12 col-md-4 item-quicklink wow fadeInDown">
+                <a href="https://www.dci.co.th/en/environment">
+                    <figure><img src="/frontend/images/photohome_02.webp" alt=""></figure>
+                    <div><img src="/frontend/images/icon-sustain.svg" alt=""> Sustainability</div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 item-quicklink wow fadeInDown">
+                <a href="https://www.dci.co.th/en/careers">
+                    <figure><img src="/frontend/images/photohome_03.webp" alt=""></figure>
+                    <div><img src="/frontend/images/icon-career.svg" alt=""> careers</div>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 item-quicklink wow fadeInDown">
+                <a href="https://www.dci.co.th/en/planttour">
+                    <figure><img src="/frontend/images/photohome_04.webp" alt=""></figure>
+                    <div><img src="/frontend/images/icon-plantour.svg" alt=""> plant tour</div>
+                </a>
+            </div>
+        </section>
+		<button type="button" class="btn btn-primary" id = 'btnPdpa' data-bs-toggle="modal" data-bs-target="#exampleModal"  style = 'display:none'>
+  Launch demo modal
+</button>
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered modal-lg">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">จัดการคุกกี้</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			  </div>
+			  <div class="modal-body">
+				เราใช้คุกกี้เพื่อเพิ่มประสิทธิภาพและประสบการณ์ที่ดีในการใช้เว็บไซต์ ท่านสามารถศึกษารายละเอียดการใช้คุกกี้ได้ที่ รายการคุกกี้
+				<a href="https://www.dci.co.th/th">รายการคุกกี้</a>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิดหน้าต่าง</button>
+				<button type="button" class="btn btn-primary" onClick = 'ApplyPDPA()'  data-bs-dismiss="modal">ยอมรับคุกกี้ทั้งหมด</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+
+
+        <script src="/frontend/js/jquery.min.js"></script>
+<script src="/frontend/js/jquery-ui.min.js"></script>
+<script src="/frontend/js/bootstrap.min.js"></script>
+<script src="/frontend/js/owl.carousel.js"></script>
+<script src="/frontend/js/modernizr.js"></script>
+<script src="/frontend/js/wow.min.js"></script>
+<script src="/frontend/js/slick.min.js"></script>
+<script src="/frontend/js/fancybox.umd.js"></script>
+<script src="/frontend/js/bootstrap-datepicker.min.js"></script>
+<script src="/frontend/js/bootstrap-datepicker.th.min.js"></script>
+<script src="/frontend/js/script.js"></script>
+<script src="/backend/libs/sweetalert2/sweetalert2.all.min.js"></script>
+<!-- <script src="https://www.dci.co.th/backend/dist/js/app.js"></script>
+<script src="https://www.dci.co.th/backend/libs/toastr/toastr.js"></script> -->
+
+<section class="row">
+    <div class="col-12 wrap-footerblue wow fadeInDown">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <a href="" class="footer-planlink">Daikin Plant ทัวร์</a>
+                  </div>
+                <div class="col-6">
+                    <div class="footer-follow">
+                         <span>Follow Us </span>
+                        <a href="https://www.facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>                        <a href="@line" target="_blank"><i class="bi bi-line"></i></a>                        <a href="https://www.youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>                                             </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ <section class="row">
+    <div class="col-12 wrap-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-xxl-5">
+                    <div class="footer-info">
+                        <div><img src="images/logo.svg" alt=""></div>
+                        <p>
+                            Daikin Compressor Industries Ltd. founded on February 9, 2001 started operation in january 2002.
+Capital 3.3 Billon Baht (invested 100% by Daikin Industries Ltd.)
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 col-xxl-2">
+                  <div class="topic-footer">Daikin Thailand</div>
+<ul class="menu-4column">
+<li><a href="https://www.daikinthai.com/" target="_blank">DIT</a></li>
+<li><a href="https://www.daikinthai.com/dat/" target="_blank">DAT</a></li>
+<li><a href="https://www.daikin.co.th/" target="_blank">SDS</a></li>
+<li><a href="https://www.daikinthai.com/dtl/" target="_blank">DTL</a></li>
+<li><a href="https://www.daikinchemicals.co.th/th" target="_blank">DCSA</a></li>
+</ul>
+
+                  </div>
+                  <div class="col-12 col-md-4 col-xxl-2">
+                  <div class="topic-footer">Internal Service</div>
+<ul class="menu-2column">
+<li><a href="http://www.dci.co.th/dciservice/hrm" target="_blank">Hospital</a></li>
+<li><a href="https://122.155.104.84/owa/" target="_blank">E-Mail</a></li>
+<li><a href="https://www.dci.co.th/hris/" target="_blank">HR Service</a></li>
+<li><a href="https://www.dci.co.th/dciservice/production/" target="_blank">Sankyu</a></li>
+<li><a href="https://www.dci.co.th/backflush/Login.aspx" target="_blank">Backflush System</a></li>
+</ul>
+
+                </div>
+                <div class="col-12 col-md-4 col-xxl-3">
+                  
+                  <div class="topic-footer topic-footer-contact">Contact</div>
+<address>7/202 Moo.6 T.Mabyangporn A.Pluakdaeng, Rayong 21140</address>
+<p>Tel. 66(0)-3865-0060</p>
+<p>Fax. 66(0)-3865-0061</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-cc">
+                    Copyright ©2023 All rights reserved | Daikin Compressor Industries ltd. en
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+        <script>
+		     console.log(document.cookie)
+            var tag = document.createElement('script');
+			PDPA();
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+            // 3. This function creates an <iframe> (and YouTube player)
+            //    after the API code downloads.
+            var player;
+			function ApplyPDPA(){
+				var now = new Date();
+				var time = now.getTime();
+				time += (3600 * 1000) * 720;
+				now.setTime(time);
+				document.cookie = "pdpa-apply=true; expires=" + now.toUTCString() + "; path=/";
+				
+			}
+			function PDPA(){
+				var haveCookie = getCookie('pdpa-apply');
+				if(haveCookie && typeof haveCookie != 'undefined'){
+				}else{
+					$('#btnPdpa').trigger('click');
+				}
+			}
+			function getCookie(name) {
+			  let cookie = {};
+			  document.cookie.split(';').forEach(function(el) {
+				let [k,v] = el.split('=');
+				cookie[k.trim()] = v;
+			  })
+			  return cookie[name];
+			}
+
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                    height: '100%',
+                    width: '100%',
+                    videoId: 'pc1TCcDClXA',
+                    loop: true,
+                    playerVars: {
+                        'autoplay': 1,
+                        'controls': 0,
+                        'loop': 1,
+                        'mute': 1,
+                    },
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            // 5. The API calls this function when the player's state changes.
+            //    The function indicates that when playing a video (state=1),
+            //    the player should play for six seconds and then stop.
+            var done = false;
+
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.ENDED) {
+                    player.seekTo(0);
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

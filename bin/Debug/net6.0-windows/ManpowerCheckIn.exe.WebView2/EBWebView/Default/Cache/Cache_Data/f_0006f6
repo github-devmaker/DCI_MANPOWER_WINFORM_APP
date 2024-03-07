@@ -1,0 +1,233 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/CheckIN/CardObjSA.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import { Avatar, Card, CardContent, CardHeader, Divider, Table, TableBody, TableCell, TableHead, TableRow, Typography, Button } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import __vite__cjsImport3_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react; const useEffect = __vite__cjsImport3_react["useEffect"];
+import DialogAddSA from "/dcimanpower/src/components/DialogAddSA.jsx";
+import __vite__cjsImport5_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const useState = __vite__cjsImport5_react["useState"];
+import __vite__cjsImport6__mui_iconsMaterial_AddCircle from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_AddCircle.js?v=68d587f7"; const AddCircleIcon = __vite__cjsImport6__mui_iconsMaterial_AddCircle.__esModule ? __vite__cjsImport6__mui_iconsMaterial_AddCircle.default : __vite__cjsImport6__mui_iconsMaterial_AddCircle;
+import { useSelector } from "/dcimanpower/node_modules/.vite/deps/react-redux.js?v=68d587f7";
+import { API_GET_OBJECT_INFO } from "/dcimanpower/src/Service.js";
+function CardObjSA(props) {
+    _s();
+    const { data, refObj } = props;
+    const login = useSelector((state)=>state.reducer.login);
+    const [openDialogAddSA, setOpenDialogAddSA] = useState(false);
+    const [listSA, setListSA] = useState([]);
+    useEffect(()=>{
+        init();
+    }, [
+        openDialogAddSA
+    ]);
+    async function init() {
+        let getListSA = await API_GET_OBJECT_INFO({
+            objCode: data.objCode
+        });
+        if (getListSA != null && typeof getListSA == 'object' && Object.keys(getListSA).length) {
+            setListSA(getListSA[0].objSA);
+        }
+    }
+    return /*#__PURE__*/ _jsxDEV(Card, {
+        children: [
+            /*#__PURE__*/ _jsxDEV("div", {
+                className: "flex justify-between px-3 py-3 pb-2.5 bg-blue-600 text-white text-right",
+                children: [
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "flex items-center gap-2",
+                        children: [
+                            /*#__PURE__*/ _jsxDEV(Avatar, {
+                                sx: {
+                                    bgcolor: 'white',
+                                    color: 'black'
+                                },
+                                children: "SA"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                lineNumber: 26,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                children: "ที่ระบบต้องการ"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                lineNumber: 27,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                        lineNumber: 25,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        children: typeof login == 'boolean' && login == true && /*#__PURE__*/ _jsxDEV(Button, {
+                            startIcon: /*#__PURE__*/ _jsxDEV(AddCircleIcon, {}, void 0, false, void 0, void 0),
+                            onClick: ()=>setOpenDialogAddSA(true),
+                            variant: "contained",
+                            className: "bg-white text-black ",
+                            children: "จัดการ SA"
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                            lineNumber: 31,
+                            columnNumber: 73
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                        lineNumber: 29,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                lineNumber: 24,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(Divider, {}, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                lineNumber: 35,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(CardContent, {
+                className: "p-0",
+                children: /*#__PURE__*/ _jsxDEV(Table, {
+                    size: "small",
+                    className: "bg-blue-50",
+                    children: [
+                        /*#__PURE__*/ _jsxDEV(TableHead, {
+                            children: /*#__PURE__*/ _jsxDEV(TableRow, {
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV(TableCell, {
+                                        className: "py-1 font-sans text-[#626262] w-[45%]",
+                                        children: "รหัส"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                        lineNumber: 40,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(TableCell, {
+                                        className: "py-1 font-sans text-[#626262]",
+                                        children: "ชื่อสกิล"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                        lineNumber: 41,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                lineNumber: 39,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                            lineNumber: 38,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(TableBody, {
+                            children: (listSA?.length) ? listSA.map((sa, index)=>{
+                                return /*#__PURE__*/ _jsxDEV(TableRow, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDEV(TableCell, {
+                                            className: "text-[#b61d1d]",
+                                            children: [
+                                                "(",
+                                                sa.saCode,
+                                                ") "
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                            lineNumber: 48,
+                                            columnNumber: 37
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV(TableCell, {
+                                            className: "font-semibold",
+                                            children: sa.saName
+                                        }, void 0, false, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                            lineNumber: 49,
+                                            columnNumber: 37
+                                        }, this)
+                                    ]
+                                }, index, true, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                    lineNumber: 47,
+                                    columnNumber: 40
+                                }, this);
+                            }) : /*#__PURE__*/ _jsxDEV(TableRow, {
+                                children: /*#__PURE__*/ _jsxDEV(TableCell, {
+                                    colspan: 2,
+                                    className: "text-center font-semibold text-red-400",
+                                    children: "* ไม่พบสกิลเฉพาะทางที่ระบบต้องการ"
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                    lineNumber: 51,
+                                    columnNumber: 44
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                                lineNumber: 51,
+                                columnNumber: 34
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                            lineNumber: 44,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                    lineNumber: 37,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                lineNumber: 36,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogAddSA, {
+                open: openDialogAddSA,
+                close: setOpenDialogAddSA,
+                data: data,
+                refObj: refObj
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+                lineNumber: 56,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx",
+        lineNumber: 23,
+        columnNumber: 9
+    }, this);
+}
+_s(CardObjSA, "MX4SCKP3JTlpPYTXv9xvYJIfdKI=", false, function() {
+    return [
+        useSelector
+    ];
+});
+_c = CardObjSA;
+export default CardObjSA;
+var _c;
+$RefreshReg$(_c, "CardObjSA");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardObjSA.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNhcmRPYmpTQS5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQXZhdGFyLCBDYXJkLCBDYXJkQ29udGVudCwgQ2FyZEhlYWRlciwgRGl2aWRlciwgVGFibGUsIFRhYmxlQm9keSwgVGFibGVDZWxsLCBUYWJsZUhlYWQsIFRhYmxlUm93LCBUeXBvZ3JhcGh5LCBCdXR0b24gfSBmcm9tICdAbXVpL21hdGVyaWFsJ1xyXG5pbXBvcnQgUmVhY3QsIHsgdXNlRWZmZWN0IH0gZnJvbSAncmVhY3QnXHJcbmltcG9ydCBEaWFsb2dBZGRTQSBmcm9tICcuLi9EaWFsb2dBZGRTQSdcclxuaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCdcclxuaW1wb3J0IEFkZENpcmNsZUljb24gZnJvbSAnQG11aS9pY29ucy1tYXRlcmlhbC9BZGRDaXJjbGUnO1xyXG5pbXBvcnQgeyB1c2VTZWxlY3RvciB9IGZyb20gJ3JlYWN0LXJlZHV4JztcclxuaW1wb3J0IHsgQVBJX0dFVF9PQkpFQ1RfSU5GTyB9IGZyb20gJy4uLy4uL1NlcnZpY2UnO1xyXG5mdW5jdGlvbiBDYXJkT2JqU0EocHJvcHMpIHtcclxuICAgIGNvbnN0IHsgZGF0YSwgcmVmT2JqIH0gPSBwcm9wcztcclxuICAgIGNvbnN0IGxvZ2luID0gdXNlU2VsZWN0b3Ioc3RhdGUgPT4gc3RhdGUucmVkdWNlci5sb2dpbik7XHJcbiAgICBjb25zdCBbb3BlbkRpYWxvZ0FkZFNBLCBzZXRPcGVuRGlhbG9nQWRkU0FdID0gdXNlU3RhdGUoZmFsc2UpO1xyXG4gICAgY29uc3QgW2xpc3RTQSwgc2V0TGlzdFNBXSA9IHVzZVN0YXRlKFtdKTtcclxuICAgIHVzZUVmZmVjdCgoKSA9PiB7XHJcbiAgICAgICAgaW5pdCgpO1xyXG4gICAgfSwgW29wZW5EaWFsb2dBZGRTQV0pO1xyXG4gICAgYXN5bmMgZnVuY3Rpb24gaW5pdCgpIHtcclxuICAgICAgICBsZXQgZ2V0TGlzdFNBID0gYXdhaXQgQVBJX0dFVF9PQkpFQ1RfSU5GTyh7IG9iakNvZGU6IGRhdGEub2JqQ29kZSB9KTtcclxuICAgICAgICBpZiAoZ2V0TGlzdFNBICE9IG51bGwgJiYgdHlwZW9mIGdldExpc3RTQSA9PSAnb2JqZWN0JyAmJiBPYmplY3Qua2V5cyhnZXRMaXN0U0EpLmxlbmd0aCkge1xyXG4gICAgICAgICAgICBzZXRMaXN0U0EoZ2V0TGlzdFNBWzBdLm9ialNBKTtcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICByZXR1cm4gKFxyXG4gICAgICAgIDxDYXJkID5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2ZsZXgganVzdGlmeS1iZXR3ZWVuIHB4LTMgcHktMyBwYi0yLjUgYmctYmx1ZS02MDAgdGV4dC13aGl0ZSB0ZXh0LXJpZ2h0Jz5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMic+XHJcbiAgICAgICAgICAgICAgICAgICAgPEF2YXRhciBzeD17eyBiZ2NvbG9yOiAnd2hpdGUnLCBjb2xvcjogJ2JsYWNrJyB9fT5TQTwvQXZhdGFyPlxyXG4gICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5PuC4l+C4teC5iOC4o+C4sOC4muC4muC4leC5ieC4reC4h+C4geC4suC4ozwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPGRpdj5cclxuICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICh0eXBlb2YgbG9naW4gPT0gJ2Jvb2xlYW4nICYmIGxvZ2luID09IHRydWUpICYmIDxCdXR0b24gc3RhcnRJY29uPXs8QWRkQ2lyY2xlSWNvbiAvPn0gb25DbGljaz17KCkgPT4gc2V0T3BlbkRpYWxvZ0FkZFNBKHRydWUpfSB2YXJpYW50PSdjb250YWluZWQnIGNsYXNzTmFtZT0nYmctd2hpdGUgdGV4dC1ibGFjayAnPuC4iOC4seC4lOC4geC4suC4oyBTQTwvQnV0dG9uPlxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPERpdmlkZXIgLz5cclxuICAgICAgICAgICAgPENhcmRDb250ZW50IGNsYXNzTmFtZT0ncC0wJz5cclxuICAgICAgICAgICAgICAgIDxUYWJsZSBzaXplPSdzbWFsbCcgY2xhc3NOYW1lPSdiZy1ibHVlLTUwJz5cclxuICAgICAgICAgICAgICAgICAgICA8VGFibGVIZWFkPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVSb3c+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVDZWxsIGNsYXNzTmFtZT0ncHktMSBmb250LXNhbnMgdGV4dC1bIzYyNjI2Ml0gdy1bNDUlXSc+4Lij4Lir4Lix4LiqPC9UYWJsZUNlbGw+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVDZWxsIGNsYXNzTmFtZT0ncHktMSBmb250LXNhbnMgdGV4dC1bIzYyNjI2Ml0nPuC4iuC4t+C5iOC4reC4quC4geC4tOC4pTwvVGFibGVDZWxsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L1RhYmxlUm93PlxyXG4gICAgICAgICAgICAgICAgICAgIDwvVGFibGVIZWFkPlxyXG4gICAgICAgICAgICAgICAgICAgIDxUYWJsZUJvZHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIChsaXN0U0E/Lmxlbmd0aCkgPyBsaXN0U0EubWFwKChzYSwgaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gPFRhYmxlUm93IGtleT17aW5kZXh9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVDZWxsIGNsYXNzTmFtZT0ndGV4dC1bI2I2MWQxZF0nPih7c2Euc2FDb2RlfSkgPC9UYWJsZUNlbGw+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUYWJsZUNlbGwgY2xhc3NOYW1lPSdmb250LXNlbWlib2xkJz57c2Euc2FOYW1lfTwvVGFibGVDZWxsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVGFibGVSb3c+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KSA6IDxUYWJsZVJvdz48VGFibGVDZWxsIGNvbHNwYW49ezJ9IGNsYXNzTmFtZT0ndGV4dC1jZW50ZXIgZm9udC1zZW1pYm9sZCB0ZXh0LXJlZC00MDAnPiog4LmE4Lih4LmI4Lie4Lia4Liq4LiB4Li04Lil4LmA4LiJ4Lie4Liy4Liw4LiX4Liy4LiH4LiX4Li14LmI4Lij4Liw4Lia4Lia4LiV4LmJ4Lit4LiH4LiB4Liy4LijPC9UYWJsZUNlbGw+PC9UYWJsZVJvdz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgIDwvVGFibGVCb2R5PlxyXG4gICAgICAgICAgICAgICAgPC9UYWJsZT5cclxuICAgICAgICAgICAgPC9DYXJkQ29udGVudD5cclxuICAgICAgICAgICAgPERpYWxvZ0FkZFNBIG9wZW49e29wZW5EaWFsb2dBZGRTQX0gY2xvc2U9e3NldE9wZW5EaWFsb2dBZGRTQX0gZGF0YT17ZGF0YX0gcmVmT2JqPXtyZWZPYmp9IC8+XHJcbiAgICAgICAgPC9DYXJkPlxyXG4gICAgKVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBDYXJkT2JqU0EiXSwibmFtZXMiOlsiQXZhdGFyIiwiQ2FyZCIsIkNhcmRDb250ZW50IiwiQ2FyZEhlYWRlciIsIkRpdmlkZXIiLCJUYWJsZSIsIlRhYmxlQm9keSIsIlRhYmxlQ2VsbCIsIlRhYmxlSGVhZCIsIlRhYmxlUm93IiwiVHlwb2dyYXBoeSIsIkJ1dHRvbiIsIlJlYWN0IiwidXNlRWZmZWN0IiwiRGlhbG9nQWRkU0EiLCJ1c2VTdGF0ZSIsIkFkZENpcmNsZUljb24iLCJ1c2VTZWxlY3RvciIsIkFQSV9HRVRfT0JKRUNUX0lORk8iLCJDYXJkT2JqU0EiLCJwcm9wcyIsImRhdGEiLCJyZWZPYmoiLCJsb2dpbiIsInN0YXRlIiwicmVkdWNlciIsIm9wZW5EaWFsb2dBZGRTQSIsInNldE9wZW5EaWFsb2dBZGRTQSIsImxpc3RTQSIsInNldExpc3RTQSIsImluaXQiLCJnZXRMaXN0U0EiLCJvYmpDb2RlIiwiT2JqZWN0Iiwia2V5cyIsImxlbmd0aCIsIm9ialNBIiwiZGl2IiwiY2xhc3NOYW1lIiwic3giLCJiZ2NvbG9yIiwiY29sb3IiLCJzdGFydEljb24iLCJvbkNsaWNrIiwidmFyaWFudCIsInNpemUiLCJtYXAiLCJzYSIsImluZGV4Iiwic2FDb2RlIiwic2FOYW1lIiwiY29sc3BhbiIsIm9wZW4iLCJjbG9zZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLFNBQVNBLE1BQU0sRUFBRUMsSUFBSSxFQUFFQyxXQUFXLEVBQUVDLFVBQVUsRUFBRUMsT0FBTyxFQUFFQyxLQUFLLEVBQUVDLFNBQVMsRUFBRUMsU0FBUyxFQUFFQyxTQUFTLEVBQUVDLFFBQVEsRUFBRUMsVUFBVSxFQUFFQyxNQUFNLFFBQVEsZ0JBQWU7QUFDcEosT0FBT0MsU0FBU0MsU0FBUyxRQUFRLFFBQU87QUFDeEMsT0FBT0MsaUJBQWlCLGlCQUFnQjtBQUN4QyxTQUFTQyxRQUFRLFFBQVEsUUFBTztBQUNoQyxPQUFPQyxtQkFBbUIsZ0NBQWdDO0FBQzFELFNBQVNDLFdBQVcsUUFBUSxjQUFjO0FBQzFDLFNBQVNDLG1CQUFtQixRQUFRLGdCQUFnQjtBQUNwRCxTQUFTQyxVQUFVQyxLQUFLOztJQUNwQixNQUFNLEVBQUVDLElBQUksRUFBRUMsTUFBTSxFQUFFLEdBQUdGO0lBQ3pCLE1BQU1HLFFBQVFOLFlBQVlPLENBQUFBLFFBQVNBLE1BQU1DLE9BQU8sQ0FBQ0YsS0FBSztJQUN0RCxNQUFNLENBQUNHLGlCQUFpQkMsbUJBQW1CLEdBQUdaLFNBQVM7SUFDdkQsTUFBTSxDQUFDYSxRQUFRQyxVQUFVLEdBQUdkLFNBQVMsRUFBRTtJQUN2Q0YsVUFBVTtRQUNOaUI7SUFDSixHQUFHO1FBQUNKO0tBQWdCO0lBQ3BCLGVBQWVJO1FBQ1gsSUFBSUMsWUFBWSxNQUFNYixvQkFBb0I7WUFBRWMsU0FBU1gsS0FBS1csT0FBTztRQUFDO1FBQ2xFLElBQUlELGFBQWEsUUFBUSxPQUFPQSxhQUFhLFlBQVlFLE9BQU9DLElBQUksQ0FBQ0gsV0FBV0ksTUFBTSxFQUFFO1lBQ3BGTixVQUFVRSxTQUFTLENBQUMsRUFBRSxDQUFDSyxLQUFLO1FBQ2hDO0lBQ0o7SUFDQSxxQkFDSSxRQUFDbkM7OzBCQUNHLFFBQUNvQztnQkFBSUMsV0FBVTs7a0NBQ1gsUUFBQ0Q7d0JBQUlDLFdBQVU7OzBDQUNYLFFBQUN0QztnQ0FBT3VDLElBQUk7b0NBQUVDLFNBQVM7b0NBQVNDLE9BQU87Z0NBQVE7MENBQUc7Ozs7OzswQ0FDbEQsUUFBQy9COzBDQUFXOzs7Ozs7Ozs7Ozs7a0NBRWhCLFFBQUMyQjtrQ0FFTyxBQUFDLE9BQU9kLFNBQVMsYUFBYUEsU0FBUyxzQkFBUyxRQUFDWjs0QkFBTytCLHlCQUFXLFFBQUMxQjs0QkFBa0IyQixTQUFTLElBQU1oQixtQkFBbUI7NEJBQU9pQixTQUFROzRCQUFZTixXQUFVO3NDQUF1Qjs7Ozs7Ozs7Ozs7Ozs7Ozs7MEJBSWhNLFFBQUNsQzs7Ozs7MEJBQ0QsUUFBQ0Y7Z0JBQVlvQyxXQUFVOzBCQUNuQixjQUFBLFFBQUNqQztvQkFBTXdDLE1BQUs7b0JBQVFQLFdBQVU7O3NDQUMxQixRQUFDOUI7c0NBQ0csY0FBQSxRQUFDQzs7a0RBQ0csUUFBQ0Y7d0NBQVUrQixXQUFVO2tEQUF3Qzs7Ozs7O2tEQUM3RCxRQUFDL0I7d0NBQVUrQixXQUFVO2tEQUFnQzs7Ozs7Ozs7Ozs7Ozs7Ozs7c0NBRzdELFFBQUNoQztzQ0FFTyxDQUFDc0IsUUFBUU8sTUFBTSxJQUFJUCxPQUFPa0IsR0FBRyxDQUFDLENBQUNDLElBQUlDO2dDQUMvQixxQkFBTyxRQUFDdkM7O3NEQUNKLFFBQUNGOzRDQUFVK0IsV0FBVTs7Z0RBQWlCO2dEQUFFUyxHQUFHRSxNQUFNO2dEQUFDOzs7Ozs7O3NEQUNsRCxRQUFDMUM7NENBQVUrQixXQUFVO3NEQUFpQlMsR0FBR0csTUFBTTs7Ozs7OzttQ0FGN0JGOzs7Ozs0QkFJMUIsbUJBQUssUUFBQ3ZDOzBDQUFTLGNBQUEsUUFBQ0Y7b0NBQVU0QyxTQUFTO29DQUFHYixXQUFVOzhDQUF5Qzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzBCQUt6RyxRQUFDeEI7Z0JBQVlzQyxNQUFNMUI7Z0JBQWlCMkIsT0FBTzFCO2dCQUFvQk4sTUFBTUE7Z0JBQU1DLFFBQVFBOzs7Ozs7Ozs7Ozs7QUFHL0Y7R0FuRFNIOztRQUVTRjs7O0tBRlRFO0FBcURULGVBQWVBLFVBQVMifQ==

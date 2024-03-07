@@ -1,0 +1,860 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/pages/TemplateManpower.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"]; const _Fragment = __vite__cjsImport1_react_jsxDevRuntime["Fragment"];
+import __vite__cjsImport2_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport2_react.__esModule ? __vite__cjsImport2_react.default : __vite__cjsImport2_react;
+import { Avatar } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import __vite__cjsImport4__mui_iconsMaterial_GpsFixed from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_GpsFixed.js?v=68d587f7"; const GpsFixedIcon = __vite__cjsImport4__mui_iconsMaterial_GpsFixed.__esModule ? __vite__cjsImport4__mui_iconsMaterial_GpsFixed.default : __vite__cjsImport4__mui_iconsMaterial_GpsFixed;
+import __vite__cjsImport5__mui_iconsMaterial_Brightness1 from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_Brightness1.js?v=68d587f7"; const Brightness1Icon = __vite__cjsImport5__mui_iconsMaterial_Brightness1.__esModule ? __vite__cjsImport5__mui_iconsMaterial_Brightness1.default : __vite__cjsImport5__mui_iconsMaterial_Brightness1;
+import __vite__cjsImport6__mui_iconsMaterial_PinDropRounded from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_PinDropRounded.js?v=68d587f7"; const PinDropRoundedIcon = __vite__cjsImport6__mui_iconsMaterial_PinDropRounded.__esModule ? __vite__cjsImport6__mui_iconsMaterial_PinDropRounded.default : __vite__cjsImport6__mui_iconsMaterial_PinDropRounded;
+import btn from "/dcimanpower/src/images/button.svg?import";
+import CreateSvg from "/dcimanpower/src/components/createSvg.jsx";
+import newSvg from "/dcimanpower/src/images/button.svg?import";
+function Manpower() {
+    // let svg = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" width="100px" viewBox="0 0 100 100" enable-background="new 0 0 64 64" xml:space="preserve"> <defs> <ref id="paramFill" param="color" default="blue"/> <ref id="paramText" param="text-label">button</ref> <ref id="paramStroke" param="outline" default="navy"/> </defs> <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="{color}" / </svg>';
+    return /*#__PURE__*/ _jsxDEV("div", {
+        className: "select-none",
+        children: [
+            /*#__PURE__*/ _jsxDEV("div", {}, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                lineNumber: 13,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV("div", {
+                children: /*#__PURE__*/ _jsxDEV("span", {
+                    className: "text-[2.5rem] font-semibold leading-0",
+                    style: {
+                        fontFamily: 'inter'
+                    },
+                    children: "Overview"
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                    lineNumber: 21,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                lineNumber: 20,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV("div", {
+                className: "flex gap-3 flex-col",
+                children: [
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "rounded-md flex flex-row gap-3 group-box",
+                        children: [
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "flex flex-col flex-1 bg-[#7d54f3] text-white rounded-lg pl-3 pr-3 pb-3 pt-2 leading-6",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-md",
+                                        children: "CHECKIN-TOTAL"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 26,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "number font-semibold text-[2em]",
+                                        children: "19"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 27,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-xs mt-1",
+                                        children: "จำนวนจุดปฎิบัติงาน"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 28,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 25,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "flex flex-col flex-1 bg-white text-[#ddd] rounded-lg pl-3 pr-3 pb-3 pt-2 leading-6",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-md text-[#929197]",
+                                        children: "CHECKED-IN"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 31,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "number font-semibold text-[2em] text-[#6330f4]",
+                                        children: "14"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 32,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-xs mt-1 text-[#bdbbbe]",
+                                        children: "จำนวนจุดปฎิบัติงาน"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 33,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 30,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "flex flex-col flex-1 bg-white text-[#ddd] rounded-lg pl-3 pr-3 pb-3 pt-2 leading-6",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-md text-[#929197]",
+                                        children: "LICENSE"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 36,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "number font-semibold text-[2em] text-[#6330f4]",
+                                        children: "14"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 37,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-xs mt-1 text-[#bdbbbe]",
+                                        children: "จำนวนจุดปฎิบัติงาน"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 38,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 35,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "flex flex-col flex-1 bg-white text-[#ddd] rounded-lg pl-3 pr-3 pb-3 pt-2 leading-6",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-md text-[#929197]",
+                                        children: "SKILL"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 41,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "number font-semibold text-[2em] text-[#6330f4]",
+                                        children: "14"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 42,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-xs mt-1 text-[#bdbbbe]",
+                                        children: "จำนวนจุดปฎิบัติงาน"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 43,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 40,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "rounded-md shad p-3 flex gap-3 flex-col bg-[#7d54f308]",
+                        style: {
+                            border: '1px solid #ddd'
+                        },
+                        children: [
+                            /*#__PURE__*/ _jsxDEV("span", {
+                                className: "text-[1rem] font-semibold leading-0 text-[#535353]",
+                                children: "แผนผังการทำงาน"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 47,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "p-3",
+                                style: {
+                                    border: '1px solid #ddd'
+                                },
+                                children: /*#__PURE__*/ _jsxDEV("svg", {
+                                    viewBox: "0 0 3000 1000",
+                                    preserveAspectRatio: "xMidYMid meet",
+                                    children: [
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(10,10)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 400,0 400,150 0,150 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 5
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 51,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("text", {
+                                                    x: "35",
+                                                    y: "105",
+                                                    class: "title",
+                                                    style: {
+                                                        fontSize: '5em'
+                                                    },
+                                                    children: "FINAL L8"
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 52,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 50,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(0,350)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 3000,0 3000,100 0,100 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 2
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 56,
+                                                    columnNumber: 33
+                                                }, this),
+                                                [
+                                                    ...Array(300)
+                                                ].map((el, index)=>{
+                                                    return /*#__PURE__*/ _jsxDEV("line", {
+                                                        x1: "0",
+                                                        x2: "0",
+                                                        y1: "0",
+                                                        y2: "100",
+                                                        style: {
+                                                            fill: '#ddd',
+                                                            stroke: 'black',
+                                                            strokeWidth: 1
+                                                        },
+                                                        transform: `translate(${index * 20},0)`
+                                                    }, index, false, {
+                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                        lineNumber: 59,
+                                                        columnNumber: 48
+                                                    }, this);
+                                                })
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 55,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(0,700)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 3000,0 3000,100 0,100 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 2
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 66,
+                                                    columnNumber: 33
+                                                }, this),
+                                                [
+                                                    ...Array(300)
+                                                ].map((el, index)=>{
+                                                    return /*#__PURE__*/ _jsxDEV(_Fragment, {
+                                                        children: /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: "0",
+                                                            x2: "0",
+                                                            y1: "0",
+                                                            y2: "100",
+                                                            style: {
+                                                                fill: '#ddd',
+                                                                stroke: 'black',
+                                                                strokeWidth: 1
+                                                            },
+                                                            transform: `translate(${index * 20},0)`
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 69,
+                                                            columnNumber: 50
+                                                        }, this)
+                                                    }, void 0, false);
+                                                })
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 65,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(65,280)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 150,0 150,50 0,50 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 75,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("circle", {
+                                                    cx: "50",
+                                                    cy: "50",
+                                                    r: "40",
+                                                    stroke: "black",
+                                                    "stroke-width": "3",
+                                                    fill: "red",
+                                                    transform: `translate(25,-60)`
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 76,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 74,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(1400,280)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 150,0 150,50 0,50 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 80,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("circle", {
+                                                    cx: "50",
+                                                    cy: "50",
+                                                    r: "40",
+                                                    stroke: "black",
+                                                    "stroke-width": "3",
+                                                    fill: "red",
+                                                    transform: `translate(25,-60)`
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 81,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 79,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(1900,280)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 150,0 150,50 0,50 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 85,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("circle", {
+                                                    cx: "50",
+                                                    cy: "50",
+                                                    r: "40",
+                                                    stroke: "black",
+                                                    "stroke-width": "3",
+                                                    fill: "red",
+                                                    transform: `translate(25,-60)`
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 86,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 84,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(800,280)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 150,0 150,50 0,50 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 90,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("circle", {
+                                                    cx: "50",
+                                                    cy: "50",
+                                                    r: "40",
+                                                    stroke: "black",
+                                                    "stroke-width": "3",
+                                                    fill: "red",
+                                                    transform: `translate(25,-60)`
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 91,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 89,
+                                            columnNumber: 29
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV("g", {
+                                            transform: `translate(350,200)`,
+                                            children: [
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,0 150,0 150,100 0,100 0,0",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 97,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "15,15 135,15 135,85 15,85 15,15",
+                                                    style: {
+                                                        fill: '#3de9ff',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 98,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "15,15 135,85",
+                                                    style: {
+                                                        fill: '#3de9ff',
+                                                        stroke: 'black',
+                                                        strokeWidth: 1
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 99,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "50,100 100,100 100,120 50,120 50,100",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 3
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 100,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("polyline", {
+                                                    points: "0,120 100,120 150,120 150,170 0,170 0,120 ",
+                                                    style: {
+                                                        fill: 'white',
+                                                        stroke: 'black',
+                                                        strokeWidth: 5
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 101,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("g", {
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: 0,
+                                                            y1: 160,
+                                                            x2: 150,
+                                                            y2: 160,
+                                                            style: {
+                                                                stroke: 'black',
+                                                                strokeWidth: 4
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 103,
+                                                            columnNumber: 37
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: 0,
+                                                            y1: 150,
+                                                            x2: 150,
+                                                            y2: 150,
+                                                            style: {
+                                                                stroke: 'black',
+                                                                strokeWidth: 4
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 104,
+                                                            columnNumber: 37
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: 0,
+                                                            y1: 140,
+                                                            x2: 150,
+                                                            y2: 140,
+                                                            style: {
+                                                                stroke: 'black',
+                                                                strokeWidth: 4
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 105,
+                                                            columnNumber: 37
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: 0,
+                                                            y1: 130,
+                                                            x2: 150,
+                                                            y2: 130,
+                                                            style: {
+                                                                stroke: 'black',
+                                                                strokeWidth: 4
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 106,
+                                                            columnNumber: 37
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 102,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("g", {
+                                                    children: [
+                                                        ...Array(8)
+                                                    ].map((el, index)=>{
+                                                        return /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: index * 20,
+                                                            y1: 120,
+                                                            x2: index * 20,
+                                                            y2: 170,
+                                                            style: {
+                                                                stroke: 'black',
+                                                                strokeWidth: 1
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 111,
+                                                            columnNumber: 52
+                                                        }, this);
+                                                    })
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 108,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("path", {
+                                                    transform: "translate(135,110)",
+                                                    d: "M 17 15 q 15 -5 15 5",
+                                                    stroke: "black",
+                                                    "stroke-width": "2",
+                                                    fill: "none"
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 115,
+                                                    columnNumber: 33
+                                                }, this),
+                                                /*#__PURE__*/ _jsxDEV("g", {
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxDEV("ellipse", {
+                                                            cx: 175,
+                                                            cy: 150,
+                                                            rx: 15,
+                                                            ry: 20,
+                                                            style: {
+                                                                fill: 'white',
+                                                                stroke: 'black',
+                                                                strokeWidth: 2
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 117,
+                                                            columnNumber: 37
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV("line", {
+                                                            x1: 163,
+                                                            y1: 145,
+                                                            x2: 190,
+                                                            y2: 145,
+                                                            style: {
+                                                                stroke: 'black',
+                                                                strokeWidth: 2
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                            lineNumber: 119,
+                                                            columnNumber: 37
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                    lineNumber: 116,
+                                                    columnNumber: 33
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                            lineNumber: 96,
+                                            columnNumber: 29
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                    lineNumber: 49,
+                                    columnNumber: 25
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 48,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                        lineNumber: 46,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "px-6 pb-6 pt-4 shad rounded-md flex flex-col gap-6",
+                        children: [
+                            /*#__PURE__*/ _jsxDEV("span", {
+                                className: "text-[1rem] font-semibold leading-0 text-[#535353]",
+                                children: "รายชื่อพนักงานที่กำลังปฎิบัติงาน"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 136,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "flex gap-4 bg-[#7d54f308] p-[8px] rounded-[8px]",
+                                style: {
+                                    border: '1px solid #ddd'
+                                },
+                                children: [
+                                    ...Array(3)
+                                ].map((item, index)=>{
+                                    return /*#__PURE__*/ _jsxDEV("div", {
+                                        className: "flex-1 ",
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV("div", {
+                                                className: "flex justify-between",
+                                                children: [
+                                                    /*#__PURE__*/ _jsxDEV("span", {
+                                                        children: "พื้นที่"
+                                                    }, void 0, false, {
+                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                        lineNumber: 142,
+                                                        columnNumber: 41
+                                                    }, this),
+                                                    /*#__PURE__*/ _jsxDEV("div", {
+                                                        className: "flex gap-2 items-center",
+                                                        children: [
+                                                            /*#__PURE__*/ _jsxDEV("span", {
+                                                                className: "text-sm text-[#979191]",
+                                                                children: "ปฎิบัติงาน"
+                                                            }, void 0, false, {
+                                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                lineNumber: 144,
+                                                                columnNumber: 45
+                                                            }, this),
+                                                            /*#__PURE__*/ _jsxDEV("div", {
+                                                                className: "bg-[#FF6258] text-white rounded-xl px-2",
+                                                                children: "39/41"
+                                                            }, void 0, false, {
+                                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                lineNumber: 145,
+                                                                columnNumber: 45
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                        lineNumber: 143,
+                                                        columnNumber: 41
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                lineNumber: 141,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV("div", {
+                                                className: "flex gap-2 flex-col mt-4 ",
+                                                children: [
+                                                    ...Array(5)
+                                                ].map((el, item)=>{
+                                                    return /*#__PURE__*/ _jsxDEV("div", {
+                                                        className: " rounded-lg flex items-center gap-2 px-3 py-2 box bg-white",
+                                                        children: [
+                                                            /*#__PURE__*/ _jsxDEV(Avatar, {
+                                                                alt: "Remy Sharp",
+                                                                src: "http://dcihrm.dci.daikin.co.jp/PICTURE/41283.JPG"
+                                                            }, void 0, false, {
+                                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                lineNumber: 154,
+                                                                columnNumber: 53
+                                                            }, this),
+                                                            /*#__PURE__*/ _jsxDEV("div", {
+                                                                className: "flex flex-col",
+                                                                children: [
+                                                                    /*#__PURE__*/ _jsxDEV("span", {
+                                                                        className: "text-[#006FA6] font-semibold",
+                                                                        children: "นาย บิลลี่ สายหวาน"
+                                                                    }, void 0, false, {
+                                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                        lineNumber: 156,
+                                                                        columnNumber: 57
+                                                                    }, this),
+                                                                    /*#__PURE__*/ _jsxDEV("span", {
+                                                                        className: "text-[#888888]",
+                                                                        children: "ตำแหน่ง : Foreman"
+                                                                    }, void 0, false, {
+                                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                        lineNumber: 157,
+                                                                        columnNumber: 57
+                                                                    }, this),
+                                                                    /*#__PURE__*/ _jsxDEV("span", {
+                                                                        className: "text-[#1E1E1E] text-sm",
+                                                                        children: "อายุงาน : 10 ปี 5 เดือน"
+                                                                    }, void 0, false, {
+                                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                        lineNumber: 158,
+                                                                        columnNumber: 57
+                                                                    }, this)
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                                lineNumber: 155,
+                                                                columnNumber: 53
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                        lineNumber: 153,
+                                                        columnNumber: 56
+                                                    }, this);
+                                                })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                                lineNumber: 150,
+                                                columnNumber: 37
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                        lineNumber: 140,
+                                        columnNumber: 40
+                                    }, this);
+                                })
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                                lineNumber: 137,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                        lineNumber: 135,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+                lineNumber: 23,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx",
+        lineNumber: 12,
+        columnNumber: 9
+    }, this);
+}
+_c = Manpower;
+export default Manpower;
+var _c;
+$RefreshReg$(_c, "Manpower");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/TemplateManpower.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRlbXBsYXRlTWFucG93ZXIuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcclxuaW1wb3J0IHsgQXZhdGFyIH0gZnJvbSAnQG11aS9tYXRlcmlhbCdcclxuaW1wb3J0IEdwc0ZpeGVkSWNvbiBmcm9tICdAbXVpL2ljb25zLW1hdGVyaWFsL0dwc0ZpeGVkJztcclxuaW1wb3J0IEJyaWdodG5lc3MxSWNvbiBmcm9tICdAbXVpL2ljb25zLW1hdGVyaWFsL0JyaWdodG5lc3MxJztcclxuaW1wb3J0IFBpbkRyb3BSb3VuZGVkSWNvbiBmcm9tICdAbXVpL2ljb25zLW1hdGVyaWFsL1BpbkRyb3BSb3VuZGVkJztcclxuaW1wb3J0IGJ0biBmcm9tICcuLi9pbWFnZXMvYnV0dG9uLnN2ZydcclxuaW1wb3J0IENyZWF0ZVN2ZyBmcm9tICcuLi9jb21wb25lbnRzL2NyZWF0ZVN2Zyc7XHJcbmltcG9ydCBuZXdTdmcgZnJvbSAnLi4vaW1hZ2VzL2J1dHRvbi5zdmcnXHJcbmZ1bmN0aW9uIE1hbnBvd2VyKCkge1xyXG4gICAgLy8gbGV0IHN2ZyA9ICc8c3ZnIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiB4bWxuczp4bGluaz1cImh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmtcIiB2ZXJzaW9uPVwiMS4xXCIgaWQ9XCJMYXllcl8xXCIgeD1cIjBweFwiIHk9XCIwcHhcIiB3aWR0aD1cIjEwMHB4XCIgdmlld0JveD1cIjAgMCAxMDAgMTAwXCIgZW5hYmxlLWJhY2tncm91bmQ9XCJuZXcgMCAwIDY0IDY0XCIgeG1sOnNwYWNlPVwicHJlc2VydmVcIj4gPGRlZnM+IDxyZWYgaWQ9XCJwYXJhbUZpbGxcIiBwYXJhbT1cImNvbG9yXCIgZGVmYXVsdD1cImJsdWVcIi8+IDxyZWYgaWQ9XCJwYXJhbVRleHRcIiBwYXJhbT1cInRleHQtbGFiZWxcIj5idXR0b248L3JlZj4gPHJlZiBpZD1cInBhcmFtU3Ryb2tlXCIgcGFyYW09XCJvdXRsaW5lXCIgZGVmYXVsdD1cIm5hdnlcIi8+IDwvZGVmcz4gPGNpcmNsZSBjeD1cIjUwXCIgY3k9XCI1MFwiIHI9XCI0MFwiIHN0cm9rZT1cImdyZWVuXCIgc3Ryb2tlLXdpZHRoPVwiNFwiIGZpbGw9XCJ7Y29sb3J9XCIgLyA8L3N2Zz4nO1xyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nc2VsZWN0LW5vbmUnPlxyXG4gICAgICAgICAgICA8ZGl2PlxyXG4gICAgICAgICAgICAgICAgey8qIDxDcmVhdGVTdmcgc3ZnPXtzdmd9IC8+ICovfVxyXG4gICAgICAgICAgICAgICAgey8qIDxvYmplY3QgdHlwZT1cImltYWdlL3N2Zyt4bWxcIiBkYXRhPXtuZXdTdmd9PlxyXG4gICAgICAgICAgICAgICAgICAgIDxwYXJhbSBuYW1lPVwiY29sb3JcIiB2YWx1ZT1cInJlZFwiIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgPHBhcmFtIG5hbWU9XCJ0ZXh0LWxhYmVsXCIgdmFsdWU9XCJzdG9wXCIgLz5cclxuICAgICAgICAgICAgICAgIDwvb2JqZWN0PiAqL31cclxuICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgIDxkaXY+XHJcbiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9J3RleHQtWzIuNXJlbV0gZm9udC1zZW1pYm9sZCBsZWFkaW5nLTAnIHN0eWxlPXt7IGZvbnRGYW1pbHk6ICdpbnRlcicgfX0+T3ZlcnZpZXc8L3NwYW4+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nZmxleCBnYXAtMyBmbGV4LWNvbCc+XHJcbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ncm91bmRlZC1tZCBmbGV4IGZsZXgtcm93IGdhcC0zIGdyb3VwLWJveCc+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2ZsZXggZmxleC1jb2wgZmxleC0xIGJnLVsjN2Q1NGYzXSB0ZXh0LXdoaXRlIHJvdW5kZWQtbGcgcGwtMyBwci0zIHBiLTMgcHQtMiBsZWFkaW5nLTYnID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSd0ZXh0LW1kJz5DSEVDS0lOLVRPVEFMPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9J251bWJlciBmb250LXNlbWlib2xkIHRleHQtWzJlbV0nPjE5PC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9J3RleHQteHMgbXQtMSc+4LiI4Liz4LiZ4Lin4LiZ4LiI4Li44LiU4Lib4LiO4Li04Lia4Lix4LiV4Li04LiH4Liy4LiZPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdmbGV4IGZsZXgtY29sIGZsZXgtMSBiZy13aGl0ZSB0ZXh0LVsjZGRkXSByb3VuZGVkLWxnIHBsLTMgcHItMyBwYi0zIHB0LTIgbGVhZGluZy02JyA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ndGV4dC1tZCB0ZXh0LVsjOTI5MTk3XSc+Q0hFQ0tFRC1JTjwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSdudW1iZXIgZm9udC1zZW1pYm9sZCB0ZXh0LVsyZW1dIHRleHQtWyM2MzMwZjRdJz4xNDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSd0ZXh0LXhzIG10LTEgdGV4dC1bI2JkYmJiZV0nPuC4iOC4s+C4meC4p+C4meC4iOC4uOC4lOC4m+C4juC4tOC4muC4seC4leC4tOC4h+C4suC4mTwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nZmxleCBmbGV4LWNvbCBmbGV4LTEgYmctd2hpdGUgdGV4dC1bI2RkZF0gcm91bmRlZC1sZyBwbC0zIHByLTMgcGItMyBwdC0yIGxlYWRpbmctNicgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9J3RleHQtbWQgdGV4dC1bIzkyOTE5N10nPkxJQ0VOU0U8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0nbnVtYmVyIGZvbnQtc2VtaWJvbGQgdGV4dC1bMmVtXSB0ZXh0LVsjNjMzMGY0XSc+MTQ8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ndGV4dC14cyBtdC0xIHRleHQtWyNiZGJiYmVdJz7guIjguLPguJnguKfguJnguIjguLjguJTguJvguI7guLTguJrguLHguJXguLTguIfguLLguJk8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2ZsZXggZmxleC1jb2wgZmxleC0xIGJnLXdoaXRlIHRleHQtWyNkZGRdIHJvdW5kZWQtbGcgcGwtMyBwci0zIHBiLTMgcHQtMiBsZWFkaW5nLTYnID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSd0ZXh0LW1kIHRleHQtWyM5MjkxOTddJz5TS0lMTDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSdudW1iZXIgZm9udC1zZW1pYm9sZCB0ZXh0LVsyZW1dIHRleHQtWyM2MzMwZjRdJz4xNDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSd0ZXh0LXhzIG10LTEgdGV4dC1bI2JkYmJiZV0nPuC4iOC4s+C4meC4p+C4meC4iOC4uOC4lOC4m+C4juC4tOC4muC4seC4leC4tOC4h+C4suC4mTwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J3JvdW5kZWQtbWQgc2hhZCBwLTMgZmxleCBnYXAtMyBmbGV4LWNvbCBiZy1bIzdkNTRmMzA4XScgc3R5bGU9e3sgYm9yZGVyOiAnMXB4IHNvbGlkICNkZGQnIH19PlxyXG4gICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ndGV4dC1bMXJlbV0gZm9udC1zZW1pYm9sZCBsZWFkaW5nLTAgdGV4dC1bIzUzNTM1M10nPuC5geC4nOC4meC4nOC4seC4h+C4geC4suC4o+C4l+C4s+C4h+C4suC4mTwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ncC0zJyBzdHlsZT17eyBib3JkZXI6ICcxcHggc29saWQgI2RkZCcgfX0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzdmcgdmlld0JveD0nMCAwIDMwMDAgMTAwMCcgcHJlc2VydmVBc3BlY3RSYXRpbz1cInhNaWRZTWlkIG1lZXRcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgxMCwxMClgfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgcG9pbnRzPVwiMCwwIDQwMCwwIDQwMCwxNTAgMCwxNTAgMCwwXCIgc3R5bGU9e3sgZmlsbDogJ3doaXRlJywgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogNSB9fSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDx0ZXh0IHg9XCIzNVwiIHk9XCIxMDVcIiBjbGFzcz1cInRpdGxlXCIgc3R5bGU9e3sgZm9udFNpemU6ICc1ZW0nIH19PkZJTkFMIEw4PC90ZXh0PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPlxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgwLDM1MClgfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgcG9pbnRzPVwiMCwwIDMwMDAsMCAzMDAwLDEwMCAwLDEwMCAwLDBcIiBzdHlsZT17eyBmaWxsOiAnd2hpdGUnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAyIH19IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbLi4uQXJyYXkoMzAwKV0ubWFwKChlbCwgaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8bGluZSBrZXk9e2luZGV4fSB4MT1cIjBcIiB4Mj1cIjBcIiB5MT1cIjBcIiB5Mj1cIjEwMFwiIHN0eWxlPXt7IGZpbGw6ICcjZGRkJywgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogMSB9fSB0cmFuc2Zvcm09e2B0cmFuc2xhdGUoJHsoaW5kZXgpICogMjB9LDApYH0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSlcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+XHJcblxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgwLDcwMClgfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgcG9pbnRzPVwiMCwwIDMwMDAsMCAzMDAwLDEwMCAwLDEwMCAwLDBcIiBzdHlsZT17eyBmaWxsOiAnd2hpdGUnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAyIH19IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbLi4uQXJyYXkoMzAwKV0ubWFwKChlbCwgaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8PjxsaW5lIHgxPVwiMFwiIHgyPVwiMFwiIHkxPVwiMFwiIHkyPVwiMTAwXCIgc3R5bGU9e3sgZmlsbDogJyNkZGQnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAxIH19IHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgkeyhpbmRleCkgKiAyMH0sMClgfSAvPjwvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09e2B0cmFuc2xhdGUoNjUsMjgwKWB9ID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgcG9pbnRzPVwiMCwwIDE1MCwwIDE1MCw1MCAwLDUwIDAsMFwiIHN0eWxlPXt7IGZpbGw6ICd3aGl0ZScsIHN0cm9rZTogJ2JsYWNrJywgc3Ryb2tlV2lkdGg6IDMgfX0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Y2lyY2xlIGN4PVwiNTBcIiBjeT1cIjUwXCIgcj1cIjQwXCIgc3Ryb2tlPVwiYmxhY2tcIiBzdHJva2Utd2lkdGg9XCIzXCIgZmlsbD1cInJlZFwiIHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgyNSwtNjApYH0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz5cclxuXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZyB0cmFuc2Zvcm09e2B0cmFuc2xhdGUoMTQwMCwyODApYH0gPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwb2x5bGluZSBwb2ludHM9XCIwLDAgMTUwLDAgMTUwLDUwIDAsNTAgMCwwXCIgc3R5bGU9e3sgZmlsbDogJ3doaXRlJywgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogMyB9fSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgY3g9XCI1MFwiIGN5PVwiNTBcIiByPVwiNDBcIiBzdHJva2U9XCJibGFja1wiIHN0cm9rZS13aWR0aD1cIjNcIiBmaWxsPVwicmVkXCIgdHJhbnNmb3JtPXtgdHJhbnNsYXRlKDI1LC02MClgfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPlxyXG5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnIHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgxOTAwLDI4MClgfSA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlsaW5lIHBvaW50cz1cIjAsMCAxNTAsMCAxNTAsNTAgMCw1MCAwLDBcIiBzdHlsZT17eyBmaWxsOiAnd2hpdGUnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAzIH19IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGNpcmNsZSBjeD1cIjUwXCIgY3k9XCI1MFwiIHI9XCI0MFwiIHN0cm9rZT1cImJsYWNrXCIgc3Ryb2tlLXdpZHRoPVwiM1wiIGZpbGw9XCJyZWRcIiB0cmFuc2Zvcm09e2B0cmFuc2xhdGUoMjUsLTYwKWB9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2c+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPXtgdHJhbnNsYXRlKDgwMCwyODApYH0gPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwb2x5bGluZSBwb2ludHM9XCIwLDAgMTUwLDAgMTUwLDUwIDAsNTAgMCwwXCIgc3R5bGU9e3sgZmlsbDogJ3doaXRlJywgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogMyB9fSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxjaXJjbGUgY3g9XCI1MFwiIGN5PVwiNTBcIiByPVwiNDBcIiBzdHJva2U9XCJibGFja1wiIHN0cm9rZS13aWR0aD1cIjNcIiBmaWxsPVwicmVkXCIgdHJhbnNmb3JtPXtgdHJhbnNsYXRlKDI1LC02MClgfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPlxyXG5cclxuXHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGcgdHJhbnNmb3JtPXtgdHJhbnNsYXRlKDM1MCwyMDApYH0gPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwb2x5bGluZSBwb2ludHM9XCIwLDAgMTUwLDAgMTUwLDEwMCAwLDEwMCAwLDBcIiBzdHlsZT17eyBmaWxsOiAnd2hpdGUnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAzIH19IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlsaW5lIHBvaW50cz1cIjE1LDE1IDEzNSwxNSAxMzUsODUgMTUsODUgMTUsMTVcIiBzdHlsZT17eyBmaWxsOiAnIzNkZTlmZicsIHN0cm9rZTogJ2JsYWNrJywgc3Ryb2tlV2lkdGg6IDMgfX0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgcG9pbnRzPVwiMTUsMTUgMTM1LDg1XCIgc3R5bGU9e3sgZmlsbDogJyMzZGU5ZmYnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAxIH19IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBvbHlsaW5lIHBvaW50cz1cIjUwLDEwMCAxMDAsMTAwIDEwMCwxMjAgNTAsMTIwIDUwLDEwMFwiIHN0eWxlPXt7IGZpbGw6ICd3aGl0ZScsIHN0cm9rZTogJ2JsYWNrJywgc3Ryb2tlV2lkdGg6IDMgfX0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgcG9pbnRzPVwiMCwxMjAgMTAwLDEyMCAxNTAsMTIwIDE1MCwxNzAgMCwxNzAgMCwxMjAgXCIgc3R5bGU9e3sgZmlsbDogJ3doaXRlJywgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogNSB9fSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT17MH0geTE9ezE2MH0geDI9ezE1MH0geTI9ezE2MH0gc3R5bGU9e3sgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogNCB9fT48L2xpbmU+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaW5lIHgxPXswfSB5MT17MTUwfSB4Mj17MTUwfSB5Mj17MTUwfSBzdHlsZT17eyBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiA0IH19PjwvbGluZT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGxpbmUgeDE9ezB9IHkxPXsxNDB9IHgyPXsxNTB9IHkyPXsxNDB9IHN0eWxlPXt7IHN0cm9rZTogJ2JsYWNrJywgc3Ryb2tlV2lkdGg6IDQgfX0+PC9saW5lPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8bGluZSB4MT17MH0geTE9ezEzMH0geDI9ezE1MH0geTI9ezEzMH0gc3R5bGU9e3sgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogNCB9fT48L2xpbmU+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbLi4uQXJyYXkoOCldLm1hcCgoZWwsIGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxsaW5lIHgxPXtpbmRleCAqIDIwfSB5MT17MTIwfSB4Mj17aW5kZXggKiAyMH0geTI9ezE3MH0gc3R5bGU9e3sgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogMSB9fT48L2xpbmU+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9nPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIHRyYW5zZm9ybT0ndHJhbnNsYXRlKDEzNSwxMTApJyBkPVwiTSAxNyAxNSBxIDE1IC01IDE1IDVcIiBzdHJva2U9XCJibGFja1wiIHN0cm9rZS13aWR0aD1cIjJcIiBmaWxsPVwibm9uZVwiIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGc+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxlbGxpcHNlIGN4PXsxNzV9IGN5PXsxNTB9IHJ4PXsxNX0gcnk9ezIwfSBzdHlsZT17eyBmaWxsOiAnd2hpdGUnLCBzdHJva2U6ICdibGFjaycsIHN0cm9rZVdpZHRoOiAyIH19PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2VsbGlwc2U+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxsaW5lIHgxPXsxNjN9IHkxPXsxNDV9IHgyPXsxOTB9IHkyPXsxNDV9IHN0eWxlPXt7IHN0cm9rZTogJ2JsYWNrJywgc3Ryb2tlV2lkdGg6IDIgfX0+PC9saW5lPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHsvKiA8ZyA+XHJcbiAgICAgICAgICAgICAgICAgICAgPHBvbHlsaW5lIHBvaW50cz1cIjAsMCA1MDAsMFwiIHN0eWxlPXt7IGZpbGw6ICcjZGRkJywgc3Ryb2tlOiAncmVkJywgc3Ryb2tlV2lkdGg6IDEgfX0gLz5cclxuICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIFsuLi5BcnJheSg1MCldLm1hcCgoZWwsIGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBjb25zb2xlLmxvZyhpbmRleClcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8PjxsaW5lIHgxPVwiMFwiIHgyPVwiNTBcIiB5MT1cIjEwXCIgeTI9XCIxMFwiIHN0eWxlPXt7IGZpbGw6ICcjZGRkJywgc3Ryb2tlOiAnYmxhY2snLCBzdHJva2VXaWR0aDogMC41IH19IHRyYW5zZm9ybT17YHRyYW5zbGF0ZSgwLCR7KGluZGV4KSAqIDEwfSlgfSAvPjwvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgIDwvZz4gKi99XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvc3ZnPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPC9kaXYgPlxyXG5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdweC02IHBiLTYgcHQtNCBzaGFkIHJvdW5kZWQtbWQgZmxleCBmbGV4LWNvbCBnYXAtNic+XHJcbiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSd0ZXh0LVsxcmVtXSBmb250LXNlbWlib2xkIGxlYWRpbmctMCB0ZXh0LVsjNTM1MzUzXSc+4Lij4Liy4Lii4LiK4Li34LmI4Lit4Lie4LiZ4Lix4LiB4LiH4Liy4LiZ4LiX4Li14LmI4LiB4Liz4Lil4Lix4LiH4Lib4LiO4Li04Lia4Lix4LiV4Li04LiH4Liy4LiZPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdmbGV4IGdhcC00IGJnLVsjN2Q1NGYzMDhdIHAtWzhweF0gcm91bmRlZC1bOHB4XScgc3R5bGU9e3sgYm9yZGVyOiAnMXB4IHNvbGlkICNkZGQnIH19PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBbLi4uQXJyYXkoMyldLm1hcCgoaXRlbSwgaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gPGRpdiBjbGFzc05hbWU9J2ZsZXgtMSAnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nZmxleCBqdXN0aWZ5LWJldHdlZW4nPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4+4Lie4Li34LmJ4LiZ4LiX4Li14LmIPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2ZsZXggZ2FwLTIgaXRlbXMtY2VudGVyJz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9J3RleHQtc20gdGV4dC1bIzk3OTE5MV0nPuC4m+C4juC4tOC4muC4seC4leC4tOC4h+C4suC4mTwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nYmctWyNGRjYyNThdIHRleHQtd2hpdGUgcm91bmRlZC14bCBweC0yJz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMzkvNDFcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2ZsZXggZ2FwLTIgZmxleC1jb2wgbXQtNCAnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFsuLi5BcnJheSg1KV0ubWFwKChlbCwgaXRlbSkgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gPGRpdiBjbGFzc05hbWU9JyByb3VuZGVkLWxnIGZsZXggaXRlbXMtY2VudGVyIGdhcC0yIHB4LTMgcHktMiBib3ggYmctd2hpdGUnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPEF2YXRhciBhbHQ9XCJSZW15IFNoYXJwXCIgc3JjPVwiaHR0cDovL2RjaWhybS5kY2kuZGFpa2luLmNvLmpwL1BJQ1RVUkUvNDEyODMuSlBHXCIgLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdmbGV4IGZsZXgtY29sJz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9J3RleHQtWyMwMDZGQTZdIGZvbnQtc2VtaWJvbGQnPuC4meC4suC4oiDguJrguLTguKXguKXguLXguYgg4Liq4Liy4Lii4Lir4Lin4Liy4LiZPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT0ndGV4dC1bIzg4ODg4OF0nPuC4leC4s+C5geC4q+C4meC5iOC4hyA6IEZvcmVtYW48L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPSd0ZXh0LVsjMUUxRTFFXSB0ZXh0LXNtJz7guK3guLLguKLguLjguIfguLLguJkgOiAxMCDguJvguLUgNSDguYDguJTguLfguK3guJk8L3NwYW4+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSlcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHsvKiA8ZGl2IGNsYXNzTmFtZT0nZmxleCBmbGV4LWNvbCBmbGV4LTEgZ2FwLTEnPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdj4mbmJzcDs8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbLi4uQXJyYXkoMTApXS5tYXAoKGl0ZW0sIGluZGV4KSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8ZGl2IGNsYXNzTmFtZT0nZmxleCBqdXN0aWZ5LWFyb3VuZCBpdGVtcy1jZW50ZXInPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2ZsZXggZ2FwLTEgaXRlbXMtY2VudGVyJz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8QnJpZ2h0bmVzczFJY29uIHN4PXt7IGZvbnRTaXplOiAnMTRweCcgfX0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj7guJ7guLfguYnguJnguJfguLXguYggOiBNTk9QPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0nZmxleCBnYXAtMic+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2JnLVsjRkY2MjU4XSB0ZXh0LXdoaXRlIHJvdW5kZWQtbGcgcHgtMic+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDM5LzQxXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSlcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+ICovfVxyXG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgKVxyXG5cclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgTWFucG93ZXIiXSwibmFtZXMiOlsiUmVhY3QiLCJBdmF0YXIiLCJHcHNGaXhlZEljb24iLCJCcmlnaHRuZXNzMUljb24iLCJQaW5Ecm9wUm91bmRlZEljb24iLCJidG4iLCJDcmVhdGVTdmciLCJuZXdTdmciLCJNYW5wb3dlciIsImRpdiIsImNsYXNzTmFtZSIsInNwYW4iLCJzdHlsZSIsImZvbnRGYW1pbHkiLCJib3JkZXIiLCJzdmciLCJ2aWV3Qm94IiwicHJlc2VydmVBc3BlY3RSYXRpbyIsImciLCJ0cmFuc2Zvcm0iLCJwb2x5bGluZSIsInBvaW50cyIsImZpbGwiLCJzdHJva2UiLCJzdHJva2VXaWR0aCIsInRleHQiLCJ4IiwieSIsImNsYXNzIiwiZm9udFNpemUiLCJBcnJheSIsIm1hcCIsImVsIiwiaW5kZXgiLCJsaW5lIiwieDEiLCJ4MiIsInkxIiwieTIiLCJjaXJjbGUiLCJjeCIsImN5IiwiciIsInN0cm9rZS13aWR0aCIsInBhdGgiLCJkIiwiZWxsaXBzZSIsInJ4IiwicnkiLCJpdGVtIiwiYWx0Iiwic3JjIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFBQSxPQUFPQSxXQUFXLFFBQU87QUFDekIsU0FBU0MsTUFBTSxRQUFRLGdCQUFlO0FBQ3RDLE9BQU9DLGtCQUFrQiwrQkFBK0I7QUFDeEQsT0FBT0MscUJBQXFCLGtDQUFrQztBQUM5RCxPQUFPQyx3QkFBd0IscUNBQXFDO0FBQ3BFLE9BQU9DLFNBQVMsdUJBQXNCO0FBQ3RDLE9BQU9DLGVBQWUsMEJBQTBCO0FBQ2hELE9BQU9DLFlBQVksdUJBQXNCO0FBQ3pDLFNBQVNDO0lBQ0wsNmVBQTZlO0lBQzdlLHFCQUNJLFFBQUNDO1FBQUlDLFdBQVU7OzBCQUNYLFFBQUNEOzs7OzswQkFPRCxRQUFDQTswQkFDRyxjQUFBLFFBQUNFO29CQUFLRCxXQUFVO29CQUF3Q0UsT0FBTzt3QkFBRUMsWUFBWTtvQkFBUTs4QkFBRzs7Ozs7Ozs7Ozs7MEJBRTVGLFFBQUNKO2dCQUFJQyxXQUFV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

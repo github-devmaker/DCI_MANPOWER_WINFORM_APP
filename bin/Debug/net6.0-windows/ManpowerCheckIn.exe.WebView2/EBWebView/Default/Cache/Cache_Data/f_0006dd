@@ -1,0 +1,511 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/DialogEditObject.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import { Button, Stack, TextField, Typography, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Grid, Select, MenuItem, Skeleton } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import __vite__cjsImport3_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react; const useEffect = __vite__cjsImport3_react["useEffect"]; const useState = __vite__cjsImport3_react["useState"];
+import { API_DELETE_OBJECT, API_GET_OBJECT_INFO, API_UPDATE_OBJ } from "/dcimanpower/src/Service.js";
+import { SketchPicker } from "/dcimanpower/node_modules/.vite/deps/react-color.js?v=68d587f7";
+import __vite__cjsImport6__mui_iconsMaterial_SaveAlt from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_SaveAlt.js?v=68d587f7"; const SaveAltIcon = __vite__cjsImport6__mui_iconsMaterial_SaveAlt.__esModule ? __vite__cjsImport6__mui_iconsMaterial_SaveAlt.default : __vite__cjsImport6__mui_iconsMaterial_SaveAlt;
+import __vite__cjsImport7__mui_iconsMaterial_DeleteOutline from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_DeleteOutline.js?v=68d587f7"; const DeleteOutlineIcon = __vite__cjsImport7__mui_iconsMaterial_DeleteOutline.__esModule ? __vite__cjsImport7__mui_iconsMaterial_DeleteOutline.default : __vite__cjsImport7__mui_iconsMaterial_DeleteOutline;
+function DialogEditObject(props) {
+    _s();
+    const { open, close, objCode, setObjCode } = props;
+    const [object, setObject] = useState();
+    useEffect(()=>{
+        if (open == true) {
+            init();
+        }
+    }, [
+        open
+    ]);
+    async function init() {
+        let ObjectCodeData = await API_GET_OBJECT_INFO({
+            objCode: objCode
+        });
+        if (ObjectCodeData != null && typeof ObjectCodeData != 'undefined' && ObjectCodeData.length) {
+            setObject(ObjectCodeData[0]);
+        }
+    }
+    useEffect(()=>{
+        if (object != null && object != '' && Object.keys(object).length) {
+            console.log(object);
+        }
+    }, [
+        object
+    ]);
+    async function handleDelete() {
+        if (confirm('คุณต้องการลบ ใช่หรือไม่ ?')) {
+            const del = await API_DELETE_OBJECT({
+                objCode: objCode
+            });
+            if (del.status) {
+                document.querySelector(`#${objCode}`).remove();
+                close(false);
+            }
+        }
+    }
+    function handleClose() {
+        setObjCode('');
+        close(false);
+    }
+    async function handleChangeBackgroundColor(color) {
+        let hex = color.hex;
+        setObject({
+            ...object,
+            objBackgroundColor: hex
+        });
+    }
+    async function handleChangeBorderColor(color) {
+        let hex = color.hex;
+        setObject({
+            ...object,
+            objBorderColor: hex
+        });
+    }
+    async function handleSaveObj() {
+        let save = await API_UPDATE_OBJ(object);
+        if (save.status == true) {
+            if (typeof save.obj != 'undefined' && Object.keys(save.obj).length) {
+                location.reload();
+            }
+        }
+    }
+    return /*#__PURE__*/ _jsxDEV(Dialog, {
+        open: open,
+        onClose: handleClose,
+        fullWidth: true,
+        maxWidth: "sm",
+        children: [
+            /*#__PURE__*/ _jsxDEV(DialogTitle, {
+                children: [
+                    object?.objCode,
+                    " แก้ไขข้อมูล"
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                lineNumber: 59,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogContent, {
+                dividers: true,
+                children: /*#__PURE__*/ _jsxDEV(Grid, {
+                    container: true,
+                    gap: 2,
+                    children: [
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            container: true,
+                            xs: 12,
+                            spacing: 2,
+                            children: [
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 12,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                children: "ObjCode"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 67,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                                disabled: true,
+                                                size: "small",
+                                                type: "text",
+                                                value: object?.objCode,
+                                                onChange: (e)=>setObject({
+                                                        ...object,
+                                                        objCode: e.target.value
+                                                    })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 68,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 66,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 65,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 12,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                children: "Type"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 73,
+                                                columnNumber: 33
+                                            }, this),
+                                            typeof object?.objType == 'undefined' ? /*#__PURE__*/ _jsxDEV(Skeleton, {}, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 75,
+                                                columnNumber: 79
+                                            }, this) : /*#__PURE__*/ _jsxDEV(Select, {
+                                                value: object?.objType,
+                                                defaultValue: object?.objType,
+                                                size: "small",
+                                                fullWidth: true,
+                                                onChange: (e)=>setObject({
+                                                        ...object,
+                                                        objType: e.target.value
+                                                    }),
+                                                children: [
+                                                    "OTHER",
+                                                    "MP"
+                                                ].map((type, index)=>{
+                                                    return /*#__PURE__*/ _jsxDEV(MenuItem, {
+                                                        value: type,
+                                                        children: type
+                                                    }, index, false, {
+                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                        lineNumber: 78,
+                                                        columnNumber: 56
+                                                    }, this);
+                                                })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 75,
+                                                columnNumber: 94
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 72,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 71,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 6,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                children: "Title"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 87,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                                size: "small",
+                                                type: "text",
+                                                value: object?.objTitle,
+                                                onChange: (e)=>setObject({
+                                                        ...object,
+                                                        objTitle: e.target.value
+                                                    })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 88,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 86,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 85,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 6,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                children: "Sub Title"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 93,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                                size: "small",
+                                                type: "text",
+                                                value: object?.objSubtitle,
+                                                onChange: (e)=>setObject({
+                                                        ...object,
+                                                        objSubtitle: e.target.value
+                                                    })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 94,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 92,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 91,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                            lineNumber: 64,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            container: true,
+                            xs: 12,
+                            spacing: 2,
+                            children: [
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 6,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                children: "ความกว้าง (Width)"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 101,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                                size: "small",
+                                                type: "number",
+                                                value: object?.objWidth,
+                                                onChange: (e)=>setObject({
+                                                        ...object,
+                                                        objWidth: e.target.value
+                                                    })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 102,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 100,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 99,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 6,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                children: "ความสูง (Height)"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 107,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                                size: "small",
+                                                type: "number",
+                                                value: object?.objHeight,
+                                                onChange: (e)=>setObject({
+                                                        ...object,
+                                                        objHeight: e.target.value
+                                                    })
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 108,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 106,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 105,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                            lineNumber: 98,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            container: true,
+                            xs: 12,
+                            spacing: 2,
+                            children: [
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 6,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                className: "text-red-500",
+                                                children: "สีพื้นหลัง (Background Color)"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 115,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(SketchPicker, {
+                                                color: `${object?.objBackgroundColor}`,
+                                                onChangeComplete: handleChangeBackgroundColor
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 116,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 114,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 113,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV(Grid, {
+                                    item: true,
+                                    xs: 6,
+                                    children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                                className: "text-red-500",
+                                                children: "สีขอบ (ฺBorder Color)"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 121,
+                                                columnNumber: 33
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(SketchPicker, {
+                                                color: `${object?.objBorderColor}`,
+                                                onChangeComplete: handleChangeBorderColor
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                                lineNumber: 122,
+                                                columnNumber: 33
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                        lineNumber: 120,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                                    lineNumber: 119,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                            lineNumber: 112,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                    lineNumber: 63,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                lineNumber: 62,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogActions, {
+                children: [
+                    /*#__PURE__*/ _jsxDEV(Button, {
+                        variant: "contained",
+                        startIcon: /*#__PURE__*/ _jsxDEV(SaveAltIcon, {}, void 0, false, void 0, void 0),
+                        onClick: handleSaveObj,
+                        children: "บันทึก"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                        lineNumber: 129,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(Button, {
+                        variant: "contained",
+                        color: "error",
+                        onClick: ()=>handleDelete(),
+                        startIcon: /*#__PURE__*/ _jsxDEV(DeleteOutlineIcon, {}, void 0, false, void 0, void 0),
+                        children: "ลบ"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                        lineNumber: 130,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(Button, {
+                        variant: "outlined",
+                        onClick: handleClose,
+                        children: "ปิดหน้าต่าง"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                        lineNumber: 131,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+                lineNumber: 128,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx",
+        lineNumber: 58,
+        columnNumber: 9
+    }, this);
+}
+_s(DialogEditObject, "XATY2TdD4UBUYY9tBc+/QF1L2mc=");
+_c = DialogEditObject;
+export default DialogEditObject;
+var _c;
+$RefreshReg$(_c, "DialogEditObject");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogEditObject.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkRpYWxvZ0VkaXRPYmplY3QuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJ1dHRvbiwgU3RhY2ssIFRleHRGaWVsZCwgVHlwb2dyYXBoeSwgRGlhbG9nLCBEaWFsb2dUaXRsZSwgRGlhbG9nQ29udGVudCwgRGlhbG9nQ29udGVudFRleHQsIERpYWxvZ0FjdGlvbnMsIEdyaWQsIFNlbGVjdCwgTWVudUl0ZW0sIFNrZWxldG9uIH0gZnJvbSAnQG11aS9tYXRlcmlhbCdcclxuaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCdcclxuaW1wb3J0IHsgQVBJX0RFTEVURV9PQkpFQ1QsIEFQSV9HRVRfT0JKRUNUX0lORk8sIEFQSV9VUERBVEVfT0JKIH0gZnJvbSAnLi4vU2VydmljZSc7XHJcbmltcG9ydCB7IFNrZXRjaFBpY2tlciB9IGZyb20gJ3JlYWN0LWNvbG9yJztcclxuaW1wb3J0IFNhdmVBbHRJY29uIGZyb20gJ0BtdWkvaWNvbnMtbWF0ZXJpYWwvU2F2ZUFsdCc7XHJcbmltcG9ydCBEZWxldGVPdXRsaW5lSWNvbiBmcm9tICdAbXVpL2ljb25zLW1hdGVyaWFsL0RlbGV0ZU91dGxpbmUnO1xyXG5mdW5jdGlvbiBEaWFsb2dFZGl0T2JqZWN0KHByb3BzKSB7XHJcbiAgICBjb25zdCB7IG9wZW4sIGNsb3NlLCBvYmpDb2RlLCBzZXRPYmpDb2RlIH0gPSBwcm9wcztcclxuICAgIGNvbnN0IFtvYmplY3QsIHNldE9iamVjdF0gPSB1c2VTdGF0ZSgpO1xyXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgICAgICBpZiAob3BlbiA9PSB0cnVlKSB7XHJcbiAgICAgICAgICAgIGluaXQoKTtcclxuICAgICAgICB9XHJcbiAgICB9LCBbb3Blbl0pO1xyXG4gICAgYXN5bmMgZnVuY3Rpb24gaW5pdCgpIHtcclxuICAgICAgICBsZXQgT2JqZWN0Q29kZURhdGEgPSBhd2FpdCBBUElfR0VUX09CSkVDVF9JTkZPKHsgb2JqQ29kZTogb2JqQ29kZSB9KTtcclxuICAgICAgICBpZiAoT2JqZWN0Q29kZURhdGEgIT0gbnVsbCAmJiB0eXBlb2YgT2JqZWN0Q29kZURhdGEgIT0gJ3VuZGVmaW5lZCcgJiYgT2JqZWN0Q29kZURhdGEubGVuZ3RoKSB7XHJcbiAgICAgICAgICAgIHNldE9iamVjdChPYmplY3RDb2RlRGF0YVswXSk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgICAgICBpZiAob2JqZWN0ICE9IG51bGwgJiYgb2JqZWN0ICE9ICcnICYmIE9iamVjdC5rZXlzKG9iamVjdCkubGVuZ3RoKSB7XHJcbiAgICAgICAgICAgIGNvbnNvbGUubG9nKG9iamVjdClcclxuICAgICAgICB9XHJcbiAgICB9LCBbb2JqZWN0XSlcclxuICAgIGFzeW5jIGZ1bmN0aW9uIGhhbmRsZURlbGV0ZSgpIHtcclxuICAgICAgICBpZiAoY29uZmlybSgn4LiE4Li44LiT4LiV4LmJ4Lit4LiH4LiB4Liy4Lij4Lil4LiaIOC5g+C4iuC5iOC4q+C4o+C4t+C4reC5hOC4oeC5iCA/JykpIHtcclxuICAgICAgICAgICAgY29uc3QgZGVsID0gYXdhaXQgQVBJX0RFTEVURV9PQkpFQ1QoeyBvYmpDb2RlOiBvYmpDb2RlIH0pO1xyXG4gICAgICAgICAgICBpZiAoZGVsLnN0YXR1cykge1xyXG4gICAgICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvcihgIyR7b2JqQ29kZX1gKS5yZW1vdmUoKTtcclxuICAgICAgICAgICAgICAgIGNsb3NlKGZhbHNlKTtcclxuICAgICAgICAgICAgfVxyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIGZ1bmN0aW9uIGhhbmRsZUNsb3NlKCkge1xyXG4gICAgICAgIHNldE9iakNvZGUoJycpO1xyXG4gICAgICAgIGNsb3NlKGZhbHNlKTtcclxuICAgIH1cclxuICAgIGFzeW5jIGZ1bmN0aW9uIGhhbmRsZUNoYW5nZUJhY2tncm91bmRDb2xvcihjb2xvcikge1xyXG4gICAgICAgIGxldCBoZXggPSBjb2xvci5oZXg7XHJcbiAgICAgICAgc2V0T2JqZWN0KHsgLi4ub2JqZWN0LCBvYmpCYWNrZ3JvdW5kQ29sb3I6IGhleCB9KVxyXG4gICAgfVxyXG5cclxuICAgIGFzeW5jIGZ1bmN0aW9uIGhhbmRsZUNoYW5nZUJvcmRlckNvbG9yKGNvbG9yKSB7XHJcbiAgICAgICAgbGV0IGhleCA9IGNvbG9yLmhleDtcclxuICAgICAgICBzZXRPYmplY3QoeyAuLi5vYmplY3QsIG9iakJvcmRlckNvbG9yOiBoZXggfSlcclxuICAgIH1cclxuICAgIGFzeW5jIGZ1bmN0aW9uIGhhbmRsZVNhdmVPYmooKSB7XHJcbiAgICAgICAgbGV0IHNhdmUgPSBhd2FpdCBBUElfVVBEQVRFX09CSihvYmplY3QpO1xyXG4gICAgICAgIGlmIChzYXZlLnN0YXR1cyA9PSB0cnVlKSB7XHJcbiAgICAgICAgICAgIGlmICh0eXBlb2Ygc2F2ZS5vYmogIT0gJ3VuZGVmaW5lZCcgJiYgT2JqZWN0LmtleXMoc2F2ZS5vYmopLmxlbmd0aCkge1xyXG4gICAgICAgICAgICAgICAgbG9jYXRpb24ucmVsb2FkKCk7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICByZXR1cm4gKFxyXG5cclxuICAgICAgICA8RGlhbG9nIG9wZW49e29wZW59IG9uQ2xvc2U9e2hhbmRsZUNsb3NlfSBmdWxsV2lkdGggbWF4V2lkdGg9J3NtJyA+XHJcbiAgICAgICAgICAgIDxEaWFsb2dUaXRsZT5cclxuICAgICAgICAgICAgICAgIHtvYmplY3Q/Lm9iakNvZGV9IOC5geC4geC5ieC5hOC4guC4guC5ieC4reC4oeC4ueC4pVxyXG4gICAgICAgICAgICA8L0RpYWxvZ1RpdGxlPlxyXG4gICAgICAgICAgICA8RGlhbG9nQ29udGVudCBkaXZpZGVycyA+XHJcbiAgICAgICAgICAgICAgICA8R3JpZCBjb250YWluZXIgZ2FwPXsyfT5cclxuICAgICAgICAgICAgICAgICAgICA8R3JpZCBpdGVtIGNvbnRhaW5lciB4cz17MTJ9IHNwYWNpbmc9ezJ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8R3JpZCBpdGVtIHhzPXsxMn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8U3RhY2s+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFR5cG9ncmFwaHk+T2JqQ29kZTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGV4dEZpZWxkIGRpc2FibGVkPXt0cnVlfSBzaXplPSdzbWFsbCcgdHlwZT0ndGV4dCcgdmFsdWU9e29iamVjdD8ub2JqQ29kZX0gb25DaGFuZ2U9eyhlKSA9PiBzZXRPYmplY3QoeyAuLi5vYmplY3QsIG9iakNvZGU6IGUudGFyZ2V0LnZhbHVlIH0pfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9TdGFjaz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9HcmlkPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8R3JpZCBpdGVtIHhzPXsxMn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8U3RhY2s+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFR5cG9ncmFwaHk+VHlwZTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICh0eXBlb2Ygb2JqZWN0Py5vYmpUeXBlID09ICd1bmRlZmluZWQnKSA/IDxTa2VsZXRvbiAvPiA6IDxTZWxlY3QgdmFsdWU9e29iamVjdD8ub2JqVHlwZX0gZGVmYXVsdFZhbHVlPXtvYmplY3Q/Lm9ialR5cGV9IHNpemU9J3NtYWxsJyBmdWxsV2lkdGggb25DaGFuZ2U9eyhlKSA9PiBzZXRPYmplY3QoeyAuLi5vYmplY3QsIG9ialR5cGU6IGUudGFyZ2V0LnZhbHVlIH0pfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbXCJPVEhFUlwiLCBcIk1QXCJdLm1hcCgodHlwZSwgaW5kZXgpID0+IHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxNZW51SXRlbSB2YWx1ZT17dHlwZX0ga2V5PXtpbmRleH0+e3R5cGV9PC9NZW51SXRlbT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1NlbGVjdD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1N0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezZ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFN0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5PlRpdGxlPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUZXh0RmllbGQgc2l6ZT0nc21hbGwnIHR5cGU9J3RleHQnIHZhbHVlPXtvYmplY3Q/Lm9ialRpdGxlfSBvbkNoYW5nZT17KGUpID0+IHNldE9iamVjdCh7IC4uLm9iamVjdCwgb2JqVGl0bGU6IGUudGFyZ2V0LnZhbHVlIH0pfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9TdGFjaz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9HcmlkPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8R3JpZCBpdGVtIHhzPXs2fT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxTdGFjaz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VHlwb2dyYXBoeT5TdWIgVGl0bGU8L1R5cG9ncmFwaHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRleHRGaWVsZCBzaXplPSdzbWFsbCcgdHlwZT0ndGV4dCcgdmFsdWU9e29iamVjdD8ub2JqU3VidGl0bGV9IG9uQ2hhbmdlPXsoZSkgPT4gc2V0T2JqZWN0KHsgLi4ub2JqZWN0LCBvYmpTdWJ0aXRsZTogZS50YXJnZXQudmFsdWUgfSl9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1N0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9HcmlkPlxyXG4gICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0gY29udGFpbmVyIHhzPXsxMn0gc3BhY2luZz17Mn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezZ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFN0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5PuC4hOC4p+C4suC4oeC4geC4p+C5ieC4suC4hyAoV2lkdGgpPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUZXh0RmllbGQgc2l6ZT0nc21hbGwnIHR5cGU9J251bWJlcicgdmFsdWU9e29iamVjdD8ub2JqV2lkdGh9IG9uQ2hhbmdlPXsoZSkgPT4gc2V0T2JqZWN0KHsgLi4ub2JqZWN0LCBvYmpXaWR0aDogZS50YXJnZXQudmFsdWUgfSl9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1N0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezZ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFN0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5PuC4hOC4p+C4suC4oeC4quC4ueC4hyAoSGVpZ2h0KTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGV4dEZpZWxkIHNpemU9J3NtYWxsJyB0eXBlPSdudW1iZXInIHZhbHVlPXtvYmplY3Q/Lm9iakhlaWdodH0gb25DaGFuZ2U9eyhlKSA9PiBzZXRPYmplY3QoeyAuLi5vYmplY3QsIG9iakhlaWdodDogZS50YXJnZXQudmFsdWUgfSl9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1N0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9HcmlkPlxyXG4gICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0gY29udGFpbmVyIHhzPXsxMn0gc3BhY2luZz17Mn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezZ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFN0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5IGNsYXNzTmFtZT0ndGV4dC1yZWQtNTAwJz7guKrguLXguJ7guLfguYnguJnguKvguKXguLHguIcgKEJhY2tncm91bmQgQ29sb3IpPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxTa2V0Y2hQaWNrZXIgY29sb3I9e2Ake29iamVjdD8ub2JqQmFja2dyb3VuZENvbG9yfWB9IG9uQ2hhbmdlQ29tcGxldGU9e2hhbmRsZUNoYW5nZUJhY2tncm91bmRDb2xvcn0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvU3RhY2s+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvR3JpZD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17Nn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8U3RhY2s+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFR5cG9ncmFwaHkgY2xhc3NOYW1lPSd0ZXh0LXJlZC01MDAnPuC4quC4teC4guC4reC4miAo4Li6Qm9yZGVyIENvbG9yKTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8U2tldGNoUGlja2VyIGNvbG9yPXtgJHtvYmplY3Q/Lm9iakJvcmRlckNvbG9yfWB9IG9uQ2hhbmdlQ29tcGxldGU9e2hhbmRsZUNoYW5nZUJvcmRlckNvbG9yfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9TdGFjaz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9HcmlkPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvR3JpZD5cclxuICAgICAgICAgICAgICAgIDwvR3JpZD5cclxuICAgICAgICAgICAgPC9EaWFsb2dDb250ZW50PlxyXG4gICAgICAgICAgICA8RGlhbG9nQWN0aW9ucz5cclxuICAgICAgICAgICAgICAgIDxCdXR0b24gdmFyaWFudD0nY29udGFpbmVkJyBzdGFydEljb249ezxTYXZlQWx0SWNvbiAvPn0gb25DbGljaz17aGFuZGxlU2F2ZU9ian0+4Lia4Lix4LiZ4LiX4Li24LiBPC9CdXR0b24+XHJcbiAgICAgICAgICAgICAgICA8QnV0dG9uIHZhcmlhbnQ9J2NvbnRhaW5lZCcgY29sb3I9J2Vycm9yJyBvbkNsaWNrPXsoKSA9PiBoYW5kbGVEZWxldGUoKX0gc3RhcnRJY29uPXs8RGVsZXRlT3V0bGluZUljb24gLz59PuC4peC4mjwvQnV0dG9uPlxyXG4gICAgICAgICAgICAgICAgPEJ1dHRvbiB2YXJpYW50PSdvdXRsaW5lZCcgb25DbGljaz17aGFuZGxlQ2xvc2V9PuC4m+C4tOC4lOC4q+C4meC5ieC4suC4leC5iOC4suC4hzwvQnV0dG9uPlxyXG4gICAgICAgICAgICA8L0RpYWxvZ0FjdGlvbnM+XHJcbiAgICAgICAgPC9EaWFsb2c+XHJcblxyXG4gICAgKVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBEaWFsb2dFZGl0T2JqZWN0Il0sIm5hbWVzIjpbIkJ1dHRvbiIsIlN0YWNrIiwiVGV4dEZpZWxkIiwiVHlwb2dyYXBoeSIsIkRpYWxvZyIsIkRpYWxvZ1RpdGxlIiwiRGlhbG9nQ29udGVudCIsIkRpYWxvZ0NvbnRlbnRUZXh0IiwiRGlhbG9nQWN0aW9ucyIsIkdyaWQiLCJTZWxlY3QiLCJNZW51SXRlbSIsIlNrZWxldG9uIiwiUmVhY3QiLCJ1c2VFZmZlY3QiLCJ1c2VTdGF0ZSIsIkFQSV9ERUxFVEVfT0JKRUNUIiwiQVBJX0dFVF9PQkpFQ1RfSU5GTyIsIkFQSV9VUERBVEVfT0JKIiwiU2tldGNoUGlja2VyIiwiU2F2ZUFsdEljb24iLCJEZWxldGVPdXRsaW5lSWNvbiIsIkRpYWxvZ0VkaXRPYmplY3QiLCJwcm9wcyIsIm9wZW4iLCJjbG9zZSIsIm9iakNvZGUiLCJzZXRPYmpDb2RlIiwib2JqZWN0Iiwic2V0T2JqZWN0IiwiaW5pdCIsIk9iamVjdENvZGVEYXRhIiwibGVuZ3RoIiwiT2JqZWN0Iiwia2V5cyIsImNvbnNvbGUiLCJsb2ciLCJoYW5kbGVEZWxldGUiLCJjb25maXJtIiwiZGVsIiwic3RhdHVzIiwiZG9jdW1lbnQiLCJxdWVyeVNlbGVjdG9yIiwicmVtb3ZlIiwiaGFuZGxlQ2xvc2UiLCJoYW5kbGVDaGFuZ2VCYWNrZ3JvdW5kQ29sb3IiLCJjb2xvciIsImhleCIsIm9iakJhY2tncm91bmRDb2xvciIsImhhbmRsZUNoYW5nZUJvcmRlckNvbG9yIiwib2JqQm9yZGVyQ29sb3IiLCJoYW5kbGVTYXZlT2JqIiwic2F2ZSIsIm9iaiIsImxvY2F0aW9uIiwicmVsb2FkIiwib25DbG9zZSIsImZ1bGxXaWR0aCIsIm1heFdpZHRoIiwiZGl2aWRlcnMiLCJjb250YWluZXIiLCJnYXAiLCJpdGVtIiwieHMiLCJzcGFjaW5nIiwiZGlzYWJsZWQiLCJzaXplIiwidHlwZSIsInZhbHVlIiwib25DaGFuZ2UiLCJlIiwidGFyZ2V0Iiwib2JqVHlwZSIsImRlZmF1bHRWYWx1ZSIsIm1hcCIsImluZGV4Iiwib2JqVGl0bGUiLCJvYmpTdWJ0aXRsZSIsIm9ialdpZHRoIiwib2JqSGVpZ2h0IiwiY2xhc3NOYW1lIiwib25DaGFuZ2VDb21wbGV0ZSIsInZhcmlhbnQiLCJzdGFydEljb24iLCJvbkNsaWNrIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0FBQUEsU0FBU0EsTUFBTSxFQUFFQyxLQUFLLEVBQUVDLFNBQVMsRUFBRUMsVUFBVSxFQUFFQyxNQUFNLEVBQUVDLFdBQVcsRUFBRUMsYUFBYSxFQUFFQyxpQkFBaUIsRUFBRUMsYUFBYSxFQUFFQyxJQUFJLEVBQUVDLE1BQU0sRUFBRUMsUUFBUSxFQUFFQyxRQUFRLFFBQVEsZ0JBQWU7QUFDNUssT0FBT0MsU0FBU0MsU0FBUyxFQUFFQyxRQUFRLFFBQVEsUUFBTztBQUNsRCxTQUFTQyxpQkFBaUIsRUFBRUMsbUJBQW1CLEVBQUVDLGNBQWMsUUFBUSxhQUFhO0FBQ3BGLFNBQVNDLFlBQVksUUFBUSxjQUFjO0FBQzNDLE9BQU9DLGlCQUFpQiw4QkFBOEI7QUFDdEQsT0FBT0MsdUJBQXVCLG9DQUFvQztBQUNsRSxTQUFTQyxpQkFBaUJDLEtBQUs7O0lBQzNCLE1BQU0sRUFBRUMsSUFBSSxFQUFFQyxLQUFLLEVBQUVDLE9BQU8sRUFBRUMsVUFBVSxFQUFFLEdBQUdKO0lBQzdDLE1BQU0sQ0FBQ0ssUUFBUUMsVUFBVSxHQUFHZDtJQUM1QkQsVUFBVTtRQUNOLElBQUlVLFFBQVEsTUFBTTtZQUNkTTtRQUNKO0lBQ0osR0FBRztRQUFDTjtLQUFLO0lBQ1QsZUFBZU07UUFDWCxJQUFJQyxpQkFBaUIsTUFBTWQsb0JBQW9CO1lBQUVTLFNBQVNBO1FBQVE7UUFDbEUsSUFBSUssa0JB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

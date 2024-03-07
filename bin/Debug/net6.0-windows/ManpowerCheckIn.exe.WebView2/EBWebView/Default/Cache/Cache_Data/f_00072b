@@ -1,0 +1,226 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/DialogSelectLine.jsx");import.meta.env = {"VITE_PATH":"dcimanpower","VITE_API":"http://dciweb.dci.daikin.co.jp/dcimanpowerapi","VITE_VERSION":"3.9","BASE_URL":"/dcimanpower/","MODE":"development","DEV":true,"PROD":false,"SSR":false};import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport2_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport2_react.__esModule ? __vite__cjsImport2_react.default : __vite__cjsImport2_react; const useEffect = __vite__cjsImport2_react["useEffect"]; const useState = __vite__cjsImport2_react["useState"];
+import Dialog from "/dcimanpower/node_modules/.vite/deps/@mui_material_Dialog.js?v=68d587f7";
+import DialogTitle from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogTitle.js?v=68d587f7";
+import DialogContent from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogContent.js?v=68d587f7";
+import DialogContentText from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogContentText.js?v=68d587f7";
+import DialogActions from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogActions.js?v=68d587f7";
+import Button from "/dcimanpower/node_modules/.vite/deps/@mui_material_Button.js?v=68d587f7";
+import { Box, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import { API_GET_LAYOUT } from "/dcimanpower/src/Service.js";
+import { useNavigate } from "/dcimanpower/node_modules/.vite/deps/react-router.js?v=68d587f7";
+function DialogSelectLine(props) {
+    _s();
+    const VITE_PATH = import.meta.env.VITE_PATH;
+    const { open, close, layoutSelected } = props;
+    const [layouts, setLayouts] = useState([]);
+    const navigate = useNavigate();
+    useEffect(()=>{
+        if (open) {
+            init();
+            console.log(layoutSelected);
+        }
+    }, [
+        open
+    ]);
+    async function init() {
+        let res = await API_GET_LAYOUT();
+        setLayouts(res);
+    }
+    async function handleSelectLine(layoutCode) {
+        navigate(`../${VITE_PATH}/${layoutCode}`);
+        location.reload();
+    }
+    return /*#__PURE__*/ _jsxDEV(Dialog, {
+        open: open,
+        onClose: ()=>close(false),
+        fullWidth: true,
+        maxWidth: 'sm',
+        children: [
+            /*#__PURE__*/ _jsxDEV(DialogTitle, {
+                children: /*#__PURE__*/ _jsxDEV(Typography, {
+                    children: "เลือกไลน์การผลิต"
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                    lineNumber: 34,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                lineNumber: 33,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogContent, {
+                dividers: true,
+                children: /*#__PURE__*/ _jsxDEV(TableContainer, {
+                    component: Paper,
+                    children: /*#__PURE__*/ _jsxDEV(Table, {
+                        fullWidth: true,
+                        size: "small",
+                        children: [
+                            /*#__PURE__*/ _jsxDEV(TableHead, {
+                                children: /*#__PURE__*/ _jsxDEV(TableRow, {
+                                    children: [
+                                        /*#__PURE__*/ _jsxDEV(TableCell, {
+                                            children: "รหัส"
+                                        }, void 0, false, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                            lineNumber: 41,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV(TableCell, {
+                                            children: "ชื่อ"
+                                        }, void 0, false, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                            lineNumber: 42,
+                                            columnNumber: 33
+                                        }, this),
+                                        /*#__PURE__*/ _jsxDEV(TableCell, {
+                                            children: "#"
+                                        }, void 0, false, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                            lineNumber: 43,
+                                            columnNumber: 33
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                    lineNumber: 40,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                lineNumber: 39,
+                                columnNumber: 25
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV(TableBody, {
+                                children: layouts.length ? layouts.filter((o)=>o.layoutName != 'TEST').map((o, i)=>{
+                                    return /*#__PURE__*/ _jsxDEV(TableRow, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDEV(TableCell, {
+                                                className: "text-center",
+                                                children: o.layoutCode
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                                lineNumber: 50,
+                                                columnNumber: 41
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TableCell, {
+                                                className: "text-left pl-3 font-semibold",
+                                                children: o.layoutName
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                                lineNumber: 51,
+                                                columnNumber: 41
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDEV(TableCell, {
+                                                className: "text-center",
+                                                children: /*#__PURE__*/ _jsxDEV(Button, {
+                                                    variant: "contained",
+                                                    size: "small",
+                                                    onClick: ()=>handleSelectLine(o.layoutCode),
+                                                    children: "เลือก"
+                                                }, void 0, false, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                                    lineNumber: 53,
+                                                    columnNumber: 45
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                                lineNumber: 52,
+                                                columnNumber: 41
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                        lineNumber: 49,
+                                        columnNumber: 44
+                                    }, this);
+                                }) : /*#__PURE__*/ _jsxDEV(TableRow, {
+                                    children: /*#__PURE__*/ _jsxDEV(TableCell, {
+                                        className: "text-center",
+                                        children: "ไม่พบข้อมูล"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                        lineNumber: 56,
+                                        columnNumber: 48
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                    lineNumber: 56,
+                                    columnNumber: 38
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                                lineNumber: 46,
+                                columnNumber: 25
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                        lineNumber: 38,
+                        columnNumber: 21
+                    }, this)
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                    lineNumber: 37,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                lineNumber: 36,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogActions, {
+                children: /*#__PURE__*/ _jsxDEV(Button, {
+                    onClick: ()=>close(false),
+                    children: "ปิดหน้าต่าง"
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                    lineNumber: 63,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+                lineNumber: 62,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx",
+        lineNumber: 32,
+        columnNumber: 9
+    }, this);
+}
+_s(DialogSelectLine, "rRxFOYHnH80wC0XyHNfbZxRzV3c=", false, function() {
+    return [
+        useNavigate
+    ];
+});
+_c = DialogSelectLine;
+export default DialogSelectLine;
+var _c;
+$RefreshReg$(_c, "DialogSelectLine");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogSelectLine.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkRpYWxvZ1NlbGVjdExpbmUuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VFZmZlY3QsIHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXHJcbmltcG9ydCBEaWFsb2cgZnJvbSAnQG11aS9tYXRlcmlhbC9EaWFsb2cnXHJcbmltcG9ydCBEaWFsb2dUaXRsZSBmcm9tICdAbXVpL21hdGVyaWFsL0RpYWxvZ1RpdGxlJ1xyXG5pbXBvcnQgRGlhbG9nQ29udGVudCBmcm9tICdAbXVpL21hdGVyaWFsL0RpYWxvZ0NvbnRlbnQnXHJcbmltcG9ydCBEaWFsb2dDb250ZW50VGV4dCBmcm9tICdAbXVpL21hdGVyaWFsL0RpYWxvZ0NvbnRlbnRUZXh0J1xyXG5pbXBvcnQgRGlhbG9nQWN0aW9ucyBmcm9tICdAbXVpL21hdGVyaWFsL0RpYWxvZ0FjdGlvbnMnXHJcbmltcG9ydCBCdXR0b24gZnJvbSAnQG11aS9tYXRlcmlhbC9CdXR0b24nXHJcblxyXG5pbXBvcnQgeyBCb3gsIFBhcGVyLCBUYWJsZSwgVGFibGVCb2R5LCBUYWJsZUNlbGwsIFRhYmxlQ29udGFpbmVyLCBUYWJsZUhlYWQsIFRhYmxlUm93LCBUeXBvZ3JhcGh5IH0gZnJvbSAnQG11aS9tYXRlcmlhbCdcclxuaW1wb3J0IHsgQVBJX0dFVF9MQVlPVVQgfSBmcm9tICcuLi9TZXJ2aWNlJ1xyXG5pbXBvcnQgeyB1c2VOYXZpZ2F0ZSB9IGZyb20gJ3JlYWN0LXJvdXRlcidcclxuZnVuY3Rpb24gRGlhbG9nU2VsZWN0TGluZShwcm9wcykge1xyXG4gICAgY29uc3QgVklURV9QQVRIID0gaW1wb3J0Lm1ldGEuZW52LlZJVEVfUEFUSDtcclxuICAgIGNvbnN0IHsgb3BlbiwgY2xvc2UsIGxheW91dFNlbGVjdGVkIH0gPSBwcm9wcztcclxuICAgIGNvbnN0IFtsYXlvdXRzLCBzZXRMYXlvdXRzXSA9IHVzZVN0YXRlKFtdKTtcclxuICAgIGNvbnN0IG5hdmlnYXRlID0gdXNlTmF2aWdhdGUoKTtcclxuICAgIHVzZUVmZmVjdCgoKSA9PiB7XHJcbiAgICAgICAgaWYgKG9wZW4pIHtcclxuICAgICAgICAgICAgaW5pdCgpO1xyXG4gICAgICAgICAgICBjb25zb2xlLmxvZyhsYXlvdXRTZWxlY3RlZClcclxuICAgICAgICB9XHJcbiAgICB9LCBbb3Blbl0pO1xyXG4gICAgYXN5bmMgZnVuY3Rpb24gaW5pdCgpIHtcclxuICAgICAgICBsZXQgcmVzID0gYXdhaXQgQVBJX0dFVF9MQVlPVVQoKTtcclxuICAgICAgICBzZXRMYXlvdXRzKHJlcyk7XHJcbiAgICB9XHJcbiAgICBhc3luYyBmdW5jdGlvbiBoYW5kbGVTZWxlY3RMaW5lKGxheW91dENvZGUpIHtcclxuICAgICAgICBuYXZpZ2F0ZShgLi4vJHtWSVRFX1BBVEh9LyR7bGF5b3V0Q29kZX1gKTtcclxuICAgICAgICBsb2NhdGlvbi5yZWxvYWQoKTtcclxuICAgIH1cclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPERpYWxvZyBvcGVuPXtvcGVufSBvbkNsb3NlPXsoKSA9PiBjbG9zZShmYWxzZSl9IGZ1bGxXaWR0aCBtYXhXaWR0aD17J3NtJ30+XHJcbiAgICAgICAgICAgIDxEaWFsb2dUaXRsZT5cclxuICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5PuC5gOC4peC4t+C4reC4geC5hOC4peC4meC5jOC4geC4suC4o+C4nOC4peC4tOC4lTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgPC9EaWFsb2dUaXRsZT5cclxuICAgICAgICAgICAgPERpYWxvZ0NvbnRlbnQgZGl2aWRlcnM+XHJcbiAgICAgICAgICAgICAgICA8VGFibGVDb250YWluZXIgY29tcG9uZW50PXtQYXBlcn0+XHJcbiAgICAgICAgICAgICAgICAgICAgPFRhYmxlIGZ1bGxXaWR0aCBzaXplPSdzbWFsbCc+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxUYWJsZUhlYWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVSb3c+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRhYmxlQ2VsbD7guKPguKvguLHguKo8L1RhYmxlQ2VsbD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVDZWxsPuC4iuC4t+C5iOC4rTwvVGFibGVDZWxsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUYWJsZUNlbGw+IzwvVGFibGVDZWxsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UYWJsZVJvdz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9UYWJsZUhlYWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxUYWJsZUJvZHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGF5b3V0cy5sZW5ndGggPyBsYXlvdXRzLmZpbHRlcihvID0+IG8ubGF5b3V0TmFtZSAhPSAnVEVTVCcpLm1hcCgobywgaSkgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICByZXR1cm4gPFRhYmxlUm93PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRhYmxlQ2VsbCBjbGFzc05hbWU9J3RleHQtY2VudGVyJz57by5sYXlvdXRDb2RlfTwvVGFibGVDZWxsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRhYmxlQ2VsbCBjbGFzc05hbWU9J3RleHQtbGVmdCBwbC0zIGZvbnQtc2VtaWJvbGQnPntvLmxheW91dE5hbWV9PC9UYWJsZUNlbGw+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGFibGVDZWxsIGNsYXNzTmFtZT0ndGV4dC1jZW50ZXInPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxCdXR0b24gdmFyaWFudD0nY29udGFpbmVkJyBzaXplPSdzbWFsbCcgb25DbGljaz17KCkgPT4gaGFuZGxlU2VsZWN0TGluZShvLmxheW91dENvZGUpfT7guYDguKXguLfguK3guIE8L0J1dHRvbj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVGFibGVDZWxsPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1RhYmxlUm93PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH0pIDogPFRhYmxlUm93PjxUYWJsZUNlbGwgY2xhc3NOYW1lPSd0ZXh0LWNlbnRlcic+4LmE4Lih4LmI4Lie4Lia4LiC4LmJ4Lit4Lih4Li54LilPC9UYWJsZUNlbGw+PC9UYWJsZVJvdz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9UYWJsZUJvZHk+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9UYWJsZT5cclxuICAgICAgICAgICAgICAgIDwvVGFibGVDb250YWluZXI+XHJcbiAgICAgICAgICAgIDwvRGlhbG9nQ29udGVudD5cclxuICAgICAgICAgICAgPERpYWxvZ0FjdGlvbnM+XHJcbiAgICAgICAgICAgICAgICA8QnV0dG9uIG9uQ2xpY2s9eygpID0+IGNsb3NlKGZhbHNlKX0+4Lib4Li04LiU4Lir4LiZ4LmJ4Liy4LiV4LmI4Liy4LiHPC9CdXR0b24+XHJcbiAgICAgICAgICAgIDwvRGlhbG9nQWN0aW9ucz5cclxuICAgICAgICA8L0RpYWxvZyA+XHJcbiAgICApXHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IERpYWxvZ1NlbGVjdExpbmUiXSwibmFtZXMiOlsiUmVhY3QiLCJ1c2VFZmZlY3QiLCJ1c2VTdGF0ZSIsIkRpYWxvZyIsIkRpYWxvZ1RpdGxlIiwiRGlhbG9nQ29udGVudCIsIkRpYWxvZ0NvbnRlbnRUZXh0IiwiRGlhbG9nQWN0aW9ucyIsIkJ1dHRvbiIsIkJveCIsIlBhcGVyIiwiVGFibGUiLCJUYWJsZUJvZHkiLCJUYWJsZUNlbGwiLCJUYWJsZUNvbnRhaW5lciIsIlRhYmxlSGVhZCIsIlRhYmxlUm93IiwiVHlwb2dyYXBoeSIsIkFQSV9HRVRfTEFZT1VUIiwidXNlTmF2aWdhdGUiLCJEaWFsb2dTZWxlY3RMaW5lIiwicHJvcHMiLCJWSVRFX1BBVEgiLCJlbnYiLCJvcGVuIiwiY2xvc2UiLCJsYXlvdXRTZWxlY3RlZCIsImxheW91dHMiLCJzZXRMYXlvdXRzIiwibmF2aWdhdGUiLCJpbml0IiwiY29uc29sZSIsImxvZyIsInJlcyIsImhhbmRsZVNlbGVjdExpbmUiLCJsYXlvdXRDb2RlIiwibG9jYXRpb24iLCJyZWxvYWQiLCJvbkNsb3NlIiwiZnVsbFdpZHRoIiwibWF4V2lkdGgiLCJkaXZpZGVycyIsImNvbXBvbmVudCIsInNpemUiLCJsZW5ndGgiLCJmaWx0ZXIiLCJvIiwibGF5b3V0TmFtZSIsIm1hcCIsImkiLCJjbGFzc05hbWUiLCJ2YXJpYW50Iiwib25DbGljayJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLE9BQU9BLFNBQVNDLFNBQVMsRUFBRUMsUUFBUSxRQUFRLFFBQU87QUFDbEQsT0FBT0MsWUFBWSx1QkFBc0I7QUFDekMsT0FBT0MsaUJBQWlCLDRCQUEyQjtBQUNuRCxPQUFPQyxtQkFBbUIsOEJBQTZCO0FBQ3ZELE9BQU9DLHVCQUF1QixrQ0FBaUM7QUFDL0QsT0FBT0MsbUJBQW1CLDhCQUE2QjtBQUN2RCxPQUFPQyxZQUFZLHVCQUFzQjtBQUV6QyxTQUFTQyxHQUFHLEVBQUVDLEtBQUssRUFBRUMsS0FBSyxFQUFFQyxTQUFTLEVBQUVDLFNBQVMsRUFBRUMsY0FBYyxFQUFFQyxTQUFTLEVBQUVDLFFBQVEsRUFBRUMsVUFBVSxRQUFRLGdCQUFlO0FBQ3hILFNBQVNDLGNBQWMsUUFBUSxhQUFZO0FBQzNDLFNBQVNDLFdBQVcsUUFBUSxlQUFjO0FBQzFDLFNBQVNDLGlCQUFpQkMsS0FBSzs7SUFDM0IsTUFBTUMsWUFBWSxZQUFZQyxHQUFHLENBQUNELFNBQVM7SUFDM0MsTUFBTSxFQUFFRSxJQUFJLEVBQUVDLEtBQUssRUFBRUMsY0FBYyxFQUFFLEdBQUdMO0lBQ3hDLE1BQU0sQ0FBQ00sU0FBU0MsV0FBVyxHQUFHMUIsU0FBUyxFQUFFO0lBQ3pDLE1BQU0yQixXQUFXVjtJQUNqQmxCLFVBQVU7UUFDTixJQUFJdUIsTUFBTTtZQUNOTTtZQUNBQyxRQUFRQyxHQUFHLENBQUNOO1FBQ2hCO0lBQ0osR0FBRztRQUFDRjtLQUFLO0lBQ1QsZUFBZU07UUFDWCxJQUFJRyxNQUFNLE1BQU1mO1FBQ2hCVSxXQUFXSztJQUNmO0lBQ0EsZUFBZUMsaUJBQWlCQyxVQUFVO1FBQ3RDTixTQUFTLENBQUMsR0FBRyxFQUFFUCxVQUFVLENBQUMsRUFBRWEsV0FBVyxDQUFDO1FBQ3hDQyxTQUFTQyxNQUFNO0lBQ25CO0lBQ0EscUJBQ0ksUUFBQ2xDO1FBQU9xQixNQUFNQTtRQUFNYyxTQUFTLElBQU1iLE1BQU07UUFBUWMsU0FBUztRQUFDQyxVQUFVOzswQkFDakUsUUFBQ3BDOzBCQUNHLGNBQUEsUUFBQ2E7OEJBQVc7Ozs7Ozs7Ozs7OzBCQUVoQixRQUFDWjtnQkFBY29DLFFBQVE7MEJBQ25CLGNBQUEsUUFBQzNCO29CQUFlNEIsV0FBV2hDOzhCQUN2QixjQUFBLFFBQUNDO3dCQUFNNEIsU0FBUzt3QkFBQ0ksTUFBSzs7MENBQ2xCLFFBQUM1QjswQ0FDRyxjQUFBLFFBQUNDOztzREFDRyxRQUFDSDtzREFBVTs7Ozs7O3NEQUNYLFFBQUNBO3NEQUFVOzs7Ozs7c0RBQ1gsUUFBQ0E7c0RBQVU7Ozs7Ozs7Ozs7Ozs7Ozs7OzBDQUduQixRQUFDRDswQ0FFT2UsUUFBUWlCLE1BQU0sR0FBR2pCLFFBQVFrQixNQUFNLENBQUNDLENBQUFBLElBQUtBLEVBQUVDLFVBQVUsSUFBSSxRQUFRQyxHQUFHLENBQUMsQ0FBQ0YsR0FBR0c7b0NBQ2pFLHFCQUFPLFFBQUNqQzs7MERBQ0osUUFBQ0g7Z0RBQVVxQyxXQUFVOzBEQUFlSixFQUFFWCxVQUFVOzs7Ozs7MERBQ2hELFFBQUN0QjtnREFBVXFDLFdBQVU7MERBQWdDSixFQUFFQyxVQUFVOzs7Ozs7MERBQ2pFLFFBQUNsQztnREFBVXFDLFdBQVU7MERBQ2pCLGNBQUEsUUFBQzFDO29EQUFPMkMsU0FBUTtvREFBWVIsTUFBSztvREFBUVMsU0FBUyxJQUFNbEIsaUJBQWlCWSxFQUFFWCxVQUFVOzhEQUFHOzs7Ozs7Ozs7Ozs7Ozs7OztnQ0FHcEcsbUJBQUssUUFBQ25COzhDQUFTLGNBQUEsUUFBQ0g7d0NBQVVxQyxXQUFVO2tEQUFjOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OzswQkFNdEUsUUFBQzNDOzBCQUNHLGNBQUEsUUFBQ0M7b0JBQU80QyxTQUFTLElBQU0zQixNQUFNOzhCQUFROzs7Ozs7Ozs7Ozs7Ozs7OztBQUlyRDtHQXZEU0w7O1FBSVlEOzs7S0FKWkM7QUF5RFQsZUFBZUEsaUJBQWdCIn0=

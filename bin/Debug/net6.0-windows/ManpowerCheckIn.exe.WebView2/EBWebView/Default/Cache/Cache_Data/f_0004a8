@@ -1,0 +1,541 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/DialogCheckin.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport2_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport2_react.__esModule ? __vite__cjsImport2_react.default : __vite__cjsImport2_react; const createContext = __vite__cjsImport2_react["createContext"]; const useContext = __vite__cjsImport2_react["useContext"]; const useEffect = __vite__cjsImport2_react["useEffect"]; const useState = __vite__cjsImport2_react["useState"];
+import Dialog from "/dcimanpower/node_modules/.vite/deps/@mui_material_Dialog.js?v=68d587f7";
+import Button from "/dcimanpower/node_modules/.vite/deps/@mui_material_Button.js?v=68d587f7";
+import { Avatar, Box, Card, CardContent, CardHeader, Divider, Grid, IconButton, Stack, Tab, Tabs, Typography, DialogContent, TableContainer, Paper, Table, TableHead, TableBody, TableRow, TableCell, InputBase, DialogTitle, DialogActions } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import __vite__cjsImport6_moment_moment from "/dcimanpower/node_modules/.vite/deps/moment_moment.js?v=68d587f7"; const moment = __vite__cjsImport6_moment_moment.__esModule ? __vite__cjsImport6_moment_moment.default : __vite__cjsImport6_moment_moment;
+import { API_CHECK_INOUT, API_GET_MQSA_OF_LAYOUT, API_GET_OBJECT, API_GET_OBJECT_BY_CODE, API_GET_OBJECT_INFO } from "/dcimanpower/src/Service.js";
+import { useDispatch, useSelector } from "/dcimanpower/node_modules/.vite/deps/react-redux.js?v=68d587f7";
+import CardPosition from "/dcimanpower/src/components/CheckIN/CardPosition.jsx";
+import CardEmp from "/dcimanpower/src/components/CheckIN/CardEmp.jsx";
+import Timeline from "/dcimanpower/node_modules/.vite/deps/@mui_lab_Timeline.js?v=68d587f7";
+import TimelineItem from "/dcimanpower/node_modules/.vite/deps/@mui_lab_TimelineItem.js?v=68d587f7";
+import TimelineSeparator from "/dcimanpower/node_modules/.vite/deps/@mui_lab_TimelineSeparator.js?v=68d587f7";
+import TimelineConnector from "/dcimanpower/node_modules/.vite/deps/@mui_lab_TimelineConnector.js?v=68d587f7";
+import TimelineContent from "/dcimanpower/node_modules/.vite/deps/@mui_lab_TimelineContent.js?v=68d587f7";
+import TimelineDot from "/dcimanpower/node_modules/.vite/deps/@mui_lab_TimelineDot.js?v=68d587f7";
+import __vite__cjsImport17__mui_iconsMaterial_CheckCircle from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_CheckCircle.js?v=68d587f7"; const CheckCircleIcon = __vite__cjsImport17__mui_iconsMaterial_CheckCircle.__esModule ? __vite__cjsImport17__mui_iconsMaterial_CheckCircle.default : __vite__cjsImport17__mui_iconsMaterial_CheckCircle;
+import { TimelineOppositeContent } from "/dcimanpower/node_modules/.vite/deps/@mui_lab.js?v=68d587f7";
+function DialogCheckin(props) {
+    _s();
+    const { open, close, data, setData, refObj, refHeaderManpower, backdrop } = props;
+    const dispatch = useDispatch();
+    const objectSelected = useSelector((state)=>state.reducer.objectSelected);
+    useEffect(()=>{
+        if (open) {
+            init();
+        }
+    }, [
+        open
+    ]);
+    async function init() {
+        const objectDetail = await API_GET_OBJECT_INFO({
+            objCode: data.objCode
+        });
+        setData(objectDetail[0]);
+        dispatch({
+            type: 'SET_OBJECT_SELECTED',
+            payload: objectDetail[0]
+        });
+    }
+    async function handleCheckInOut() {
+        let inpEmpCode = document.querySelector('input#inpEmpCode').value;
+        let inpYMD = document.querySelector('input#inpYMD').value;
+        let inpShift = document.querySelector('input#inpShift').value;
+        let inpType = document.querySelector('input#inpType').value;
+        if (inpEmpCode != '') {
+            backdrop(true);
+            const checkin = await API_CHECK_INOUT({
+                "objCode": data.objCode,
+                "empCode": inpEmpCode,
+                "ckdate": inpYMD,
+                "ckshift": inpShift,
+                "cktype": inpType
+            });
+            console.log({
+                "objCode": data.objCode,
+                "empCode": inpEmpCode,
+                "ckdate": inpYMD,
+                "ckshift": inpShift,
+                "cktype": inpType
+            });
+            if (checkin.status == "1") {
+                setData({});
+                alert(`empcode : ${inpEmpCode} ,ckshift : ${inpYMD} ,ckdate : ${inpShift} ,cktype : ${inpType} ,`);
+                init();
+                refObj(data.objCode);
+                refHeaderManpower();
+                backdrop(false);
+            } else if (checkin.status == "0") {
+                backdrop(false);
+                alert(1);
+                alert(checkin.msg);
+            }
+        }
+    }
+    async function handleTest() {
+        refHeaderManpower();
+    }
+    return /*#__PURE__*/ _jsxDEV(Dialog, {
+        open: open,
+        onClose: ()=>close(false),
+        fullWidth: true,
+        maxWidth: "lg",
+        children: [
+            /*#__PURE__*/ _jsxDEV(DialogTitle, {
+                className: "text-center",
+                children: "ข้อมูลพื้นที่ปฎิบัติงานและพนักงาน"
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                lineNumber: 73,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogContent, {
+                children: /*#__PURE__*/ _jsxDEV(Grid, {
+                    container: true,
+                    spacing: 3,
+                    children: [
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            sm: 12,
+                            md: 6,
+                            lg: 6,
+                            children: [
+                                /*#__PURE__*/ _jsxDEV("button", {
+                                    style: {
+                                        display: 'none'
+                                    },
+                                    id: "handleCheckInOut",
+                                    onClick: handleCheckInOut,
+                                    children: "CHECKIN"
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                    lineNumber: 78,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV(Stack, {
+                                    gap: 2,
+                                    children: /*#__PURE__*/ _jsxDEV(CardPosition, {
+                                        data: data
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 80,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                    lineNumber: 79,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                            lineNumber: 77,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            sm: 12,
+                            md: 6,
+                            lg: 6,
+                            children: /*#__PURE__*/ _jsxDEV(Stack, {
+                                gap: 2,
+                                children: /*#__PURE__*/ _jsxDEV(CardEmp, {
+                                    data: objectSelected,
+                                    eventCheckIn: handleCheckInOut
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                    lineNumber: 85,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                lineNumber: 84,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                            lineNumber: 83,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            sm: 12,
+                            md: 6,
+                            lg: 6,
+                            children: /*#__PURE__*/ _jsxDEV(Card, {
+                                variant: "outlined",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV(CardHeader, {
+                                        title: /*#__PURE__*/ _jsxDEV(Typography, {
+                                            className: "font-semibold",
+                                            children: "ประวัติการเข้าทำงานในจุดนี้ล่าสุด 7 วัน"
+                                        }, void 0, false, void 0, void 0),
+                                        subheader: "",
+                                        className: "bg-yellow-600 "
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 90,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(Divider, {}, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 91,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(CardContent, {
+                                        children: /*#__PURE__*/ _jsxDEV(Timeline, {
+                                            position: "alternate",
+                                            children: objectSelected?.objLog.length ? objectSelected?.objLog.map((vLog, iLog)=>{
+                                                return /*#__PURE__*/ _jsxDEV(TimelineItem, {
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxDEV(TimelineOppositeContent, {
+                                                            sx: {
+                                                                m: 'auto 0'
+                                                            },
+                                                            align: "right",
+                                                            variant: "body2",
+                                                            color: "text.secondary",
+                                                            children: /*#__PURE__*/ _jsxDEV(Typography, {
+                                                                variant: "inherit",
+                                                                className: `${vLog.cktype == 'IN' ? 'text-green-800' : 'text-red-500'}`,
+                                                                children: [
+                                                                    moment(vLog.ckdateTime, 'YYYY-MM-DDTHH:mm:ss').format('DD/MM/YYYY HH:mm:ss'),
+                                                                    " ",
+                                                                    vLog.cktype
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                lineNumber: 103,
+                                                                columnNumber: 53
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                            lineNumber: 97,
+                                                            columnNumber: 49
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV(TimelineSeparator, {
+                                                            children: [
+                                                                /*#__PURE__*/ _jsxDEV(TimelineConnector, {}, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 106,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ _jsxDEV(TimelineDot, {
+                                                                    color: `${vLog.cktype == 'IN' ? 'success' : 'error'}`,
+                                                                    children: iLog == 0 && typeof objectSelected.empCode !== 'undefined' && objectSelected.empCode != "" ? /*#__PURE__*/ _jsxDEV(CheckCircleIcon, {}, void 0, false, {
+                                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                        lineNumber: 109,
+                                                                        columnNumber: 158
+                                                                    }, this) : ''
+                                                                }, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 107,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ _jsxDEV(TimelineConnector, {}, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 112,
+                                                                    columnNumber: 53
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                            lineNumber: 105,
+                                                            columnNumber: 49
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV(TimelineContent, {
+                                                            className: `${iLog > 0 ? 'text-[#818181]' : ''}`,
+                                                            sx: {
+                                                                py: '12px',
+                                                                px: 2
+                                                            },
+                                                            children: [
+                                                                /*#__PURE__*/ _jsxDEV(Typography, {
+                                                                    variant: "h6",
+                                                                    component: "span",
+                                                                    children: vLog.empName
+                                                                }, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 115,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ _jsxDEV(Typography, {
+                                                                    children: [
+                                                                        " ",
+                                                                        vLog.empCode,
+                                                                        " [",
+                                                                        vLog.posit,
+                                                                        "]"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 118,
+                                                                    columnNumber: 53
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                            lineNumber: 114,
+                                                            columnNumber: 49
+                                                        }, this)
+                                                    ]
+                                                }, iLog, true, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                    lineNumber: 96,
+                                                    columnNumber: 52
+                                                }, this);
+                                            }) : /*#__PURE__*/ _jsxDEV(Typography, {
+                                                className: "w-full text-center",
+                                                children: "ไม่พบประวัติการเข้าทำงาน"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                lineNumber: 121,
+                                                columnNumber: 46
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                            lineNumber: 93,
+                                            columnNumber: 33
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 92,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                lineNumber: 89,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                            lineNumber: 88,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            sm: 12,
+                            md: 6,
+                            lg: 6,
+                            children: /*#__PURE__*/ _jsxDEV(Card, {
+                                variant: "outlined",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV(CardHeader, {
+                                        title: /*#__PURE__*/ _jsxDEV(Typography, {
+                                            className: "font-semibold",
+                                            children: "ประวัติการเข้าทำงานของพนักงานล่าสุด 7 วัน"
+                                        }, void 0, false, void 0, void 0),
+                                        subheader: "",
+                                        className: "bg-blue-300 "
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 129,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(Divider, {}, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 130,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(CardContent, {
+                                        children: /*#__PURE__*/ _jsxDEV(Timeline, {
+                                            position: "alternate",
+                                            children: objectSelected?.empLog.length ? objectSelected?.empLog.map((vLog, iLog)=>{
+                                                return /*#__PURE__*/ _jsxDEV(TimelineItem, {
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxDEV(TimelineOppositeContent, {
+                                                            sx: {
+                                                                m: 'auto 0'
+                                                            },
+                                                            align: "right",
+                                                            variant: "body2",
+                                                            color: "text.secondary",
+                                                            children: /*#__PURE__*/ _jsxDEV(Typography, {
+                                                                variant: "inherit",
+                                                                className: `${vLog.cktype == 'IN' ? 'text-green-800' : 'text-red-500'}`,
+                                                                children: [
+                                                                    moment(vLog.ckdateTime, 'YYYY-MM-DDTHH:mm:ss').format('DD/MM/YYYY HH:mm:ss'),
+                                                                    " ",
+                                                                    vLog.cktype
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                lineNumber: 142,
+                                                                columnNumber: 53
+                                                            }, this)
+                                                        }, void 0, false, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                            lineNumber: 136,
+                                                            columnNumber: 49
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV(TimelineSeparator, {
+                                                            children: [
+                                                                /*#__PURE__*/ _jsxDEV(TimelineConnector, {}, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 145,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ _jsxDEV(TimelineDot, {
+                                                                    color: `${vLog.cktype == 'IN' ? 'success' : 'error'}`,
+                                                                    children: iLog == 0 && typeof objectSelected.empCode !== 'undefined' && objectSelected.empCode != "" ? /*#__PURE__*/ _jsxDEV(CheckCircleIcon, {}, void 0, false, {
+                                                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                        lineNumber: 148,
+                                                                        columnNumber: 158
+                                                                    }, this) : ''
+                                                                }, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 146,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ _jsxDEV(TimelineConnector, {}, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 151,
+                                                                    columnNumber: 53
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                            lineNumber: 144,
+                                                            columnNumber: 49
+                                                        }, this),
+                                                        /*#__PURE__*/ _jsxDEV(TimelineContent, {
+                                                            className: `${iLog > 0 ? 'text-[#818181]' : ''}`,
+                                                            sx: {
+                                                                py: '12px',
+                                                                px: 2
+                                                            },
+                                                            children: [
+                                                                /*#__PURE__*/ _jsxDEV(Typography, {
+                                                                    variant: "h6",
+                                                                    component: "span",
+                                                                    children: vLog.empName
+                                                                }, void 0, false, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 154,
+                                                                    columnNumber: 53
+                                                                }, this),
+                                                                /*#__PURE__*/ _jsxDEV(Typography, {
+                                                                    children: [
+                                                                        " ",
+                                                                        vLog.empCode,
+                                                                        " [",
+                                                                        vLog.posit,
+                                                                        "]"
+                                                                    ]
+                                                                }, void 0, true, {
+                                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                                    lineNumber: 157,
+                                                                    columnNumber: 53
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                            lineNumber: 153,
+                                                            columnNumber: 49
+                                                        }, this)
+                                                    ]
+                                                }, iLog, true, {
+                                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                    lineNumber: 135,
+                                                    columnNumber: 52
+                                                }, this);
+                                            }) : /*#__PURE__*/ _jsxDEV(Typography, {
+                                                className: "w-full text-center",
+                                                children: "ไม่พบประวัติการเข้าทำงาน"
+                                            }, void 0, false, {
+                                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                                lineNumber: 161,
+                                                columnNumber: 46
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                            lineNumber: 132,
+                                            columnNumber: 33
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                        lineNumber: 131,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                                lineNumber: 128,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                            lineNumber: 127,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                    lineNumber: 76,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                lineNumber: 74,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogActions, {
+                children: /*#__PURE__*/ _jsxDEV(Button, {
+                    onClick: ()=>close(false),
+                    children: "ปิดหน้าต่าง"
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                    lineNumber: 170,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+                lineNumber: 169,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx",
+        lineNumber: 72,
+        columnNumber: 9
+    }, this);
+}
+_s(DialogCheckin, "RQKcCZUeuGZEIom+v4bkvhtLMOU=", false, function() {
+    return [
+        useDispatch,
+        useSelector
+    ];
+});
+_c = DialogCheckin;
+export default DialogCheckin;
+var _c;
+$RefreshReg$(_c, "DialogCheckin");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogCheckin.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkRpYWxvZ0NoZWNraW4uanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyBjcmVhdGVDb250ZXh0LCB1c2VDb250ZXh0LCB1c2VFZmZlY3QsIHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXHJcbmltcG9ydCBEaWFsb2cgZnJvbSAnQG11aS9tYXRlcmlhbC9EaWFsb2cnXHJcbmltcG9ydCBCdXR0b24gZnJvbSAnQG11aS9tYXRlcmlhbC9CdXR0b24nXHJcbmltcG9ydCB7IEF2YXRhciwgQm94LCBDYXJkLCBDYXJkQ29udGVudCwgQ2FyZEhlYWRlciwgRGl2aWRlciwgR3JpZCwgSWNvbkJ1dHRvbiwgU3RhY2ssIFRhYiwgVGFicywgVHlwb2dyYXBoeSwgRGlhbG9nQ29udGVudCwgVGFibGVDb250YWluZXIsIFBhcGVyLCBUYWJsZSwgVGFibGVIZWFkLCBUYWJsZUJvZHksIFRhYmxlUm93LCBUYWJsZUNlbGwsIElucHV0QmFzZSwgRGlhbG9nVGl0bGUsIERpYWxvZ0FjdGlvbnMgfSBmcm9tICdAbXVpL21hdGVyaWFsJ1xyXG5pbXBvcnQgbW9tZW50IGZyb20gJ21vbWVudC9tb21lbnQnXHJcbmltcG9ydCB7IEFQSV9DSEVDS19JTk9VVCwgQVBJX0dFVF9NUVNBX09GX0xBWU9VVCwgQVBJX0dFVF9PQkpFQ1QsIEFQSV9HRVRfT0JKRUNUX0JZX0NPREUsIEFQSV9HRVRfT0JKRUNUX0lORk8gfSBmcm9tICcuLi9TZXJ2aWNlJ1xyXG5pbXBvcnQgeyB1c2VEaXNwYXRjaCwgdXNlU2VsZWN0b3IgfSBmcm9tICdyZWFjdC1yZWR1eCdcclxuaW1wb3J0IENhcmRQb3NpdGlvbiBmcm9tICcuL0NoZWNrSU4vQ2FyZFBvc2l0aW9uJ1xyXG5pbXBvcnQgQ2FyZEVtcCBmcm9tICcuL0NoZWNrSU4vQ2FyZEVtcCdcclxuaW1wb3J0IFRpbWVsaW5lIGZyb20gJ0BtdWkvbGFiL1RpbWVsaW5lJztcclxuaW1wb3J0IFRpbWVsaW5lSXRlbSBmcm9tICdAbXVpL2xhYi9UaW1lbGluZUl0ZW0nO1xyXG5pbXBvcnQgVGltZWxpbmVTZXBhcmF0b3IgZnJvbSAnQG11aS9sYWIvVGltZWxpbmVTZXBhcmF0b3InO1xyXG5pbXBvcnQgVGltZWxpbmVDb25uZWN0b3IgZnJvbSAnQG11aS9sYWIvVGltZWxpbmVDb25uZWN0b3InO1xyXG5pbXBvcnQgVGltZWxpbmVDb250ZW50IGZyb20gJ0BtdWkvbGFiL1RpbWVsaW5lQ29udGVudCc7XHJcbmltcG9ydCBUaW1lbGluZURvdCBmcm9tICdAbXVpL2xhYi9UaW1lbGluZURvdCc7XHJcbmltcG9ydCBDaGVja0NpcmNsZUljb24gZnJvbSAnQG11aS9pY29ucy1tYXRlcmlhbC9DaGVja0NpcmNsZSc7XHJcbmltcG9ydCB7IFRpbWVsaW5lT3Bwb3NpdGVDb250ZW50IH0gZnJvbSAnQG11aS9sYWInXHJcbmZ1bmN0aW9uIERpYWxvZ0NoZWNraW4ocHJvcHMpIHtcclxuICAgIGNvbnN0IHsgb3BlbiwgY2xvc2UsIGRhdGEsIHNldERhdGEsIHJlZk9iaiwgcmVmSGVhZGVyTWFucG93ZXIsIGJhY2tkcm9wIH0gPSBwcm9wcztcclxuICAgIGNvbnN0IGRpc3BhdGNoID0gdXNlRGlzcGF0Y2goKTtcclxuICAgIGNvbnN0IG9iamVjdFNlbGVjdGVkID0gdXNlU2VsZWN0b3Ioc3RhdGUgPT4gc3RhdGUucmVkdWNlci5vYmplY3RTZWxlY3RlZCk7XHJcbiAgICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgICAgIGlmIChvcGVuKSB7XHJcbiAgICAgICAgICAgIGluaXQoKTtcclxuICAgICAgICB9XHJcbiAgICB9LCBbb3Blbl0pO1xyXG4gICAgYXN5bmMgZnVuY3Rpb24gaW5pdCgpIHtcclxuICAgICAgICBjb25zdCBvYmplY3REZXRhaWwgPSBhd2FpdCBBUElfR0VUX09CSkVDVF9JTkZPKHsgb2JqQ29kZTogZGF0YS5vYmpDb2RlIH0pO1xyXG4gICAgICAgIHNldERhdGEob2JqZWN0RGV0YWlsWzBdKVxyXG4gICAgICAgIGRpc3BhdGNoKHsgdHlwZTogJ1NFVF9PQkpFQ1RfU0VMRUNURUQnLCBwYXlsb2FkOiBvYmplY3REZXRhaWxbMF0gfSlcclxuICAgIH1cclxuICAgIGFzeW5jIGZ1bmN0aW9uIGhhbmRsZUNoZWNrSW5PdXQoKSB7XHJcbiAgICAgICAgbGV0IGlucEVtcENvZGUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdpbnB1dCNpbnBFbXBDb2RlJykudmFsdWU7XHJcbiAgICAgICAgbGV0IGlucFlNRCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ2lucHV0I2lucFlNRCcpLnZhbHVlO1xyXG4gICAgICAgIGxldCBpbnBTaGlmdCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJ2lucHV0I2lucFNoaWZ0JykudmFsdWU7XHJcbiAgICAgICAgbGV0IGlucFR5cGUgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdpbnB1dCNpbnBUeXBlJykudmFsdWU7XHJcbiAgICAgICAgaWYgKGlucEVtcENvZGUgIT0gJycpIHtcclxuICAgICAgICAgICAgYmFja2Ryb3AodHJ1ZSk7XHJcbiAgICAgICAgICAgIGNvbnN0IGNoZWNraW4gPSBhd2FpdCBBUElfQ0hFQ0tfSU5PVVQoe1xyXG4gICAgICAgICAgICAgICAgXCJvYmpDb2RlXCI6IGRhdGEub2JqQ29kZSxcclxuICAgICAgICAgICAgICAgIFwiZW1wQ29kZVwiOiBpbnBFbXBDb2RlLFxyXG4gICAgICAgICAgICAgICAgXCJja2RhdGVcIjogaW5wWU1ELFxyXG4gICAgICAgICAgICAgICAgXCJja3NoaWZ0XCI6IGlucFNoaWZ0LFxyXG4gICAgICAgICAgICAgICAgXCJja3R5cGVcIjogaW5wVHlwZVxyXG4gICAgICAgICAgICB9KTtcclxuICAgICAgICAgICAgY29uc29sZS5sb2coe1xyXG4gICAgICAgICAgICAgICAgXCJvYmpDb2RlXCI6IGRhdGEub2JqQ29kZSxcclxuICAgICAgICAgICAgICAgIFwiZW1wQ29kZVwiOiBpbnBFbXBDb2RlLFxyXG4gICAgICAgICAgICAgICAgXCJja2RhdGVcIjogaW5wWU1ELFxyXG4gICAgICAgICAgICAgICAgXCJja3NoaWZ0XCI6IGlucFNoaWZ0LFxyXG4gICAgICAgICAgICAgICAgXCJja3R5cGVcIjogaW5wVHlwZVxyXG4gICAgICAgICAgICB9KVxyXG4gICAgICAgICAgICBpZiAoY2hlY2tpbi5zdGF0dXMgPT0gXCIxXCIpIHtcclxuICAgICAgICAgICAgICAgIHNldERhdGEoe30pO1xyXG4gICAgICAgICAgICAgICAgYWxlcnQoYGVtcGNvZGUgOiAke2lucEVtcENvZGV9ICxja3NoaWZ0IDogJHtpbnBZTUR9ICxja2RhdGUgOiAke2lucFNoaWZ0fSAsY2t0eXBlIDogJHtpbnBUeXBlfSAsYCk7XHJcbiAgICAgICAgICAgICAgICBpbml0KCk7XHJcbiAgICAgICAgICAgICAgICByZWZPYmooZGF0YS5vYmpDb2RlKTtcclxuICAgICAgICAgICAgICAgIHJlZkhlYWRlck1hbnBvd2VyKCk7XHJcbiAgICAgICAgICAgICAgICBiYWNrZHJvcChmYWxzZSk7XHJcbiAgICAgICAgICAgIH0gZWxzZSBpZiAoY2hlY2tpbi5zdGF0dXMgPT0gXCIwXCIpIHtcclxuICAgICAgICAgICAgICAgIGJhY2tkcm9wKGZhbHNlKTtcclxuICAgICAgICAgICAgICAgIGFsZXJ0KDEpO1xyXG4gICAgICAgICAgICAgICAgYWxlcnQoY2hlY2tpbi5tc2cpO1xyXG4gICAgICAgICAgICB9XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG5cclxuICAgIGFzeW5jIGZ1bmN0aW9uIGhhbmRsZVRlc3QoKSB7XHJcbiAgICAgICAgcmVmSGVhZGVyTWFucG93ZXIoKTtcclxuICAgIH1cclxuICAgIHJldHVybiAoXHJcbiAgICAgICAgPERpYWxvZyBvcGVuPXtvcGVufSBvbkNsb3NlPXsoKSA9PiBjbG9zZShmYWxzZSl9IGZ1bGxXaWR0aCBtYXhXaWR0aD0nbGcnPlxyXG4gICAgICAgICAgICA8RGlhbG9nVGl0bGUgY2xhc3NOYW1lPSd0ZXh0LWNlbnRlcic+4LiC4LmJ4Lit4Lih4Li54Lil4Lie4Li34LmJ4LiZ4LiX4Li14LmI4Lib4LiO4Li04Lia4Lix4LiV4Li04LiH4Liy4LiZ4LmB4Lil4Liw4Lie4LiZ4Lix4LiB4LiH4Liy4LiZPC9EaWFsb2dUaXRsZT5cclxuICAgICAgICAgICAgPERpYWxvZ0NvbnRlbnQ+XHJcbiAgICAgICAgICAgICAgICB7LyogPEJ1dHRvbiBvbkNsaWNrPXsoKSA9PiBoYW5kbGVUZXN0KCl9PlRFU1Q8L0J1dHRvbj4gKi99XHJcbiAgICAgICAgICAgICAgICA8R3JpZCBjb250YWluZXIgc3BhY2luZz17M30+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17MTJ9IHNtPXsxMn0gbWQ9ezZ9IGxnPXs2fT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPGJ1dHRvbiBzdHlsZT17eyBkaXNwbGF5OiAnbm9uZScgfX0gaWQ9XCJoYW5kbGVDaGVja0luT3V0XCIgb25DbGljaz17aGFuZGxlQ2hlY2tJbk91dH0+Q0hFQ0tJTjwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8U3RhY2sgZ2FwPXsyfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxDYXJkUG9zaXRpb24gZGF0YT17ZGF0YX0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9TdGFjaz5cclxuICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17MTJ9IHNtPXsxMn0gbWQ9ezZ9IGxnPXs2fT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPFN0YWNrIGdhcD17Mn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Q2FyZEVtcCBkYXRhPXtvYmplY3RTZWxlY3RlZH0gZXZlbnRDaGVja0luPXtoYW5kbGVDaGVja0luT3V0fSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L1N0YWNrPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvR3JpZD5cclxuICAgICAgICAgICAgICAgICAgICA8R3JpZCBpdGVtIHhzPXsxMn0gc209ezEyfSBtZD17Nn0gbGc9ezZ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8Q2FyZCB2YXJpYW50PVwib3V0bGluZWRcIiA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8Q2FyZEhlYWRlciB0aXRsZT17PFR5cG9ncmFwaHkgY2xhc3NOYW1lPSdmb250LXNlbWlib2xkJz7guJvguKPguLDguKfguLHguJXguLTguIHguLLguKPguYDguILguYnguLLguJfguLPguIfguLLguJnguYPguJnguIjguLjguJTguJnguLXguYnguKXguYjguLLguKrguLjguJQgNyDguKfguLHguJk8L1R5cG9ncmFwaHk+fSBzdWJoZWFkZXI9XCJcIiBjbGFzc05hbWU9J2JnLXllbGxvdy02MDAgJyAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPERpdmlkZXIgLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxDYXJkQ29udGVudD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGltZWxpbmUgcG9zaXRpb249XCJhbHRlcm5hdGVcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgb2JqZWN0U2VsZWN0ZWQ/Lm9iakxvZy5sZW5ndGggPyBvYmplY3RTZWxlY3RlZD8ub2JqTG9nLm1hcCgodkxvZywgaUxvZykgPT4ge1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiA8VGltZWxpbmVJdGVtIGtleT17aUxvZ30+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUaW1lbGluZU9wcG9zaXRlQ29udGVudFxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc3g9e3sgbTogJ2F1dG8gMCcgfX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGFsaWduPVwicmlnaHRcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdmFyaWFudD1cImJvZHkyXCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvbG9yPVwidGV4dC5zZWNvbmRhcnlcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VHlwb2dyYXBoeSB2YXJpYW50PSdpbmhlcml0JyBjbGFzc05hbWU9e2Ake3ZMb2cuY2t0eXBlID09ICdJTicgPyAndGV4dC1ncmVlbi04MDAnIDogJ3RleHQtcmVkLTUwMCd9YH0+e21vbWVudCh2TG9nLmNrZGF0ZVRpbWUsICdZWVlZLU1NLUREVEhIOm1tOnNzJykuZm9ybWF0KCdERC9NTS9ZWVlZIEhIOm1tOnNzJyl9IHt2TG9nLmNrdHlwZX08L1R5cG9ncmFwaHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVGltZWxpbmVPcHBvc2l0ZUNvbnRlbnQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUaW1lbGluZVNlcGFyYXRvcj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUaW1lbGluZUNvbm5lY3RvciAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRpbWVsaW5lRG90IGNvbG9yPXtgJHt2TG9nLmNrdHlwZSA9PSAnSU4nID8gJ3N1Y2Nlc3MnIDogJ2Vycm9yJ31gfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIChpTG9nID09IDAgJiYgKHR5cGVvZiBvYmplY3RTZWxlY3RlZC5lbXBDb2RlICE9PSAndW5kZWZpbmVkJyAmJiBvYmplY3RTZWxlY3RlZC5lbXBDb2RlICE9IFwiXCIpKSA/IDxDaGVja0NpcmNsZUljb24gLz4gOiAnJ1xyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVGltZWxpbmVEb3Q+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGltZWxpbmVDb25uZWN0b3IgLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZVNlcGFyYXRvcj5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRpbWVsaW5lQ29udGVudCBjbGFzc05hbWU9e2Ake2lMb2cgPiAwID8gJ3RleHQtWyM4MTgxODFdJyA6ICcnfWB9IHN4PXt7IHB5OiAnMTJweCcsIHB4OiAyIH19PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFR5cG9ncmFwaHkgdmFyaWFudD1cImg2XCIgY29tcG9uZW50PVwic3BhblwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHt2TG9nLmVtcE5hbWV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1R5cG9ncmFwaHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VHlwb2dyYXBoeT4ge3ZMb2cuZW1wQ29kZX0gW3t2TG9nLnBvc2l0fV08L1R5cG9ncmFwaHk+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVGltZWxpbmVDb250ZW50PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVGltZWxpbmVJdGVtPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSkgOiA8VHlwb2dyYXBoeSBjbGFzc05hbWU9J3ctZnVsbCB0ZXh0LWNlbnRlcic+4LmE4Lih4LmI4Lie4Lia4Lib4Lij4Liw4Lin4Lix4LiV4Li04LiB4Liy4Lij4LmA4LiC4LmJ4Liy4LiX4Liz4LiH4Liy4LiZPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvQ2FyZENvbnRlbnQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvQ2FyZD5cclxuICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17MTJ9IHNtPXsxMn0gbWQ9ezZ9IGxnPXs2fT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPENhcmQgdmFyaWFudD1cIm91dGxpbmVkXCIgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPENhcmRIZWFkZXIgdGl0bGU9ezxUeXBvZ3JhcGh5IGNsYXNzTmFtZT0nZm9udC1zZW1pYm9sZCc+4Lib4Lij4Liw4Lin4Lix4LiV4Li04LiB4Liy4Lij4LmA4LiC4LmJ4Liy4LiX4Liz4LiH4Liy4LiZ4LiC4Lit4LiH4Lie4LiZ4Lix4LiB4LiH4Liy4LiZ4Lil4LmI4Liy4Liq4Li44LiUIDcg4Lin4Lix4LiZPC9UeXBvZ3JhcGh5Pn0gc3ViaGVhZGVyPVwiXCIgY2xhc3NOYW1lPSdiZy1ibHVlLTMwMCAnIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8RGl2aWRlciAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPENhcmRDb250ZW50PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUaW1lbGluZSBwb3NpdGlvbj1cImFsdGVybmF0ZVwiPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBvYmplY3RTZWxlY3RlZD8uZW1wTG9nLmxlbmd0aCA/IG9iamVjdFNlbGVjdGVkPy5lbXBMb2cubWFwKCh2TG9nLCBpTG9nKSA9PiB7XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcmV0dXJuIDxUaW1lbGluZUl0ZW0ga2V5PXtpTG9nfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRpbWVsaW5lT3Bwb3NpdGVDb250ZW50XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBzeD17eyBtOiAnYXV0byAwJyB9fVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYWxpZ249XCJyaWdodFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YXJpYW50PVwiYm9keTJcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY29sb3I9XCJ0ZXh0LnNlY29uZGFyeVwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5IHZhcmlhbnQ9J2luaGVyaXQnIGNsYXNzTmFtZT17YCR7dkxvZy5ja3R5cGUgPT0gJ0lOJyA/ICd0ZXh0LWdyZWVuLTgwMCcgOiAndGV4dC1yZWQtNTAwJ31gfT57bW9tZW50KHZMb2cuY2tkYXRlVGltZSwgJ1lZWVktTU0tRERUSEg6bW06c3MnKS5mb3JtYXQoJ0REL01NL1lZWVkgSEg6bW06c3MnKX0ge3ZMb2cuY2t0eXBlfTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZU9wcG9zaXRlQ29udGVudD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRpbWVsaW5lU2VwYXJhdG9yPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPFRpbWVsaW5lQ29ubmVjdG9yIC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGltZWxpbmVEb3QgY29sb3I9e2Ake3ZMb2cuY2t0eXBlID09ICdJTicgPyAnc3VjY2VzcycgOiAnZXJyb3InfWB9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKGlMb2cgPT0gMCAmJiAodHlwZW9mIG9iamVjdFNlbGVjdGVkLmVtcENvZGUgIT09ICd1bmRlZmluZWQnICYmIG9iamVjdFNlbGVjdGVkLmVtcENvZGUgIT0gXCJcIikpID8gPENoZWNrQ2lyY2xlSWNvbiAvPiA6ICcnXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfVxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZURvdD5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUaW1lbGluZUNvbm5lY3RvciAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L1RpbWVsaW5lU2VwYXJhdG9yPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VGltZWxpbmVDb250ZW50IGNsYXNzTmFtZT17YCR7aUxvZyA+IDAgPyAndGV4dC1bIzgxODE4MV0nIDogJyd9YH0gc3g9e3sgcHk6ICcxMnB4JywgcHg6IDIgfX0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8VHlwb2dyYXBoeSB2YXJpYW50PVwiaDZcIiBjb21wb25lbnQ9XCJzcGFuXCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge3ZMb2cuZW1wTmFtZX1cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5PiB7dkxvZy5lbXBDb2RlfSBbe3ZMb2cucG9zaXR9XTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZUNvbnRlbnQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZUl0ZW0+XHJcblxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfSkgOiA8VHlwb2dyYXBoeSBjbGFzc05hbWU9J3ctZnVsbCB0ZXh0LWNlbnRlcic+4LmE4Lih4LmI4Lie4Lia4Lib4Lij4Liw4Lin4Lix4LiV4Li04LiB4Liy4Lij4LmA4LiC4LmJ4Liy4LiX4Liz4LiH4Liy4LiZPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9UaW1lbGluZT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvQ2FyZENvbnRlbnQ+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvQ2FyZD5cclxuICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgIDwvRGlhbG9nQ29udGVudD5cclxuICAgICAgICAgICAgPERpYWxvZ0FjdGlvbnM+XHJcbiAgICAgICAgICAgICAgICA8QnV0dG9uIG9uQ2xpY2s9eygpID0+IGNsb3NlKGZhbHNlKX0+4Lib4Li04LiU4Lir4LiZ4LmJ4Liy4LiV4LmI4Liy4LiHPC9CdXR0b24+XHJcbiAgICAgICAgICAgIDwvRGlhbG9nQWN0aW9ucz5cclxuICAgICAgICA8L0RpYWxvZz5cclxuICAgIClcclxufVxyXG5leHBvcnQgZGVmYXVsdCBEaWFsb2dDaGVja2luXHJcbiJdLCJuYW1lcyI6WyJSZWFjdCIsImNyZWF0ZUNvbnRleHQiLCJ1c2VDb250ZXh0IiwidXNlRWZmZWN0IiwidXNlU3RhdGUiLCJEaWFsb2ciLCJCdXR0b24iLCJBdmF0YXIiLCJCb3giLCJDYXJkIiwiQ2FyZENvbnRlbnQiLCJDYXJkSGVhZGVyIiwiRGl2aWRlciIsIkdyaWQiLCJJY29uQnV0dG9uIiwiU3RhY2siLCJUYWIiLCJUYWJzIiwiVHlwb2dyYXBoeSIsIkRpYWxvZ0NvbnRlbnQiLCJUYWJsZUNvbnRhaW5lciIsIlBhcGVyIiwiVGFibGUiLCJUYWJsZUhlYWQiLCJUYWJsZUJvZHkiLCJUYWJsZVJvdyIsIlRhYmxlQ2VsbCIsIklucHV0QmFzZSIsIkRpYWxvZ1RpdGxlIiwiRGlhbG9nQWN0aW9ucyIsIm1vbWVudCIsIkFQSV9DSEVDS19JTk9VVCIsIkFQSV9HRVRfTVFTQV9PRl9MQVlPVVQiLCJBUElfR0VUX09CSkVDVCIsIkFQSV9HRVRfT0JKRUNUX0JZX0NPREUiLCJBUElfR0VUX09CSkVDVF9JTkZPIiwidXNlRGlzcGF0Y2giLCJ1c2VTZWxlY3RvciIsIkNhcmRQb3NpdGlvbiIsIkNhcmRFbXAiLCJUaW1lbGluZSIsIlRpbWVsaW5lSXRlbSIsIlRpbWVsaW5lU2VwYXJhdG9yIiwiVGltZWxpbmVDb25uZWN0b3IiLCJUaW1lbGluZUNvbnRlbnQiLCJUaW1lbGluZURvdCIsIkNoZWNrQ2lyY2xlSWNvbiIsIlRpbWVsaW5lT3Bwb3NpdGVDb250ZW50IiwiRGlhbG9nQ2hlY2tpbiIsInByb3BzIiwib3BlbiIsImNsb3NlIiwiZGF0YSIsInNldERhdGEiLCJyZWZPYmoiLCJyZWZIZWFkZXJNYW5wb3dlciIsImJhY2tkcm9wIiwiZGlzcGF0Y2giLCJvYmplY3RTZWxlY3RlZCIsInN0YXRlIiwicmVkdWNlciIsImluaXQiLCJvYmplY3REZXRhaWwiLCJvYmpDb2RlIiwidHlwZSIsInBheWxvYWQiLCJoYW5kbGVDaGVja0luT3V0IiwiaW5wRW1wQ29kZSIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciIsInZhbHVlIiwiaW5wWU1EIiwiaW5wU2hpZnQiLCJpbnBUeXBlIiwiY2hlY2tpbiIsImNvbnNvbGUiLCJsb2ciLCJzdGF0dXMiLCJhbGVydCIsIm1zZyIsImhhbmRsZVRlc3QiLCJvbkNsb3NlIiwiZnVsbFdpZHRoIiwibWF4V2lkdGgiLCJjbGFzc05hbWUiLCJjb250YWluZXIiLCJzcGFjaW5nIiwiaXRlbSIsInhzIiwic20iLCJtZCIsImxnIiwiYnV0dG9uIiwic3R5bGUiLCJkaXNwbGF5IiwiaWQiLCJvbkNsaWNrIiwiZ2FwIiwiZXZlbnRDaGVja0luIiwidmFyaWFudCIsInRpdGxlIiwic3ViaGVhZGVyIiwicG9zaXRpb24iLCJvYmpMb2ciLCJsZW5ndGgiLCJtYXAiLCJ2TG9nIiwiaUxvZyIsInN4IiwibSIsImFsaWduIiwiY29sb3IiLCJja3R5cGUiLCJja2RhdGVUaW1lIiwiZm9ybWF0IiwiZW1wQ29kZSIsInB5IiwicHgiLCJjb21wb25lbnQiLCJlbXBOYW1lIiwicG9zaXQiLCJlbXBMb2ciXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7QUFBQSxPQUFPQSxTQUFTQyxhQUFhLEVBQUVDLFVBQVUsRUFBRUMsU0FBUyxFQUFFQyxRQUFRLFFBQVEsUUFBTztBQUM3RSxPQUFPQyxZQUFZLHVCQUFzQjtBQUN6QyxPQUFPQyxZQUFZLHVCQUFzQjtBQUN6QyxTQUFTQyxNQUFNLEVBQUVDLEdBQUcsRUFBRUMsSUFBSSxFQUFFQyxXQUFXLEVBQUVDLFVBQVUsRUFBRUMsT0FBTyxFQUFFQyxJQUFJLEVBQUVDLFVBQVUsRUFBRUMsS0FBSyxFQUFFQyxHQUFHLEVBQUVDLElBQUksRUFBRUMsVUFBVSxFQUFFQyxhQUFhLEVBQUVDLGNBQWMsRUFBRUMsS0FBSyxFQUFFQyxLQUFLLEVBQUVDLFNBQVMsRUFBRUMsU0FBUyxFQUFFQyxRQUFRLEVBQUVDLFNBQVMsRUFBRUMsU0FBUyxFQUFFQyxXQUFXLEVBQUVDLGFBQWEsUUFBUSxnQkFBZTtBQUNsUSxPQUFPQyxZQUFZLGdCQUFlO0FBQ2xDLFNBQVNDLGVBQWUsRUFBRUMsc0JBQXNCLEVBQUVDLGNBQWMsRUFBRUMsc0JBQXNCLEVBQUVDLG1CQUFtQixRQUFRLGFBQVk7QUFDakksU0FBU0MsV0FBVyxFQUFFQyxXQUFXLFFBQVEsY0FBYTtBQUN0RCxPQUFPQyxrQkFBa0IseUJBQXdCO0FBQ2pELE9BQU9DLGFBQWEsb0JBQW1CO0FBQ3ZDLE9BQU9DLGNBQWMsb0JBQW9CO0FBQ3pDLE9BQU9DLGtCQUFrQix3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

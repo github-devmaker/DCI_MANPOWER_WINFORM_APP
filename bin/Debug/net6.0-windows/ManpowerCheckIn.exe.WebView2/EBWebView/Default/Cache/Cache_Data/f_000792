@@ -1,0 +1,223 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/pages/manpower.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"]; const _Fragment = __vite__cjsImport1_react_jsxDevRuntime["Fragment"];
+var _s = $RefreshSig$();
+import { Button } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import __vite__cjsImport3_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react;
+import __vite__cjsImport4_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const useEffect = __vite__cjsImport4_react["useEffect"];
+import __vite__cjsImport5_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const useState = __vite__cjsImport5_react["useState"];
+import { API_GET_LAYOUT } from "/dcimanpower/src/Service.js";
+import DialogCheckin from "/dcimanpower/src/components/DialogCheckin.jsx?t=1708404536671";
+function Manpower() {
+    _s();
+    const [openCheckIn, setopenCheckIn] = useState(false);
+    const [layout, setLayout] = useState([]);
+    const [eqpIdTemp, setEqpIdTemp] = useState('1');
+    useEffect(()=>{
+        init();
+    }, []);
+    const init = async ()=>{
+        const setSvg = await intialData();
+        if (setSvg) {
+            const drag = await initialDraggle();
+        }
+    };
+    const intialData = async ()=>{
+        const resLayouts = await API_GET_LAYOUT();
+        if (layout == '') {
+            setLayout(resLayouts[0]);
+        }
+    };
+    function setEvent(evt) {
+        var svg = evt.target;
+        svg.addEventListener('click', dbClick);
+    }
+    function dbClick(evt) {
+        let id = evt.target.getAttribute("id");
+        setEqpIdTemp(id);
+    }
+    useEffect(()=>{
+        setopenCheckIn(true);
+    }, [
+        eqpIdTemp
+    ]);
+    const initialDraggle = async ()=>{
+        const svgLayout = document.querySelector('#svgContent');
+        svgLayout.addEventListener('load', setEvent);
+        const svgs = document.querySelectorAll('svg#svgContent svg');
+        svgs.forEach((element)=>{
+            element.addEventListener('click', dbClick);
+        });
+    };
+    function AlertEqpId() {
+        alert(eqpIdTemp);
+    }
+    return /*#__PURE__*/ _jsxDEV(_Fragment, {
+        children: [
+            /*#__PURE__*/ _jsxDEV("div", {
+                children: [
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "hidden",
+                        id: "divObjCode",
+                        children: eqpIdTemp
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 53,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV("input", {
+                        type: "hidden",
+                        id: "inpObjCode",
+                        value: eqpIdTemp
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 54,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(Button, {
+                        id: "btnEvent",
+                        className: "hidden bg-green-500 text-white",
+                        onClick: ()=>AlertEqpId(),
+                        children: "ALERT"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 55,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(Button, {
+                        id: "btnHideEvent",
+                        className: "hidden bg-green-500 text-white",
+                        onClick: ()=>AlertEqpId(),
+                        children: "ALERT"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 56,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                lineNumber: 52,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV("div", {
+                className: "h-[100%] flex flex-col select-none",
+                children: [
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "h-[50px] flex justify-between items-center px-[14px] shadow-lg",
+                        children: [
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "text-[#03a9f4] text-[3vh] flex-1",
+                                children: "MAN POWER "
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                                lineNumber: 60,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "text-black text-[3vh] flex-2",
+                                children: "FINAL FACTORY1 - FINAL12"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                                lineNumber: 61,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("div", {
+                                className: "text-black flex-1 shadow-t"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                                lineNumber: 62,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 59,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "h-full py-6 pl-0 pr-6 w-full flex items-center gap-8",
+                        children: /*#__PURE__*/ _jsxDEV("div", {
+                            className: "py-3 bg-white w-[100%] h-fit",
+                            children: /*#__PURE__*/ _jsxDEV("div", {
+                                children: /*#__PURE__*/ _jsxDEV("svg", {
+                                    id: "svgContent",
+                                    viewBox: `0 0 1200 600`,
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    preserveAspectRatio: "xMidYMid meet"
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                                    lineNumber: 68,
+                                    columnNumber: 29
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                                lineNumber: 67,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                            lineNumber: 66,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 65,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV("div", {
+                        className: "h-[35px] flex justify-between items-center px-[14px] shadow-lg border-t-[1px]",
+                        children: /*#__PURE__*/ _jsxDEV("div", {
+                            children: "พนักงานทั้งหมด : 14 คน"
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                            lineNumber: 74,
+                            columnNumber: 21
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 73,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(DialogCheckin, {
+                        open: openCheckIn,
+                        close: setopenCheckIn
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                        lineNumber: 76,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx",
+                lineNumber: 58,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true);
+}
+_s(Manpower, "NtHM/+Nv8PO9ETCTprAc5elzeZk=");
+_c = Manpower;
+export default Manpower;
+var _c;
+$RefreshReg$(_c, "Manpower");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/pages/manpower.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1hbnBvd2VyLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBCdXR0b24gfSBmcm9tICdAbXVpL21hdGVyaWFsJ1xyXG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnXHJcbmltcG9ydCB7IHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0JztcclxuaW1wb3J0IHsgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCc7XHJcbmltcG9ydCB7IEFQSV9HRVRfTEFZT1VUIH0gZnJvbSAnLi4vU2VydmljZSc7XHJcbmltcG9ydCBEaWFsb2dDaGVja2luIGZyb20gJy4uL2NvbXBvbmVudHMvRGlhbG9nQ2hlY2tpbic7XHJcbmZ1bmN0aW9uIE1hbnBvd2VyKCkge1xyXG4gICAgY29uc3QgW29wZW5DaGVja0luLCBzZXRvcGVuQ2hlY2tJbl0gPSB1c2VTdGF0ZShmYWxzZSk7XHJcbiAgICBjb25zdCBbbGF5b3V0LCBzZXRMYXlvdXRdID0gdXNlU3RhdGUoW10pO1xyXG4gICAgY29uc3QgW2VxcElkVGVtcCwgc2V0RXFwSWRUZW1wXSA9IHVzZVN0YXRlKCcxJyk7XHJcbiAgICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgICAgIGluaXQoKTtcclxuICAgIH0sIFtdKTtcclxuXHJcbiAgICBjb25zdCBpbml0ID0gYXN5bmMgKCkgPT4ge1xyXG4gICAgICAgIGNvbnN0IHNldFN2ZyA9IGF3YWl0IGludGlhbERhdGEoKTtcclxuICAgICAgICBpZiAoc2V0U3ZnKSB7XHJcbiAgICAgICAgICAgIGNvbnN0IGRyYWcgPSBhd2FpdCBpbml0aWFsRHJhZ2dsZSgpO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIGNvbnN0IGludGlhbERhdGEgPSBhc3luYyAoKSA9PiB7XHJcbiAgICAgICAgY29uc3QgcmVzTGF5b3V0cyA9IGF3YWl0IEFQSV9HRVRfTEFZT1VUKCk7XHJcbiAgICAgICAgaWYgKGxheW91dCA9PSAnJykge1xyXG4gICAgICAgICAgICBzZXRMYXlvdXQocmVzTGF5b3V0c1swXSlcclxuICAgICAgICB9XHJcbiAgICB9XHJcbiAgICBmdW5jdGlvbiBzZXRFdmVudChldnQpIHtcclxuICAgICAgICB2YXIgc3ZnID0gZXZ0LnRhcmdldDtcclxuICAgICAgICBzdmcuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBkYkNsaWNrKVxyXG4gICAgfVxyXG4gICAgZnVuY3Rpb24gZGJDbGljayhldnQpIHtcclxuICAgICAgICBsZXQgaWQgPSBldnQudGFyZ2V0LmdldEF0dHJpYnV0ZShcImlkXCIpO1xyXG4gICAgICAgIHNldEVxcElkVGVtcChpZCk7XHJcbiAgICB9XHJcbiAgICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgICAgIHNldG9wZW5DaGVja0luKHRydWUpO1xyXG4gICAgfSwgW2VxcElkVGVtcF0pXHJcbiAgICBjb25zdCBpbml0aWFsRHJhZ2dsZSA9IGFzeW5jICgpID0+IHtcclxuICAgICAgICBjb25zdCBzdmdMYXlvdXQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcjc3ZnQ29udGVudCcpO1xyXG4gICAgICAgIHN2Z0xheW91dC5hZGRFdmVudExpc3RlbmVyKCdsb2FkJywgc2V0RXZlbnQpO1xyXG4gICAgICAgIGNvbnN0IHN2Z3MgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCdzdmcjc3ZnQ29udGVudCBzdmcnKTtcclxuICAgICAgICBzdmdzLmZvckVhY2goZWxlbWVudCA9PiB7XHJcbiAgICAgICAgICAgIGVsZW1lbnQuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCBkYkNsaWNrKVxyXG4gICAgICAgIH0pO1xyXG4gICAgfVxyXG5cclxuICAgIGZ1bmN0aW9uIEFsZXJ0RXFwSWQoKSB7XHJcbiAgICAgICAgYWxlcnQoZXFwSWRUZW1wKVxyXG4gICAgfVxyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8PlxyXG4gICAgICAgICAgICA8ZGl2PiAgIFxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2hpZGRlbicgaWQ9J2Rpdk9iakNvZGUnPntlcXBJZFRlbXB9PC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0naGlkZGVuJyBpZD0naW5wT2JqQ29kZScgdmFsdWU9e2VxcElkVGVtcH0+PC9pbnB1dD5cclxuICAgICAgICAgICAgICAgIDxCdXR0b24gaWQ9J2J0bkV2ZW50JyBjbGFzc05hbWU9J2hpZGRlbiBiZy1ncmVlbi01MDAgdGV4dC13aGl0ZScgb25DbGljaz17KCkgPT4gQWxlcnRFcXBJZCgpfT5BTEVSVDwvQnV0dG9uPlxyXG4gICAgICAgICAgICAgICAgPEJ1dHRvbiBpZD0nYnRuSGlkZUV2ZW50JyBjbGFzc05hbWU9J2hpZGRlbiBiZy1ncmVlbi01MDAgdGV4dC13aGl0ZScgb25DbGljaz17KCkgPT4gQWxlcnRFcXBJZCgpfT5BTEVSVDwvQnV0dG9uPlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2gtWzEwMCVdIGZsZXggZmxleC1jb2wgc2VsZWN0LW5vbmUnPlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2gtWzUwcHhdIGZsZXgganVzdGlmeS1iZXR3ZWVuIGl0ZW1zLWNlbnRlciBweC1bMTRweF0gc2hhZG93LWxnJz5cclxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ndGV4dC1bIzAzYTlmNF0gdGV4dC1bM3ZoXSBmbGV4LTEnPk1BTiBQT1dFUiA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ndGV4dC1ibGFjayB0ZXh0LVszdmhdIGZsZXgtMic+RklOQUwgRkFDVE9SWTEgLSBGSU5BTDEyPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J3RleHQtYmxhY2sgZmxleC0xIHNoYWRvdy10Jz5cclxuICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9J2gtZnVsbCBweS02IHBsLTAgcHItNiB3LWZ1bGwgZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTgnPlxyXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdweS0zIGJnLXdoaXRlIHctWzEwMCVdIGgtZml0JyAgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8ZGl2PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHN2ZyBpZD0nc3ZnQ29udGVudCcgdmlld0JveD17YDAgMCAxMjAwIDYwMGB9IHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmdcIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPVwieE1pZFlNaWQgbWVldFwiICA+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8L3N2Zz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdoLVszNXB4XSBmbGV4IGp1c3RpZnktYmV0d2VlbiBpdGVtcy1jZW50ZXIgcHgtWzE0cHhdIHNoYWRvdy1sZyBib3JkZXItdC1bMXB4XSc+XHJcbiAgICAgICAgICAgICAgICAgICAgPGRpdj7guJ7guJnguLHguIHguIfguLLguJnguJfguLHguYnguIfguKvguKHguJQgOiAxNCDguITguJk8L2Rpdj5cclxuICAgICAgICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgICAgICAgICAgPERpYWxvZ0NoZWNraW4gb3Blbj17b3BlbkNoZWNrSW59IGNsb3NlPXtzZXRvcGVuQ2hlY2tJbn0gLz5cclxuICAgICAgICAgICAgPC9kaXYgPlxyXG4gICAgICAgIDwvPlxyXG4gICAgKVxyXG59XHJcbmV4cG9ydCBkZWZhdWx0IE1hbnBvd2VyIl0sIm5hbWVzIjpbIkJ1dHRvbiIsIlJlYWN0IiwidXNlRWZmZWN0IiwidXNlU3RhdGUiLCJBUElfR0VUX0xBWU9VVCIsIkRpYWxvZ0NoZWNraW4iLCJNYW5wb3dlciIsIm9wZW5DaGVja0luIiwic2V0b3BlbkNoZWNrSW4iLCJsYXlvdXQiLCJzZXRMYXlvdXQiLCJlcXBJZFRlbXAiLCJzZXRFcXBJZFRlbXAiLCJpbml0Iiwic2V0U3ZnIiwiaW50aWFsRGF0YSIsImRyYWciLCJpbml0aWFsRHJhZ2dsZSIsInJlc0xheW91dHMiLCJzZXRFdmVudCIsImV2dCIsInN2ZyIsInRhcmdldCIsImFkZEV2ZW50TGlzdGVuZXIiLCJkYkNsaWNrIiwiaWQiLCJnZXRBdHRyaWJ1dGUiLCJzdmdMYXlvdXQiLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJzdmdzIiwicXVlcnlTZWxlY3RvckFsbCIsImZvckVhY2giLCJlbGVtZW50IiwiQWxlcnRFcXBJZCIsImFsZXJ0IiwiZGl2IiwiY2xhc3NOYW1lIiwiaW5wdXQiLCJ0eXBlIiwidmFsdWUiLCJvbkNsaWNrIiwidmlld0JveCIsInhtbG5zIiwicHJlc2VydmVBc3BlY3RSYXRpbyIsIm9wZW4iLCJjbG9zZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFBLFNBQVNBLE1BQU0sUUFBUSxnQkFBZTtBQUN0QyxPQUFPQyxXQUFXLFFBQU87QUFDekIsU0FBU0MsU0FBUyxRQUFRLFFBQVE7QUFDbEMsU0FBU0MsUUFBUSxRQUFRLFFBQVE7QUFDakMsU0FBU0MsY0FBYyxRQUFRLGFBQWE7QUFDNUMsT0FBT0MsbUJBQW1CLDhCQUE4QjtBQUN4RCxTQUFTQzs7SUFDTCxNQUFNLENBQUNDLGFBQWFDLGVBQWUsR0FBR0wsU0FBUztJQUMvQyxNQUFNLENBQUNNLFFBQVFDLFVBQVUsR0FBR1AsU0FBUyxFQUFFO0lBQ3ZDLE1BQU0sQ0FBQ1EsV0FBV0MsYUFBYSxHQUFHVCxTQUFTO0lBQzNDRCxVQUFVO1FBQ05XO0lBQ0osR0FBRyxFQUFFO0lBRUwsTUFBTUEsT0FBTztRQUNULE1BQU1DLFNBQVMsTUFBTUM7UUFDckIsSUFBSUQsUUFBUTtZQUNSLE1BQU1FLE9BQU8sTUFBTUM7UUFDdkI7SUFDSjtJQUNBLE1BQU1GLGFBQWE7UUFDZixNQUFNRyxhQUFhLE1BQU1kO1FBQ3pCLElBQUlLLFVBQVUsSUFBSTtZQUNkQyxVQUFVUSxVQUFVLENBQUMsRUFBRTtRQUMzQjtJQUNKO0lBQ0EsU0FBU0MsU0FBU0MsR0FBRztRQUNqQixJQUFJQyxNQUFNRCxJQUFJRSxNQUFNO1FBQ3BCRCxJQUFJRSxnQkFBZ0IsQ0FBQyxTQUFTQztJQUNsQztJQUNBLFNBQVNBLFFBQVFKLEdBQUc7UUFDaEIsSUFBSUssS0FBS0wsSUFBSUUsTUFBTSxDQUFDSSxZQUFZLENBQUM7UUFDakNkLGFBQWFhO0lBQ2pCO0lBQ0F2QixVQUFVO1FBQ05NLGVBQWU7SUFDbkIsR0FBRztRQUFDRztLQUFVO0lBQ2QsTUFBTU0saUJBQWlCO1FBQ25CLE1BQU1VLFlBQVlDLFNBQVNDLGFBQWEsQ0FBQztRQUN6Q0YsVUFBVUosZ0JBQWdCLENBQUMsUUFBUUo7UUFDbkMsTUFBTVcsT0FBT0YsU0FBU0csZ0JBQWdCLENBQUM7UUFDdkNELEtBQUtFLE9BQU8sQ0FBQ0MsQ0FBQUE7WUFDVEEsUUFBUVYsZ0JBQWdCLENBQUMsU0FBU0M7UUFDdEM7SUFDSjtJQUVBLFNBQVNVO1FBQ0xDLE1BQU14QjtJQUNWO0lBQ0EscUJBQ0k7OzBCQUNJLFFBQUN5Qjs7a0NBQ0csUUFBQ0E7d0JBQUlDLFdBQVU7d0JBQVNaLElBQUc7a0NBQWNkOzs7Ozs7a0NBQ3pDLFFBQUMyQjt3QkFBTUMsTUFBSzt3QkFBU2QsSUFBRzt3QkFBYWUsT0FBTzdCOzs7Ozs7a0NBQzVDLFFBQUNYO3dCQUFPeUIsSUFBRzt3QkFBV1ksV0FBVTt3QkFBaUNJLFNBQVMsSUFBTVA7a0NBQWM7Ozs7OztrQ0FDOUYsUUFBQ2xDO3dCQUFPeUIsSUFBRzt3QkFBZVksV0FBVTt3QkFBaUNJLFNBQVMsSUFBTVA7a0NBQWM7Ozs7Ozs7Ozs7OzswQkFFdEcsUUFBQ0U7Z0JBQUlDLFdBQVU7O2tDQUNYLFFBQUNEO3dCQUFJQyxXQUFVOzswQ0FDWCxRQUFDRDtnQ0FBSUMsV0FBVTswQ0FBbUM7Ozs7OzswQ0FDbEQsUUFBQ0Q7Z0NBQUlDLFdBQVU7MENBQStCOzs7Ozs7MENBQzlDLFFBQUNEO2dDQUFJQyxXQUFVOzs7Ozs7Ozs7Ozs7a0NBR25CLFFBQUNEO3dCQUFJQyxXQUFVO2tDQUNYLGNBQUEsUUFBQ0Q7NEJBQUlDLFdBQVU7c0NBQ1gsY0FBQSxRQUFDRDswQ0FDRyxjQUFBLFFBQUNmO29DQUFJSSxJQUFHO29DQUFhaUIsU0FBUyxDQUFDLFlBQVksQ0FBQztvQ0FBRUMsT0FBTTtvQ0FBNkJDLHFCQUFvQjs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O2tDQUtqSCxRQUFDUjt3QkFBSUMsV0FBVTtrQ0FDWCxjQUFBLFFBQUNEO3NDQUFJOzs7Ozs7Ozs7OztrQ0FFVCxRQUFDL0I7d0JBQWN3QyxNQUFNdEM7d0JBQWF1QyxPQUFPdEM7Ozs7Ozs7Ozs7Ozs7O0FBSXpEO0dBekVTRjtLQUFBQTtBQTBFVCxlQUFlQSxTQUFRIn0=

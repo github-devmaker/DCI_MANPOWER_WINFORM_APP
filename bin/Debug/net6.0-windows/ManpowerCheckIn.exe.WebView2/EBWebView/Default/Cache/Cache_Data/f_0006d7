@@ -1,0 +1,252 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/DialogAddMaster.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport2_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport2_react.__esModule ? __vite__cjsImport2_react.default : __vite__cjsImport2_react; const useEffect = __vite__cjsImport2_react["useEffect"];
+import Dialog from "/dcimanpower/node_modules/.vite/deps/@mui_material_Dialog.js?v=68d587f7";
+import DialogTitle from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogTitle.js?v=68d587f7";
+import DialogContent from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogContent.js?v=68d587f7";
+import DialogContentText from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogContentText.js?v=68d587f7";
+import DialogActions from "/dcimanpower/node_modules/.vite/deps/@mui_material_DialogActions.js?v=68d587f7";
+import { Button, IconButton, Stack, TextField, Typography } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import { API_ADD_MASTER, API_GEN_MASTERID } from "/dcimanpower/src/Service.js";
+import __vite__cjsImport10_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const useState = __vite__cjsImport10_react["useState"];
+import __vite__cjsImport11__mui_iconsMaterial_Close from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_Close.js?v=68d587f7"; const CloseIcon = __vite__cjsImport11__mui_iconsMaterial_Close.__esModule ? __vite__cjsImport11__mui_iconsMaterial_Close.default : __vite__cjsImport11__mui_iconsMaterial_Close;
+import __vite__cjsImport12__mui_iconsMaterial_Save from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_Save.js?v=68d587f7"; const SaveIcon = __vite__cjsImport12__mui_iconsMaterial_Save.__esModule ? __vite__cjsImport12__mui_iconsMaterial_Save.default : __vite__cjsImport12__mui_iconsMaterial_Save;
+import { LoadingButton } from "/dcimanpower/node_modules/.vite/deps/@mui_lab.js?v=68d587f7";
+function DialogAddMaster(props) {
+    _s();
+    const { open, close, snackbar } = props;
+    const [masterId, setMasterId] = useState();
+    const [loading, setLoading] = useState(false);
+    const [master, setMaster] = useState({
+        "objMasterId": "",
+        "mstName": "",
+        "objSvg": "",
+        "mstStatus": "ACTIVE"
+    });
+    useEffect(()=>{
+        if (open) {
+            getMasterId();
+        }
+    }, [
+        open
+    ]);
+    async function getMasterId() {
+        const res = await API_GEN_MASTERID();
+        setMaster({
+            ...master,
+            objMasterId: typeof res.docNbr != 'undefined' ? res.docNbr : ''
+        });
+    }
+    async function handleAddMaster() {
+        setLoading(true);
+        snackbar({
+            vertical: 'top',
+            horizontal: 'right'
+        });
+        const res = await API_ADD_MASTER(master);
+        if (res.status == "1") {
+            const nbr = await getMasterId();
+            setLoading(false);
+        } else {
+            alert('ไม่สามารถเพิ่ม Master ได้ !');
+        }
+    }
+    return /*#__PURE__*/ _jsxDEV(Dialog, {
+        open: open,
+        onClose: ()=>close(false),
+        fullWidth: true,
+        maxWidth: 'sm',
+        children: [
+            /*#__PURE__*/ _jsxDEV(DialogTitle, {
+                className: "px-6 pt-4 pb-3",
+                id: "customized-dialog-title",
+                children: "Add Master"
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                lineNumber: 47,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(IconButton, {
+                "aria-label": "close",
+                onClick: ()=>close(false),
+                sx: {
+                    position: 'absolute',
+                    right: 8,
+                    top: 8,
+                    color: (theme)=>theme.palette.grey[500]
+                },
+                children: /*#__PURE__*/ _jsxDEV(CloseIcon, {}, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                    lineNumber: 60,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                lineNumber: 50,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogContent, {
+                dividers: true,
+                children: [
+                    /*#__PURE__*/ _jsxDEV(Stack, {
+                        children: [
+                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                variant: "h5",
+                                component: "div",
+                                children: "Master"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                                lineNumber: 64,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                color: "text.secondary",
+                                children: "กรุณากรอกข้อมูล Master ที่ต้องการ"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                                lineNumber: 65,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                        lineNumber: 63,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(Stack, {
+                        mt: 3,
+                        mb: 2,
+                        gap: 2,
+                        children: [
+                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                variant: "filled",
+                                required: true,
+                                label: "Master ID",
+                                value: master?.objMasterId
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                                lineNumber: 70,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV(TextField, {
+                                required: true,
+                                label: "Master Name",
+                                placeholder: "กรุณากรอก Master Name ",
+                                value: master?.mstName,
+                                onChange: (e)=>setMaster({
+                                        ...master,
+                                        mstName: e.target.value
+                                    })
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                                lineNumber: 76,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                        lineNumber: 69,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(Stack, {
+                        children: [
+                            /*#__PURE__*/ _jsxDEV(Typography, {
+                                color: "text.secondary",
+                                children: "SVG Code"
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                                lineNumber: 85,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ _jsxDEV("textarea", {
+                                rows: 5,
+                                className: "w-full rounded-lg p-3 mb-3",
+                                style: {
+                                    border: '1px solid #ddd'
+                                },
+                                placeholder: "กรุณาใส่โค้ด SVG ที่ช่องนี้",
+                                value: master?.objSvg,
+                                onChange: (e)=>setMaster({
+                                        ...master,
+                                        objSvg: e.target.value
+                                    })
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                                lineNumber: 88,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                        lineNumber: 84,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                lineNumber: 62,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(DialogActions, {
+                children: [
+                    /*#__PURE__*/ _jsxDEV(Button, {
+                        onClick: ()=>close(false),
+                        children: "ปิดหน้าต่าง"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                        lineNumber: 92,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ _jsxDEV(LoadingButton, {
+                        className: "min-w-[6rem]",
+                        loading: loading ? true : false,
+                        loadingPosition: "start",
+                        startIcon: /*#__PURE__*/ _jsxDEV(SaveIcon, {}, void 0, false, void 0, void 0),
+                        onClick: ()=>handleAddMaster(),
+                        variant: "contained",
+                        children: "เพิ่ม"
+                    }, void 0, false, {
+                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                        lineNumber: 93,
+                        columnNumber: 17
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+                lineNumber: 91,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx",
+        lineNumber: 46,
+        columnNumber: 9
+    }, this);
+}
+_s(DialogAddMaster, "QbdIYvP9W6Qws5+va2jzhM+hvb8=");
+_c = DialogAddMaster;
+export default DialogAddMaster;
+var _c;
+$RefreshReg$(_c, "DialogAddMaster");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/DialogAddMaster.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkRpYWxvZ0FkZE1hc3Rlci5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgRGlhbG9nIGZyb20gJ0BtdWkvbWF0ZXJpYWwvRGlhbG9nJ1xyXG5pbXBvcnQgRGlhbG9nVGl0bGUgZnJvbSAnQG11aS9tYXRlcmlhbC9EaWFsb2dUaXRsZSdcclxuaW1wb3J0IERpYWxvZ0NvbnRlbnQgZnJvbSAnQG11aS9tYXRlcmlhbC9EaWFsb2dDb250ZW50J1xyXG5pbXBvcnQgRGlhbG9nQ29udGVudFRleHQgZnJvbSAnQG11aS9tYXRlcmlhbC9EaWFsb2dDb250ZW50VGV4dCdcclxuaW1wb3J0IERpYWxvZ0FjdGlvbnMgZnJvbSAnQG11aS9tYXRlcmlhbC9EaWFsb2dBY3Rpb25zJ1xyXG5pbXBvcnQgeyBCdXR0b24sIEljb25CdXR0b24sIFN0YWNrLCBUZXh0RmllbGQsIFR5cG9ncmFwaHkgfSBmcm9tICdAbXVpL21hdGVyaWFsJ1xyXG5pbXBvcnQgeyBBUElfQUREX01BU1RFUiwgQVBJX0dFTl9NQVNURVJJRCB9IGZyb20gJy4uL1NlcnZpY2UnXHJcbmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXHJcbmltcG9ydCBDbG9zZUljb24gZnJvbSAnQG11aS9pY29ucy1tYXRlcmlhbC9DbG9zZSc7XHJcbmltcG9ydCBTYXZlSWNvbiBmcm9tICdAbXVpL2ljb25zLW1hdGVyaWFsL1NhdmUnO1xyXG5pbXBvcnQgeyBMb2FkaW5nQnV0dG9uIH0gZnJvbSAnQG11aS9sYWInXHJcbmZ1bmN0aW9uIERpYWxvZ0FkZE1hc3Rlcihwcm9wcykge1xyXG4gICAgY29uc3QgeyBvcGVuLCBjbG9zZSwgc25hY2tiYXIgfSA9IHByb3BzO1xyXG4gICAgY29uc3QgW21hc3RlcklkLCBzZXRNYXN0ZXJJZF0gPSB1c2VTdGF0ZSgpO1xyXG4gICAgY29uc3QgW2xvYWRpbmcsIHNldExvYWRpbmddID0gdXNlU3RhdGUoZmFsc2UpO1xyXG4gICAgY29uc3QgW21hc3Rlciwgc2V0TWFzdGVyXSA9IHVzZVN0YXRlKHtcclxuICAgICAgICBcIm9iak1hc3RlcklkXCI6IFwiXCIsXHJcbiAgICAgICAgXCJtc3ROYW1lXCI6IFwiXCIsXHJcbiAgICAgICAgXCJvYmpTdmdcIjogXCJcIixcclxuICAgICAgICBcIm1zdFN0YXR1c1wiOiBcIkFDVElWRVwiXHJcbiAgICB9KVxyXG4gICAgdXNlRWZmZWN0KCgpID0+IHtcclxuICAgICAgICBpZiAob3Blbikge1xyXG4gICAgICAgICAgICBnZXRNYXN0ZXJJZCgpO1xyXG4gICAgICAgIH1cclxuICAgIH0sIFtvcGVuXSk7XHJcblxyXG4gICAgYXN5bmMgZnVuY3Rpb24gZ2V0TWFzdGVySWQoKSB7XHJcbiAgICAgICAgY29uc3QgcmVzID0gYXdhaXQgQVBJX0dFTl9NQVNURVJJRCgpO1xyXG4gICAgICAgIHNldE1hc3Rlcih7IC4uLm1hc3Rlciwgb2JqTWFzdGVySWQ6ICh0eXBlb2YgcmVzLmRvY05iciAhPSAndW5kZWZpbmVkJyA/IHJlcy5kb2NOYnIgOiAnJykgfSlcclxuICAgIH1cclxuXHJcbiAgICBhc3luYyBmdW5jdGlvbiBoYW5kbGVBZGRNYXN0ZXIoKSB7XHJcbiAgICAgICAgc2V0TG9hZGluZyh0cnVlKTtcclxuICAgICAgICBzbmFja2Jhcih7IHZlcnRpY2FsOiAndG9wJywgaG9yaXpvbnRhbDogJ3JpZ2h0JyB9KTtcclxuICAgICAgICBjb25zdCByZXMgPSBhd2FpdCBBUElfQUREX01BU1RFUihtYXN0ZXIpO1xyXG4gICAgICAgIGlmIChyZXMuc3RhdHVzID09IFwiMVwiKSB7XHJcbiAgICAgICAgICAgIGNvbnN0IG5iciA9IGF3YWl0IGdldE1hc3RlcklkKCk7XHJcbiAgICAgICAgICAgIHNldExvYWRpbmcoZmFsc2UpO1xyXG4gICAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgICAgIGFsZXJ0KCfguYTguKHguYjguKrguLLguKHguLLguKPguJbguYDguJ7guLTguYjguKEgTWFzdGVyIOC5hOC4lOC5iSAhJyk7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8RGlhbG9nIG9wZW49e29wZW59IG9uQ2xvc2U9eygpID0+IGNsb3NlKGZhbHNlKX0gZnVsbFdpZHRoIG1heFdpZHRoPXsnc20nfT5cclxuICAgICAgICAgICAgPERpYWxvZ1RpdGxlIGNsYXNzTmFtZT0ncHgtNiBwdC00IHBiLTMnIGlkPVwiY3VzdG9taXplZC1kaWFsb2ctdGl0bGVcIj5cclxuICAgICAgICAgICAgICAgIEFkZCBNYXN0ZXJcclxuICAgICAgICAgICAgPC9EaWFsb2dUaXRsZT5cclxuICAgICAgICAgICAgPEljb25CdXR0b25cclxuICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9XCJjbG9zZVwiXHJcbiAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiBjbG9zZShmYWxzZSl9XHJcbiAgICAgICAgICAgICAgICBzeD17e1xyXG4gICAgICAgICAgICAgICAgICAgIHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxyXG4gICAgICAgICAgICAgICAgICAgIHJpZ2h0OiA4LFxyXG4gICAgICAgICAgICAgICAgICAgIHRvcDogOCxcclxuICAgICAgICAgICAgICAgICAgICBjb2xvcjogKHRoZW1lKSA9PiB0aGVtZS5wYWxldHRlLmdyZXlbNTAwXSxcclxuICAgICAgICAgICAgICAgIH19XHJcbiAgICAgICAgICAgID5cclxuICAgICAgICAgICAgICAgIDxDbG9zZUljb24gLz5cclxuICAgICAgICAgICAgPC9JY29uQnV0dG9uPlxyXG4gICAgICAgICAgICA8RGlhbG9nQ29udGVudCBkaXZpZGVycz5cclxuICAgICAgICAgICAgICAgIDxTdGFjayA+XHJcbiAgICAgICAgICAgICAgICAgICAgPFR5cG9ncmFwaHkgdmFyaWFudD1cImg1XCIgY29tcG9uZW50PVwiZGl2XCI+TWFzdGVyPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgIDxUeXBvZ3JhcGh5IGNvbG9yPVwidGV4dC5zZWNvbmRhcnlcIj5cclxuICAgICAgICAgICAgICAgICAgICAgICAg4LiB4Lij4Li44LiT4Liy4LiB4Lij4Lit4LiB4LiC4LmJ4Lit4Lih4Li54LilIE1hc3RlciDguJfguLXguYjguJXguYnguK3guIfguIHguLLguKNcclxuICAgICAgICAgICAgICAgICAgICA8L1R5cG9ncmFwaHk+XHJcbiAgICAgICAgICAgICAgICA8L1N0YWNrPlxyXG4gICAgICAgICAgICAgICAgPFN0YWNrIG10PXszfSBtYj17Mn0gZ2FwPXsyfT5cclxuICAgICAgICAgICAgICAgICAgICA8VGV4dEZpZWxkXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhcmlhbnQ9J2ZpbGxlZCdcclxuICAgICAgICAgICAgICAgICAgICAgICAgcmVxdWlyZWRcclxuICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWw9XCJNYXN0ZXIgSURcIlxyXG4gICAgICAgICAgICAgICAgICAgICAgICB2YWx1ZT17bWFzdGVyPy5vYmpNYXN0ZXJJZH1cclxuICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDxUZXh0RmllbGRcclxuICAgICAgICAgICAgICAgICAgICAgICAgcmVxdWlyZWRcclxuICAgICAgICAgICAgICAgICAgICAgICAgbGFiZWw9XCJNYXN0ZXIgTmFtZVwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwi4LiB4Lij4Li44LiT4Liy4LiB4Lij4Lit4LiBIE1hc3RlciBOYW1lIFwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgIHZhbHVlPXttYXN0ZXI/Lm1zdE5hbWV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0TWFzdGVyKHsgLi4ubWFzdGVyLCBtc3ROYW1lOiBlLnRhcmdldC52YWx1ZSB9KX1cclxuICAgICAgICAgICAgICAgICAgICAvPlxyXG4gICAgICAgICAgICAgICAgPC9TdGFjaz5cclxuICAgICAgICAgICAgICAgIDxTdGFjaz5cclxuICAgICAgICAgICAgICAgICAgICA8VHlwb2dyYXBoeSBjb2xvcj1cInRleHQuc2Vjb25kYXJ5XCI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIFNWRyBDb2RlXHJcbiAgICAgICAgICAgICAgICAgICAgPC9UeXBvZ3JhcGh5PlxyXG4gICAgICAgICAgICAgICAgICAgIDx0ZXh0YXJlYSByb3dzPXs1fSBjbGFzc05hbWU9J3ctZnVsbCByb3VuZGVkLWxnIHAtMyBtYi0zJyBzdHlsZT17eyBib3JkZXI6ICcxcHggc29saWQgI2RkZCcgfX0gcGxhY2Vob2xkZXI9J+C4geC4o+C4uOC4k+C4suC5g+C4quC5iOC5guC4hOC5ieC4lCBTVkcg4LiX4Li14LmI4LiK4LmI4Lit4LiH4LiZ4Li14LmJJyB2YWx1ZT17bWFzdGVyPy5vYmpTdmd9IG9uQ2hhbmdlPXsoZSkgPT4gc2V0TWFzdGVyKHsgLi4ubWFzdGVyLCBvYmpTdmc6IGUudGFyZ2V0LnZhbHVlIH0pfSAvPlxyXG4gICAgICAgICAgICAgICAgPC9TdGFjaz5cclxuICAgICAgICAgICAgPC9EaWFsb2dDb250ZW50PlxyXG4gICAgICAgICAgICA8RGlhbG9nQWN0aW9ucz5cclxuICAgICAgICAgICAgICAgIDxCdXR0b24gb25DbGljaz17KCkgPT4gY2xvc2UoZmFsc2UpfSA+4Lib4Li04LiU4Lir4LiZ4LmJ4Liy4LiV4LmI4Liy4LiHPC9CdXR0b24+XHJcbiAgICAgICAgICAgICAgICA8TG9hZGluZ0J1dHRvbiBjbGFzc05hbWU9J21pbi13LVs2cmVtXScgbG9hZGluZz17bG9hZGluZyA/IHRydWUgOiBmYWxzZX0gbG9hZGluZ1Bvc2l0aW9uPSdzdGFydCcgc3RhcnRJY29uPXs8U2F2ZUljb24gLz59IG9uQ2xpY2s9eygpID0+IGhhbmRsZUFkZE1hc3RlcigpfSB2YXJpYW50PSdjb250YWluZWQnPuC5gOC4nuC4tOC5iOC4oTwvTG9hZGluZ0J1dHRvbj5cclxuICAgICAgICAgICAgPC9EaWFsb2dBY3Rpb25zPlxyXG4gICAgICAgIDwvRGlhbG9nPlxyXG4gICAgKVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBEaWFsb2dBZGRNYXN0ZXIiXSwibmFtZXMiOlsiUmVhY3QiLCJ1c2VFZmZlY3QiLCJEaWFsb2ciLCJEaWFsb2dUaXRsZSIsIkRpYWxvZ0NvbnRlbnQiLCJEaWFsb2dDb250ZW50VGV4dCIsIkRpYWxvZ0FjdGlvbnMiLCJCdXR0b24iLCJJY29uQnV0dG9uIiwiU3RhY2siLCJUZXh0RmllbGQiLCJUeXBvZ3JhcGh5IiwiQVBJX0FERF9NQVNURVIiLCJBUElfR0VOX01BU1RFUklEIiwidXNlU3RhdGUiLCJDbG9zZUljb24iLCJTYXZlSWNvbiIsIkxvYWRpbmdCdXR0b24iLCJEaWFsb2dBZGRNYXN0ZXIiLCJwcm9wcyIsIm9wZW4iLCJjbG9zZSIsInNuYWNrYmFyIiwibWFzdGVySWQiLCJzZXRNYXN0ZXJJZCIsImxvYWRpbmciLCJzZXRMb2FkaW5nIiwibWFzdGVyIiwic2V0TWFzdGVyIiwiZ2V0TWFzdGVySWQiLCJyZXMiLCJvYmpNYXN0ZXJJZCIsImRvY05iciIsImhhbmRsZUFkZE1hc3RlciIsInZlcnRpY2FsIiwiaG9yaXpvbnRhbCIsInN0YXR1cyIsIm5iciIsImFsZXJ0Iiwib25DbG9zZSIsImZ1bGxXaWR0aCIsIm1heFdpZHRoIiwiY2xhc3NOYW1lIiwiaWQiLCJhcmlhLWxhYmVsIiwib25DbGljayIsInN4IiwicG9zaXRpb24iLCJyaWdodCIsInRvcCIsImNvbG9yIiwidGhlbWUiLCJwYWxldHRlIiwiZ3JleSIsImRpdmlkZXJzIiwidmFyaWFudCIsImNvbXBvbmVudCIsIm10IiwibWIiLCJnYXAiLCJyZXF1aXJlZCIsImxhYmVsIiwidmFsdWUiLCJwbGFjZWhvbGRlciIsIm1zdE5hbWUiLCJvbkNoYW5nZSIsImUiLCJ0YXJnZXQiLCJ0ZXh0YXJlYSIsInJvd3MiLCJzdHlsZSIsImJvcmRlciIsIm9ialN2ZyIsImxvYWRpbmdQb3NpdGlvbiIsInN0YXJ0SWNvbiJd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

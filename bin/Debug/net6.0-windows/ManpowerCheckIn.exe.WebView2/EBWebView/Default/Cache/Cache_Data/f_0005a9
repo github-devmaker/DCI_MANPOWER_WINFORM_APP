@@ -1,0 +1,286 @@
+import { createHotContext as __vite__createHotContext } from "/dcimanpower/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/CheckIN/CardEmp.jsx");import * as RefreshRuntime from "/dcimanpower/@react-refresh";
+
+if (!window.$RefreshReg$) throw new Error("React refresh preamble was not loaded. Something is wrong.");
+const prevRefreshReg = window.$RefreshReg$;
+const prevRefreshSig = window.$RefreshSig$;
+window.$RefreshReg$ = RefreshRuntime.getRefreshReg("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx");
+window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+
+import __vite__cjsImport1_react_jsxDevRuntime from "/dcimanpower/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=68d587f7"; const _jsxDEV = __vite__cjsImport1_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport2_react from "/dcimanpower/node_modules/.vite/deps/react.js?v=68d587f7"; const React = __vite__cjsImport2_react.__esModule ? __vite__cjsImport2_react.default : __vite__cjsImport2_react; const useEffect = __vite__cjsImport2_react["useEffect"];
+import { Card, CardHeader, Avatar, IconButton, CardContent, Typography, Divider, Grid, Stack, Button, Table, TableBody, TableRow, TableCell, styled, Badge } from "/dcimanpower/node_modules/.vite/deps/@mui_material.js?v=68d587f7";
+import CardEmpMQ from "/dcimanpower/src/components/CheckIN/CardEmpMQ.jsx";
+import __vite__cjsImport5__mui_iconsMaterial_CheckCircle from "/dcimanpower/node_modules/.vite/deps/@mui_icons-material_CheckCircle.js?v=68d587f7"; const CheckCircleIcon = __vite__cjsImport5__mui_iconsMaterial_CheckCircle.__esModule ? __vite__cjsImport5__mui_iconsMaterial_CheckCircle.default : __vite__cjsImport5__mui_iconsMaterial_CheckCircle;
+import CardEmpSA from "/dcimanpower/src/components/CheckIN/CardEmpSA.jsx";
+const StyledBadge = styled(Badge)(({ theme })=>({
+        '& .MuiBadge-badge': {
+            backgroundColor: '#44b700',
+            color: '#44b700',
+            boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
+            '&::after': {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                borderRadius: '50%',
+                animation: 'ripple 1.2s infinite ease-in-out',
+                border: '1px solid currentColor',
+                content: '""'
+            }
+        },
+        '@keyframes ripple': {
+            '0%': {
+                transform: 'scale(.8)',
+                opacity: 1
+            },
+            '100%': {
+                transform: 'scale(2.4)',
+                opacity: 0
+            }
+        }
+    }));
+_c = StyledBadge;
+function CardEmp(props) {
+    _s();
+    const { data, eventCheckIn, refInpEmpCode } = props;
+    const RowContent = (props)=>{
+        return /*#__PURE__*/ _jsxDEV(Stack, {
+            children: [
+                /*#__PURE__*/ _jsxDEV(Typography, {
+                    className: "text-[14px] font-sans",
+                    children: props.title
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                    lineNumber: 38,
+                    columnNumber: 13
+                }, this),
+                /*#__PURE__*/ _jsxDEV(Typography, {
+                    className: `pl-3 font-semibold text-[21px] font-sans `,
+                    children: props.value != '' ? props.value : '-'
+                }, void 0, false, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                    lineNumber: 39,
+                    columnNumber: 13
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+            lineNumber: 37,
+            columnNumber: 16
+        }, this);
+    };
+    useEffect(()=>{
+        console.log(refInpEmpCode);
+    }, []);
+    return /*#__PURE__*/ _jsxDEV(Card, {
+        variant: "outlined",
+        className: "min-h-[200px]",
+        children: [
+            /*#__PURE__*/ _jsxDEV(CardHeader, {
+                title: "ข้อมูลพนักงาน",
+                className: "px-3 py-2 pb-1 text-center"
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                lineNumber: 47,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(Divider, {}, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                lineNumber: 48,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ _jsxDEV(CardContent, {
+                className: "min-h-[200px]",
+                children: /*#__PURE__*/ _jsxDEV(Grid, {
+                    container: true,
+                    spacing: 3,
+                    children: [
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 6,
+                            className: "flex justify-center flex-col items-center gap-2 h-[165px]",
+                            children: [
+                                /*#__PURE__*/ _jsxDEV(StyledBadge, {
+                                    overlap: "circular",
+                                    anchorOrigin: {
+                                        vertical: 'bottom',
+                                        horizontal: 'right'
+                                    },
+                                    variant: "dot",
+                                    children: /*#__PURE__*/ _jsxDEV(Avatar, {
+                                        "aria-label": "recipe",
+                                        src: data?.empImage,
+                                        sx: {
+                                            width: 128,
+                                            height: 128
+                                        },
+                                        style: {
+                                            border: '1px solid #CCCCCC'
+                                        }
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                        lineNumber: 57,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                    lineNumber: 52,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ _jsxDEV("span", {
+                                    children: data?.empCode
+                                }, void 0, false, {
+                                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                    lineNumber: 60,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                            lineNumber: 51,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 6,
+                            children: /*#__PURE__*/ _jsxDEV("div", {
+                                className: "flex  flex-col  justify-center",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV(RowContent, {
+                                        title: "ชื่อ ",
+                                        value: data?.empName
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                        lineNumber: 66,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(RowContent, {
+                                        title: "ตำแหน่ง ",
+                                        value: data?.empPosit
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                        lineNumber: 67,
+                                        columnNumber: 29
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV(RowContent, {
+                                        title: "อายุงาน ",
+                                        value: `${data?.empWorkYear} ปี ${Math.floor((data?.empWorkDay - data?.empWorkYear * 365) / 31) > 0 ? Math.floor((data?.empWorkDay - data?.empWorkYear * 365) / 31) + ' เดือน' : ''} `
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                        lineNumber: 68,
+                                        columnNumber: 29
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                lineNumber: 65,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                            lineNumber: 64,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            children: /*#__PURE__*/ _jsxDEV("div", {
+                                onClick: eventCheckIn,
+                                className: "h-[100px] pb-2 cursor-pointer ring-2 ring-green-500 w-full rounded-xl bg-mp-check-in  flex items-center justify-center shadow-2xl gap-2",
+                                children: [
+                                    /*#__PURE__*/ _jsxDEV(CheckCircleIcon, {
+                                        className: "text-[3em]"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                        lineNumber: 73,
+                                        columnNumber: 33
+                                    }, this),
+                                    /*#__PURE__*/ _jsxDEV("span", {
+                                        className: "text-[3em] text-white",
+                                        children: "CHECK IN"
+                                    }, void 0, false, {
+                                        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                        lineNumber: 73,
+                                        columnNumber: 74
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                lineNumber: 72,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                            lineNumber: 71,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            children: /*#__PURE__*/ _jsxDEV(CardEmpMQ, {
+                                listMQ: data?.empMQ
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                lineNumber: 77,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                            lineNumber: 76,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ _jsxDEV(Grid, {
+                            item: true,
+                            xs: 12,
+                            children: /*#__PURE__*/ _jsxDEV(CardEmpSA, {
+                                listSA: data?.empSA
+                            }, void 0, false, {
+                                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                                lineNumber: 80,
+                                columnNumber: 25
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                            lineNumber: 79,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                    lineNumber: 50,
+                    columnNumber: 17
+                }, this)
+            }, void 0, false, {
+                fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+                lineNumber: 49,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx",
+        lineNumber: 46,
+        columnNumber: 9
+    }, this);
+}
+_s(CardEmp, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c1 = CardEmp;
+export default CardEmp;
+var _c, _c1;
+$RefreshReg$(_c, "StyledBadge");
+$RefreshReg$(_c1, "CardEmp");
+
+
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+  RefreshRuntime.registerExportsForReactRefresh("D:/git/DCI_MANPOWER_CHECKIN_APP/src/components/CheckIN/CardEmp.jsx", currentExports);
+  import.meta.hot.accept((nextExports) => {
+    if (!nextExports) return;
+    const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate(currentExports, nextExports);
+    if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+  });
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkNhcmRFbXAuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCwgeyB1c2VFZmZlY3QgfSBmcm9tICdyZWFjdCdcclxuaW1wb3J0IHsgQ2FyZCwgQ2FyZEhlYWRlciwgQXZhdGFyLCBJY29uQnV0dG9uLCBDYXJkQ29udGVudCwgVHlwb2dyYXBoeSwgRGl2aWRlciwgR3JpZCwgU3RhY2ssIEJ1dHRvbiwgVGFibGUsIFRhYmxlQm9keSwgVGFibGVSb3csIFRhYmxlQ2VsbCwgc3R5bGVkLCBCYWRnZSB9IGZyb20gJ0BtdWkvbWF0ZXJpYWwnXHJcbmltcG9ydCBDYXJkRW1wTVEgZnJvbSAnLi9DYXJkRW1wTVEnO1xyXG5pbXBvcnQgQ2hlY2tDaXJjbGVJY29uIGZyb20gJ0BtdWkvaWNvbnMtbWF0ZXJpYWwvQ2hlY2tDaXJjbGUnO1xyXG5pbXBvcnQgQ2FyZEVtcFNBIGZyb20gJy4vQ2FyZEVtcFNBJztcclxuY29uc3QgU3R5bGVkQmFkZ2UgPSBzdHlsZWQoQmFkZ2UpKCh7IHRoZW1lIH0pID0+ICh7XHJcbiAgICAnJiAuTXVpQmFkZ2UtYmFkZ2UnOiB7XHJcbiAgICAgICAgYmFja2dyb3VuZENvbG9yOiAnIzQ0YjcwMCcsXHJcbiAgICAgICAgY29sb3I6ICcjNDRiNzAwJyxcclxuICAgICAgICBib3hTaGFkb3c6IGAwIDAgMCAycHggJHt0aGVtZS5wYWxldHRlLmJhY2tncm91bmQucGFwZXJ9YCxcclxuICAgICAgICAnJjo6YWZ0ZXInOiB7XHJcbiAgICAgICAgICAgIHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxyXG4gICAgICAgICAgICB0b3A6IDAsXHJcbiAgICAgICAgICAgIGxlZnQ6IDAsXHJcbiAgICAgICAgICAgIHdpZHRoOiAnMTAwJScsXHJcbiAgICAgICAgICAgIGhlaWdodDogJzEwMCUnLFxyXG4gICAgICAgICAgICBib3JkZXJSYWRpdXM6ICc1MCUnLFxyXG4gICAgICAgICAgICBhbmltYXRpb246ICdyaXBwbGUgMS4ycyBpbmZpbml0ZSBlYXNlLWluLW91dCcsXHJcbiAgICAgICAgICAgIGJvcmRlcjogJzFweCBzb2xpZCBjdXJyZW50Q29sb3InLFxyXG4gICAgICAgICAgICBjb250ZW50OiAnXCJcIicsXHJcbiAgICAgICAgfSxcclxuICAgIH0sXHJcbiAgICAnQGtleWZyYW1lcyByaXBwbGUnOiB7XHJcbiAgICAgICAgJzAlJzoge1xyXG4gICAgICAgICAgICB0cmFuc2Zvcm06ICdzY2FsZSguOCknLFxyXG4gICAgICAgICAgICBvcGFjaXR5OiAxLFxyXG4gICAgICAgIH0sXHJcbiAgICAgICAgJzEwMCUnOiB7XHJcbiAgICAgICAgICAgIHRyYW5zZm9ybTogJ3NjYWxlKDIuNCknLFxyXG4gICAgICAgICAgICBvcGFjaXR5OiAwLFxyXG4gICAgICAgIH0sXHJcbiAgICB9LFxyXG59KSk7XHJcbmZ1bmN0aW9uIENhcmRFbXAocHJvcHMpIHtcclxuICAgIGNvbnN0IHsgZGF0YSwgZXZlbnRDaGVja0luLHJlZklucEVtcENvZGUgfSA9IHByb3BzO1xyXG4gICAgY29uc3QgUm93Q29udGVudCA9IChwcm9wcykgPT4ge1xyXG4gICAgICAgIHJldHVybiA8U3RhY2sgPlxyXG4gICAgICAgICAgICA8VHlwb2dyYXBoeSBjbGFzc05hbWU9J3RleHQtWzE0cHhdIGZvbnQtc2Fucyc+e3Byb3BzLnRpdGxlfTwvVHlwb2dyYXBoeT5cclxuICAgICAgICAgICAgPFR5cG9ncmFwaHkgY2xhc3NOYW1lPXtgcGwtMyBmb250LXNlbWlib2xkIHRleHQtWzIxcHhdIGZvbnQtc2FucyBgfT57cHJvcHMudmFsdWUgIT0gJycgPyBwcm9wcy52YWx1ZSA6ICctJ308L1R5cG9ncmFwaHk+XHJcbiAgICAgICAgPC9TdGFjaz5cclxuICAgIH1cclxuICAgIHVzZUVmZmVjdCgoKSA9PiB7XHJcbiAgICAgICAgY29uc29sZS5sb2cocmVmSW5wRW1wQ29kZSlcclxuICAgIH0sIFtdKVxyXG4gICAgcmV0dXJuIChcclxuICAgICAgICA8Q2FyZCB2YXJpYW50PVwib3V0bGluZWRcIiBjbGFzc05hbWU9J21pbi1oLVsyMDBweF0nID5cclxuICAgICAgICAgICAgPENhcmRIZWFkZXIgdGl0bGU9XCLguILguYnguK3guKHguLnguKXguJ7guJnguLHguIHguIfguLLguJlcIiBjbGFzc05hbWU9J3B4LTMgcHktMiBwYi0xIHRleHQtY2VudGVyJyAvPlxyXG4gICAgICAgICAgICA8RGl2aWRlciAvPlxyXG4gICAgICAgICAgICA8Q2FyZENvbnRlbnQgY2xhc3NOYW1lPSdtaW4taC1bMjAwcHhdJz5cclxuICAgICAgICAgICAgICAgIDxHcmlkIGNvbnRhaW5lciBzcGFjaW5nPXszfSA+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17Nn0gY2xhc3NOYW1lPSdmbGV4IGp1c3RpZnktY2VudGVyIGZsZXgtY29sIGl0ZW1zLWNlbnRlciBnYXAtMiBoLVsxNjVweF0nPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8U3R5bGVkQmFkZ2VcclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIG92ZXJsYXA9XCJjaXJjdWxhclwiXHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBhbmNob3JPcmlnaW49e3sgdmVydGljYWw6ICdib3R0b20nLCBob3Jpem9udGFsOiAncmlnaHQnIH19XHJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB2YXJpYW50PVwiZG90XCJcclxuICAgICAgICAgICAgICAgICAgICAgICAgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPEF2YXRhciBhcmlhLWxhYmVsPVwicmVjaXBlXCIgc3JjPXtkYXRhPy5lbXBJbWFnZX0gc3g9e3sgd2lkdGg6IDEyOCwgaGVpZ2h0OiAxMjggfX0gc3R5bGU9e3sgYm9yZGVyOiAnMXB4IHNvbGlkICNDQ0NDQ0MnIH19PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9BdmF0YXI+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvU3R5bGVkQmFkZ2U+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge2RhdGE/LmVtcENvZGV9XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvc3Bhbj5cclxuICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17Nn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSdmbGV4ICBmbGV4LWNvbCAganVzdGlmeS1jZW50ZXInPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFJvd0NvbnRlbnQgdGl0bGU9J+C4iuC4t+C5iOC4rSAnIHZhbHVlPXtkYXRhPy5lbXBOYW1lfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPFJvd0NvbnRlbnQgdGl0bGU9J+C4leC4s+C5geC4q+C4meC5iOC4hyAnIHZhbHVlPXtkYXRhPy5lbXBQb3NpdH0gLz5cclxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxSb3dDb250ZW50IHRpdGxlPSfguK3guLLguKLguLjguIfguLLguJkgJyB2YWx1ZT17YCR7ZGF0YT8uZW1wV29ya1llYXJ9IOC4m+C4tSAkeyhNYXRoLmZsb29yKChkYXRhPy5lbXBXb3JrRGF5IC0gKGRhdGE/LmVtcFdvcmtZZWFyICogMzY1KSkgLyAzMSkpID4gMCA/IChNYXRoLmZsb29yKChkYXRhPy5lbXBXb3JrRGF5IC0gKGRhdGE/LmVtcFdvcmtZZWFyICogMzY1KSkgLyAzMSkgKyAnIOC5gOC4lOC4t+C4reC4mScpIDogJyd9IGB9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2ID5cclxuICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cyA9IHsxMn0+XHJcbiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgb25DbGljaz17ZXZlbnRDaGVja0lufSBjbGFzc05hbWU9J2gtWzEwMHB4XSBwYi0yIGN1cnNvci1wb2ludGVyIHJpbmctMiByaW5nLWdyZWVuLTUwMCB3LWZ1bGwgcm91bmRlZC14bCBiZy1tcC1jaGVjay1pbiAgZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1jZW50ZXIgc2hhZG93LTJ4bCBnYXAtMicgPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxDaGVja0NpcmNsZUljb24gY2xhc3NOYW1lPSd0ZXh0LVszZW1dJy8+PHNwYW4gY2xhc3NOYW1lPSd0ZXh0LVszZW1dIHRleHQtd2hpdGUnPkNIRUNLIElOPC9zcGFuPlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgICAgICAgICAgICA8L0dyaWQ+XHJcbiAgICAgICAgICAgICAgICAgICAgPEdyaWQgaXRlbSB4cz17MTJ9PlxyXG4gICAgICAgICAgICAgICAgICAgICAgICA8Q2FyZEVtcE1RIGxpc3RNUT17ZGF0YT8uZW1wTVF9IC8+XHJcbiAgICAgICAgICAgICAgICAgICAgPC9HcmlkPlxyXG4gICAgICAgICAgICAgICAgICAgIDxHcmlkIGl0ZW0geHM9ezEyfT5cclxuICAgICAgICAgICAgICAgICAgICAgICAgPENhcmRFbXBTQSBsaXN0U0E9e2RhdGE/LmVtcFNBfSAvPlxyXG4gICAgICAgICAgICAgICAgICAgIDwvR3JpZD5cclxuICAgICAgICAgICAgICAgIDwvR3JpZD5cclxuICAgICAgICAgICAgPC9DYXJkQ29udGVudD5cclxuICAgICAgICA8L0NhcmQ+XHJcbiAgICApXHJcbn1cclxuXHJcbmV4cG9ydCBkZWZhdWx0IENhcmRFbXAiXSwibmFtZXMiOlsiUmVhY3QiLCJ1c2VFZmZlY3QiLCJDYXJkIiwiQ2FyZEhlYWRlciIsIkF2YXRhciIsIkljb25CdXR0b24iLCJDYXJkQ29udGVudCIsIlR5cG9ncmFwaHkiLCJEaXZpZGVyIiwiR3JpZCIsIlN0YWNrIiwiQnV0dG9uIiwiVGFibGUiLCJUYWJsZUJvZHkiLCJUYWJsZVJvdyIsIlRhYmxlQ2VsbCIsInN0eWxlZCIsIkJhZGdlIiwiQ2FyZEVtcE1RIiwiQ2hlY2tDaXJjbGVJY29uIiwiQ2FyZEVtcFNBIiwiU3R5bGVkQmFkZ2UiLCJ0aGVtZSIsImJhY2tncm91bmRDb2xvciIsImNvbG9yIiwiYm94U2hhZG93IiwicGFsZXR0ZSIsImJhY2tncm91bmQiLCJwYXBlciIsInBvc2l0aW9uIiwidG9wIiwibGVmdCIsIndpZHRoIiwiaGVpZ2h0IiwiYm9yZGVyUmFkaXVzIiwiYW5pbWF0aW9uIiwiYm9yZGVyIiwiY29udGVudCIsInRyYW5zZm9ybSIsIm9wYWNpdHkiLCJDYXJkRW1wIiwicHJvcHMiLCJkYXRhIiwiZXZlbnRDaGVja0luIiwicmVmSW5wRW1wQ29kZSIsIlJvd0NvbnRlbnQiLCJjbGFzc05hbWUiLCJ0aXRsZSIsInZhbHVlIiwiY29uc29sZSIsImxvZyIsInZhcmlhbnQiLCJjb250YWluZXIiLCJzcGFjaW5nIiwiaXRlbSIsInhzIiwib3ZlcmxhcCIsImFuY2hvck9yaWdpbiIsInZlcnRpY2FsIiwiaG9yaXpvbnRhbCIsImFyaWEtbGFiZWwiLCJzcmMiLCJlbXBJbWFnZSIsInN4Iiwic3R5bGUiLCJzcGFuIiwiZW1wQ29kZSIsImRpdiIsImVtcE5hbWUiLCJlbXBQb3NpdCIsImVtcFdvcmtZZWFyIiwiTWF0aCIsImZsb29yIiwiZW1wV29ya0RheSIsIm9uQ2xpY2siLCJsaXN0TVEiLCJlbXBNUSIsImxpc3RTQSIsImVtcFNBIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7O0FBQUEsT0FBT0EsU0FBU0MsU0FBUyxRQUFRLFFBQU87QUFDeEMsU0FBU0MsSUFBSSxFQUFFQyxVQUFVLEVBQUVDLE1BQU0sRUFBRUMsVUFBVSxFQUFFQyxXQUFXLEVBQUVDLFVBQVUsRUFBRUMsT0FBTyxFQUFFQyxJQUFJLEVBQUVDLEtBQUssRUFBRUMsTUFBTSxFQUFFQyxLQUFLLEVBQUVDLFNBQVMsRUFBRUMsUUFBUSxFQUFFQyxTQUFTLEVBQUVDLE1BQU0sRUFBRUMsS0FBSyxRQUFRLGdCQUFl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

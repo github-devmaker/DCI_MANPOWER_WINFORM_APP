@@ -1,0 +1,1 @@
+D:\git\ManpowerCheckIn\obj\Debug\netcoreapp3.0\ManpowerCheckIn.csproj.AssemblyReference.cache
